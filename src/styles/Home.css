@@ -1,0 +1,332 @@
+/* General styling for the Home page */
+.home {
+    display: flex;
+    flex-direction: column; /* Stack navbar and content */
+    min-height: 115vh; /* Make the whole page at least the height of the viewport */
+    background-color: black;
+    color: white;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Navbar styling */
+.navbar {
+    position: fixed; /* Fix the navbar at the top of the viewport */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 70px; /* Set a fixed height */
+    background-color: white; /* Navbar background */
+    color: black; /* Text color */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the navbar text */
+    z-index: 10; /* Ensure it stays above other content */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: slight shadow */
+}
+
+/* Main content area */
+.content {
+    display: flex;
+    justify-content: space-between; /* Space between the containers */
+    align-items: center; /* Vertically center the containers */
+    height: 100vh; /* Ensure it takes the full viewport height */
+    box-sizing: border-box; /* Prevent overflow */
+}
+
+/* Text container styling */
+.text-container {
+    text-align: center;
+    background-color:#010d15;
+    width: 70%; /* Take 50% of the space */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align text to the top */
+    align-items: center;
+    height: 70%; /* Adjust height if needed */
+    box-sizing: border-box; /* Prevent overflow */
+}
+
+/* Typewriter style (without animation) */
+.typewriter {
+    font-family: "VT323", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: typing 1.5s steps(30) 1s 1 normal forwards, /* Faster typing effect */
+    blinkCursor 500ms steps(1) infinite; /* Blinking cursor */
+    text-align: left; /* Aligns the text to the left */
+    margin-left: -525px;
+    color: #ffffff;
+    visibility: hidden; /* Initially hide the text */
+    position: relative;
+}
+
+/* Typing animation */
+@keyframes typing {
+    0% {
+        clip-path: inset(0 100% 0 0); /* Starts with the text hidden */
+        visibility: visible; /* Ensure the text becomes visible during the animation */
+    }
+    100% {
+        clip-path: inset(0 0 0 0); /* Reveals the text */
+        visibility: visible; /* Keeps the text visible after the animation */
+    }
+}
+
+/* Blinking cursor animation */
+@keyframes blinkCursor {
+    0% {
+        border-right-color: #ffffff; /* Cursor visible */
+    }
+    50% {
+        border-right-color: transparent; /* Cursor hidden */
+    }
+    100% {
+        border-right-color: #ffffff; /* Cursor visible */
+    }
+}
+
+/* Start the typing animation for the first line */
+.typewriter.start {
+    font-family: "Text Me One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    animation: typing 1.5s steps(30) 1s 1 normal forwards, /* Faster typing effect */
+    blinkCursor 500ms steps(1) infinite; /* Blinking cursor */
+    text-align: left; /* Aligns the text to the left */
+    color: #ffffff;
+    visibility: hidden; /* Initially hide the text */
+    position: relative;
+}
+
+/* Delay for the first line (typewriter effect can be visual only here, no animation) */
+.typewriter.delay-1 {
+    margin-top: -10px;
+    font-family: "Text Me One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    color: #ffffff;
+    display: inline-block;
+    animation: typing 1.0s steps(30) 4s 1 normal forwards, /* Faster typing effect with delay */
+    blinkCursor 500ms steps(1) infinite; /* Blinking cursor */
+    text-align: left; /* Aligns the text to the left */
+    margin-left: -610px;
+    visibility: hidden; /* Initially hide the text */
+    position: relative;
+}
+
+/* Delay for the second line (typewriter effect can be visual only here, no animation) */
+.end.delay-2 {
+    font-family: "Text Me One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 27px;
+    color: #165395;
+    text-align: center;
+    display: inline-block;
+    animation: typing 1.5s steps(30) 8s 1 normal forwards, /* Faster typing effect with longer delay */
+    blinkCursor 500ms steps(1) infinite; /* Blinking cursor */
+    visibility: hidden; /* Initially hide the text */
+    margin-top: -10px;
+    margin-left: 150px;
+    position: relative;
+}
+
+/* Text styling for first and last names */
+.first-name,
+.last-name {
+    display: block; /* Make each span a block-level element so it takes up a full line */
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s forwards; /* Apply the fade-in effect */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* First name fade-in with delay (after delay-1 and before delay-2) */
+.first-name {
+    font-size: 120px;
+    font-family: "Limelight", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: -30px;
+    margin-left: 150px;
+    animation-delay: 7s; /* Start fade-in after delay-1 ends */
+}
+
+/* Last name fade-in with delay (after first name and before delay-2) */
+.last-name {
+    font-size: 120px;
+    font-family: "Limelight", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: -10px;
+    margin-left: 150px;
+    animation-delay: 7s; /* Start fade-in after first name */
+}
+
+  
+/* Photo container styling */
+.photo-container {
+    width: 50%; /* Take 50% of the space */
+    background-color: #010d15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70%; /* Ensure it takes full height of the parent */
+    box-sizing: border-box; /* Prevent overflow */
+}
+
+.photo-container img {
+    max-width: 100%; /* Ensure the image scales to fit */
+    max-height: 100%; /* Ensure the image scales to fit */
+    object-fit: cover;
+}
+
+.polaroid {
+    background-color: white;
+    padding: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    display: inline-block;
+    width: 300px; /* Fixed width */
+    max-width: 90%; /* Still responsive to very small screens */
+}
+
+/* Image inside the Polaroid */
+.polaroid-image {
+    width: 100%; /* Image fills the polaroid container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Caption below the image */
+.caption {
+    font-family: 'Arial', sans-serif;
+    font-size: 0.9rem;
+    margin-top: 8px;
+    color: #ffffff;
+}
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9rem;
+    color: white;
+}
+
+/* Choose text styling */
+.choose {
+    font-size: 15px; 
+    font-style: oblique; 
+    font-family: 'Arial', sans-serif;
+    color: white; 
+    text-align: center;
+}
+
+/* ============================================================ Google Fonts =========================================================*/
+.chango-regular {
+    font-family: "Chango", sans-serif;
+    font-style: normal;
+}
+
+.noto-sans-kr {
+    font-family: 'Noto Sans KR', serif;
+    font-weight: 100; /* You can use 400, 700, etc., based on the style you want */
+    font-style: normal;
+}
+
+.fascinate-inline-regular {
+    font-family: "Fascinate Inline", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.limelight-regular {
+    font-family: "Limelight", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+} 
+ 
+.vt323-regular {
+    font-family: "VT323", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .quantico-regular {
+    font-family: "Quantico", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .quantico-bold {
+    font-family: "Quantico", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .quantico-regular-italic {
+    font-family: "Quantico", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .quantico-bold-italic {
+    font-family: "Quantico", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .text-me-one-regular {
+    font-family: "Text Me One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .fascinate-regular {
+    font-family: "Fascinate", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .asset-regular {
+  font-family: "Asset", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.notable-regular {
+    font-family: "Notable", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .caprasimo-regular {
+    font-family: "Caprasimo", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .righteous-regular {
+    font-family: "Righteous", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
