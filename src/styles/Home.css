@@ -255,6 +255,7 @@
 
 .copy{
     font-size: 14px;
+    font-style: normal;
 }
 
  
@@ -303,6 +304,7 @@
 .photo-container .button {
     display: block;
     margin: 20px auto; /* Centers the button below the polaroid */
+    margin-top: 20px;
 }
 
 
