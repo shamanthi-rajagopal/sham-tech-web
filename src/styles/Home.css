@@ -1,4 +1,4 @@
-/* General styling for the Home page */
+/* General styling for the Home page => ALL CSS NEEDED FOR HOME PAGE IS HERE!!! */
 .home {
     display: flex;
     flex-direction: column; /* Stack navbar and content */
@@ -15,14 +15,16 @@
     left: 0;
     width: 100%; /* Full width */
     height: 70px; /* Set a fixed height */
-    background-color: white; /* Navbar background */
+    background-color: rgba(0, 0, 0, 0.115); /* Transparent white background */
     color: black; /* Text color */
     display: flex;
     align-items: center;
     justify-content: center; /* Center the navbar text */
     z-index: 10; /* Ensure it stays above other content */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: slight shadow */
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.462); /* Optional: slight shadow */
+    backdrop-filter: blur(10px); /* Apply blur to the background behind the navbar */
 }
+
 
 /* Main content area */
 .content {
@@ -36,7 +38,7 @@
 /* Text container styling */
 .text-container {
     text-align: center;
-    background-color:#010d15;
+    background-color:#000000;
     width: 70%; /* Take 50% of the space */
     display: flex;
     flex-direction: column;
@@ -115,7 +117,7 @@
     font-size: 25px;
     color: #ffffff;
     display: inline-block;
-    animation: typing 1.0s steps(30) 4s 1 normal forwards, /* Faster typing effect with delay */
+    animation: typing 1.0s steps(30) 3s 1 normal forwards, /* Faster typing effect with delay */
     blinkCursor 500ms steps(1) infinite; /* Blinking cursor */
     text-align: left; /* Aligns the text to the left */
     margin-left: -610px;
@@ -129,10 +131,10 @@
     font-weight: 400;
     font-style: normal;
     font-size: 27px;
-    color: #165395;
+    color: #1e60a7;
     text-align: center;
     display: inline-block;
-    animation: typing 1.5s steps(30) 8s 1 normal forwards, /* Faster typing effect with longer delay */
+    animation: typing 1.5s steps(30) 9.5s 1 normal forwards, /* Faster typing effect with longer delay */
     blinkCursor 500ms steps(1) infinite; /* Blinking cursor */
     visibility: hidden; /* Initially hide the text */
     margin-top: -10px;
@@ -145,7 +147,7 @@
 .last-name {
     display: block; /* Make each span a block-level element so it takes up a full line */
     opacity: 0; /* Initially hidden */
-    animation: fadeIn 2s forwards; /* Apply the fade-in effect */
+    animation: fadeIn 1.5s forwards; /* Apply the fade-in effect */
 }
 
 /* Fade-in animation */
@@ -166,7 +168,7 @@
     font-style: normal;
     margin-top: -30px;
     margin-left: 150px;
-    animation-delay: 7s; /* Start fade-in after delay-1 ends */
+    animation-delay: 5s; /* Start fade-in after delay-1 ends */
 }
 
 /* Last name fade-in with delay (after first name and before delay-2) */
@@ -177,27 +179,23 @@
     font-style: normal;
     margin-top: -10px;
     margin-left: 150px;
-    animation-delay: 7s; /* Start fade-in after first name */
+    animation-delay: 6s; /* Start fade-in after first name */
 }
 
   
 /* Photo container styling */
 .photo-container {
     width: 50%; /* Take 50% of the space */
-    background-color: #010d15;
+    background-color: #000000;
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center-align the content */
     align-items: center;
     height: 70%; /* Ensure it takes full height of the parent */
     box-sizing: border-box; /* Prevent overflow */
 }
 
-.photo-container img {
-    max-width: 100%; /* Ensure the image scales to fit */
-    max-height: 100%; /* Ensure the image scales to fit */
-    object-fit: cover;
-}
-
+/* Polaroid container with fade-in */
 .polaroid {
     background-color: white;
     padding: 15px;
@@ -205,22 +203,32 @@
     text-align: center;
     display: inline-block;
     width: 300px; /* Fixed width */
-    max-width: 90%; /* Still responsive to very small screens */
+    max-width: 90%; /* Responsive to very small screens */
+    margin-top: 140px;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1s ease-in forwards; /* Fade-in animation */
+    animation-delay: 7s; /* Delay to match the typing animation */
 }
 
-/* Image inside the Polaroid */
+/* Image inside the Polaroid with fade-in */
 .polaroid-image {
     width: 100%; /* Image fills the polaroid container */
     height: auto; /* Maintain aspect ratio */
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1s ease-in forwards; /* Fade-in animation */
+    animation-delay: 7.5s; /* Slightly delayed for a smoother effect */
 }
 
-/* Caption below the image */
-.caption {
-    font-family: 'Arial', sans-serif;
-    font-size: 0.9rem;
-    margin-top: 8px;
-    color: #ffffff;
+/* Fade-in effect keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
+
 
 /* Footer styling */
 .footer {
@@ -230,14 +238,69 @@
     color: white;
 }
 
-/* Choose text styling */
 .choose {
-    font-size: 15px; 
-    font-style: oblique; 
-    font-family: 'Arial', sans-serif;
-    color: white; 
-    text-align: center;
+    font-size: 12px;
+    margin-top: 10px;
+    font-family: 'Noto Sans KR', serif;
+    font-weight: 100; /* You can use 400, 700, etc., based on the style you want */
+    font-style: normal;
+    color: #ffffff;
+    transition: text-shadow 0.3s ease, color 0.3s ease; /* Smooth transition for the glow effect */
 }
+
+.choose:hover {
+    color: #f0f0f0; /* Slightly lighter color for the text */
+    text-shadow: 0 0 10px #fff, 0 0 20px #d4f9ff, 0 0 30px #d4f9ff, 0 0 40px #d4f9ff;
+}
+
+ 
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Button styling with fade-in effect */
+.button {
+    border: 2px solid #ffffff; /* White border */
+    background-color: transparent; /* Transparent background */
+    color: #ffffff; /* White text */
+    font-family: "VT323", sans-serif; /* Matches the theme */
+    font-size: 20px;
+    padding: 10px 20px;
+    margin-top: 20px; /* Space above the button */
+    cursor: pointer;
+    text-transform: uppercase; /* Capitalized text */
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out; /* Smooth hover effect */
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 1s ease-in-out forwards; /* Fade-in effect */
+    animation-delay: 11s; /* Delay after typing animation, adjust as needed */
+}
+
+/* Hover animation for button */
+.button:hover {
+    background-color: #ffffff; /* White background on hover */
+    color: #000000; /* Black text on hover */
+    transform: scale(1.1); /* Slightly enlarge the button */
+}
+
+/* Center-aligns the button in text-container */
+.text-container .button {
+    display: block;
+    margin: 20px -150px auto 0; /* Center-aligns the button in text-container */
+}
+
+/* Centers the button below the polaroid */
+.photo-container .button {
+    display: block;
+    margin: 20px auto; /* Centers the button below the polaroid */
+}
+
 
 /* ============================================================ Google Fonts =========================================================*/
 .chango-regular {
