@@ -42,7 +42,7 @@ const Home = () => {
         <p className="choose">
           I couldn&apos;t choose one style so I did both! [ click the buttons to see what I mean :) ]
         </p>
-        <p>Shamanthi Rajagopal &copy; 2025</p>
+        <p className="copy">Shamanthi Rajagopal &copy; 2025</p>
       </footer>
     </div>
   );

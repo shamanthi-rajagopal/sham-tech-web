@@ -239,7 +239,7 @@
 }
 
 .choose {
-    font-size: 12px;
+    font-size: 13px;
     margin-top: 10px;
     font-family: 'Noto Sans KR', serif;
     font-weight: 100; /* You can use 400, 700, etc., based on the style you want */
@@ -251,6 +251,10 @@
 .choose:hover {
     color: #f0f0f0; /* Slightly lighter color for the text */
     text-shadow: 0 0 10px #fff, 0 0 20px #d4f9ff, 0 0 30px #d4f9ff, 0 0 40px #d4f9ff;
+}
+
+.copy{
+    font-size: 14px;
 }
 
  
