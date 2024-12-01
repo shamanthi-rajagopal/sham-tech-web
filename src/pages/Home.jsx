@@ -17,12 +17,14 @@ const Home = () => {
       </a>
 
         <div className="navbar-buttons">
-          <a href="https://github.com/shamanthi-rajagopal" target="_blank" rel="noopener noreferrer" className="nav-button">
-            GitHub
-          </a>
           <a href="https://www.linkedin.com/in/shamanthi-rajagopal/" target="_blank" rel="noopener noreferrer" className="nav-button">
             LinkedIn
           </a>
+
+          <a href="https://github.com/shamanthi-rajagopal" target="_blank" rel="noopener noreferrer" className="nav-button">
+            GitHub
+          </a>
+
           <a href="https://github.com/shamanthi-rajagopal/shamanthi-rajagopal/blob/main/Shamanthi_Public__Resume.pdf" target="_blank" rel="noopener noreferrer" className="nav-button">
             Resume
           </a>
