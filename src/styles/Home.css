@@ -334,11 +334,11 @@
 
 /* Button styling with fade-in effect */
 .button {
-    border: 2px solid #ffffff; /* White border */
+    border: 3px solid #ffffff; /* White border */
     background-color: transparent; /* Transparent background */
     color: #ffffff; /* White text */
     font-family: "VT323", sans-serif; /* Matches the theme */
-    font-size: 20px;
+    font-size: 21px;
     padding: 10px 20px;
     margin-top: 20px; /* Space above the button */
     cursor: pointer;
