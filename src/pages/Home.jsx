@@ -1,6 +1,8 @@
 import "../styles/Home.css";
 import profileImage from "../assets/images/profile1.jpg";
 import star from "../assets/images/bluestar.png";
+import computer from "../assets/images/computer.png";
+import space from "../assets/images/space.png";
 import { useNavigate, Link } from "react-router-dom";
 
 const Home = () => {
@@ -15,16 +17,17 @@ const Home = () => {
       </a>
 
         <div className="navbar-buttons">
-          <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer" className="nav-button">
+          <a href="https://github.com/shamanthi-rajagopal" target="_blank" rel="noopener noreferrer" className="nav-button">
             GitHub
           </a>
-          <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" className="nav-button">
+          <a href="https://www.linkedin.com/in/shamanthi-rajagopal/" target="_blank" rel="noopener noreferrer" className="nav-button">
             LinkedIn
           </a>
-          <a href="https://your-resume-link.com" target="_blank" rel="noopener noreferrer" className="nav-button">
+          <a href="https://github.com/shamanthi-rajagopal/shamanthi-rajagopal/blob/main/Shamanthi_Public__Resume.pdf" target="_blank" rel="noopener noreferrer" className="nav-button">
             Resume
           </a>
-          <Link to="/tech" className="nav-button">Portfolio</Link>
+          <Link to="/tech" className="nav-icon1"><img src={computer} alt="Portfolio Icon" className="nav-icon1" /></Link>
+          <Link to="/my-world" className="nav-icon1"><img src={space} alt="Portfolio Icon" className="nav-icon2" /></Link>
         </div>
       </div>
 

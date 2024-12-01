@@ -46,13 +46,39 @@
     margin-left: 17px;
     transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   }
-  
-  .nav-icon:hover {
-    filter: drop-shadow(0 0 5px #4299d2) drop-shadow(0 0 5px #4299d2); /* Glowing outline */
+
+  .nav-icon1 {
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    object-fit: contain; /* Ensures the image maintains aspect ratio */
+    margin-left: 0px;
+    transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-icon2 {
+    width: 45px; /* Adjust size as needed */
+    height: 45px;
+    object-fit: contain; /* Ensures the image maintains aspect ratio */
+    margin-left: 0px;
+    transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-icon1:hover {
+    filter: drop-shadow(0 0 5px #ced6db) drop-shadow(0 0 5px #ced6db); /* Glowing outline */
     transform: scale(1.075); /* Slight scale effect for emphasis */
   }
   
+  .nav-icon:hover {
+    filter: drop-shadow(0 0 4px #4299d2) drop-shadow(0 0 4px #4299d2); /* Glowing outline */
+    transform: scale(1.075); /* Slight scale effect for emphasis */
+  }
+
+  .nav-icon2:hover {
+    filter: drop-shadow(0 0 5px #ff9e9e) drop-shadow(0 0 5px #ed6969); /* Glowing outline */
+    transform: scale(1.075); /* Slight scale effect for emphasis */
+  }
   
+
   .navbar-buttons {
     display: flex;
     gap: 15px; /* Spacing between buttons */
