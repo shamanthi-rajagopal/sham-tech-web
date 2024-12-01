@@ -43,7 +43,7 @@
     width: 40px; /* Adjust size as needed */
     height: 40px;
     object-fit: contain; /* Ensures the image maintains aspect ratio */
-    margin-left: 20px;
+    margin-left: 17px;
     transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   }
   
@@ -51,8 +51,6 @@
     filter: drop-shadow(0 0 5px #4299d2) drop-shadow(0 0 5px #4299d2); /* Glowing outline */
     transform: scale(1.075); /* Slight scale effect for emphasis */
   }
-  
-  
   
   
   .navbar-buttons {
@@ -68,7 +66,7 @@
     border: none;
     border-radius: 2px;
     padding: 8px 12px;
-    font-size: 16px;
+    font-size: 17px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-family: 'Noto Sans KR', serif;
