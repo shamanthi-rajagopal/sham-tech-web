@@ -23,8 +23,62 @@
     z-index: 10; /* Ensure it stays above other content */
     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.462); /* Optional: slight shadow */
     backdrop-filter: blur(10px); /* Apply blur to the background behind the navbar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
 }
 
+.nav-home {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: 'Noto Sans KR', serif;
+    font-weight: 200; 
+    font-style: normal;
+  }
+
+  .nav-icon {
+    width: 40px; /* Adjust size as needed */
+    height: 40px;
+    object-fit: contain; /* Ensures the image maintains aspect ratio */
+    margin-left: 20px;
+    transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-icon:hover {
+    filter: drop-shadow(0 0 5px #4299d2) drop-shadow(0 0 5px #4299d2); /* Glowing outline */
+    transform: scale(1.075); /* Slight scale effect for emphasis */
+  }
+  
+  
+  
+  
+  .navbar-buttons {
+    display: flex;
+    gap: 15px; /* Spacing between buttons */
+    margin-right: 20px ;
+  }
+  
+  .nav-button {
+    background-color: #ffffff00;
+    color: white;
+    text-decoration: none; /* Remove underline */
+    border: none;
+    border-radius: 2px;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Noto Sans KR', serif;
+    font-weight: 100; 
+    font-style: normal;
+  }
+  
+  .nav-button:hover {
+    background-color: #ffffff54;
+  }
 
 /* Main content area */
 .content {
@@ -134,13 +188,24 @@
     color: #1e60a7;
     text-align: center;
     display: inline-block;
-    animation: typing 1.5s steps(30) 9.5s 1 normal forwards, /* Faster typing effect with longer delay */
-    blinkCursor 500ms steps(1) infinite; /* Blinking cursor */
+    animation: typing 1.5s steps(30) 8s 1 normal forwards;
     visibility: hidden; /* Initially hide the text */
     margin-top: -10px;
     margin-left: 150px;
     position: relative;
+    transition: text-shadow 0.3s ease, color 0.3s ease; /* Smooth transition for the glow effect */
 }
+
+.end.delay-2:hover {
+    color: #1e60a7; /* Keep the original text color */
+    text-shadow: 
+        0 0 3px #1e60a7,   /* Light inner glow */
+        0 0 8px #4299d2,   /* Medium blue */
+        0 0 13px #1e60a7,  /* Deeper blue for outer glow */
+        0 0 18px #0f3460;  /* Dark blue for the final outermost glow */
+}
+
+
 
 /* Text styling for first and last names */
 .first-name,
@@ -168,7 +233,7 @@
     font-style: normal;
     margin-top: -30px;
     margin-left: 150px;
-    animation-delay: 5s; /* Start fade-in after delay-1 ends */
+    animation-delay: 4.5s; /* Start fade-in after delay-1 ends */
 }
 
 /* Last name fade-in with delay (after first name and before delay-2) */
@@ -179,7 +244,7 @@
     font-style: normal;
     margin-top: -10px;
     margin-left: 150px;
-    animation-delay: 6s; /* Start fade-in after first name */
+    animation-delay: 5s; /* Start fade-in after first name */
 }
 
   
@@ -207,7 +272,7 @@
     margin-top: 140px;
     opacity: 0; /* Initially hidden */
     animation: fadeIn 1s ease-in forwards; /* Fade-in animation */
-    animation-delay: 7s; /* Delay to match the typing animation */
+    animation-delay: 6s; /* Delay to match the typing animation */
 }
 
 /* Image inside the Polaroid with fade-in */
@@ -216,7 +281,7 @@
     height: auto; /* Maintain aspect ratio */
     opacity: 0; /* Initially hidden */
     animation: fadeIn 1s ease-in forwards; /* Fade-in animation */
-    animation-delay: 7.5s; /* Slightly delayed for a smoother effect */
+    animation-delay: 6.5s; /* Slightly delayed for a smoother effect */
 }
 
 /* Fade-in effect keyframes */
@@ -284,7 +349,7 @@
     transition: all 0.3s ease-in-out; /* Smooth hover effect */
     opacity: 0; /* Initially hidden */
     animation: fadeIn 1s ease-in-out forwards; /* Fade-in effect */
-    animation-delay: 11s; /* Delay after typing animation, adjust as needed */
+    animation-delay: 7s; /* Delay after typing animation, adjust as needed */
 }
 
 /* Hover animation for button */
@@ -316,7 +381,7 @@
 
 .noto-sans-kr {
     font-family: 'Noto Sans KR', serif;
-    font-weight: 100; /* You can use 400, 700, etc., based on the style you want */
+    font-weight: 100; 
     font-style: normal;
 }
 
