@@ -16,7 +16,7 @@
   border: 2px solid #8b8b8b; /* Dark border to match Windows 95 theme */
   border-radius: 0px; /* Slightly rounded corners for a vintage feel */
   display: none;
-  font-family: "MS Sans Serif", sans-serif; /* Windows 95 font */
+  font-family: 'Windows95Font', sans-serif;
   border-top: 2px solid #ffffff;
   border-left: 1px solid #ffffff;
   border-bottom: 2px solid #000000;

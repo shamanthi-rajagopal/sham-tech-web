@@ -13,4 +13,11 @@
     font-family: "Tahoma", sans-serif; /* Windows 95 font style */
     color: black; /* Default text color */
   }
+
+  body {
+    overflow-y: hidden; /* Prevent vertical scrolling */
+    overflow-x: hidden; /* Prevent vertical scrolling */
+    margin: 0; /* Optional: remove default margin to ensure no unwanted scrolling */
+  }
+  
   

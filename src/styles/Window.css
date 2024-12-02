@@ -1,31 +1,87 @@
+@font-face {
+  font-family: 'Windows95Font';
+  src: url('/fonts/w95fa.woff2') format('woff2'),
+       url('/fonts/w95fa.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .window {
-    position: absolute;
-    width: 300px;
-    background-color: #ffffff;
-    border: 2px solid #000000;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-  }
-  
-  .window-header {
-    background-color: #2c6bb5;
-    padding: 5px;
-    color: white;
-    cursor: move;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .window-header button {
-    background: transparent;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
-  
-  .window-content {
-    padding: 10px;
-    font-family: "Arial", sans-serif;
-    background-color: #f4f4f4;
-  }
-  
+  position: absolute;
+  width: 700px;
+  min-width: 500px;
+  min-height: 500px; /* Set a minimum height for consistency */
+  background-color: #cac6cb; /* Slightly off-white to resemble a classic OS window */
+  border: 2px solid #000000;
+  box-shadow: 
+    4px 4px 8px rgba(0, 0, 0, 0.008), /* Outer shadow for depth */
+    inset 0 0 0 2px #cac6cb,          /* Grey inner border */
+    inset 0 0 0 3px #5f5f5f;          /* Blue inner border (thicker) */
+  border-radius: 0px; /* Subtle rounding for a modern touch */
+  overflow: hidden; /* Prevent content overflow */
+  user-select: none; /* Prevent accidental text selection during dragging */
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #000000;
+  border-right: 2px solid #000000;
+}
+
+
+.window-header {
+  background-color: #102e5f; /* A slightly richer blue */
+  width:674px;
+  padding: 3px 8px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Windows95Font', sans-serif;
+  font-size: 14px;
+  margin-left: 5px;
+  transform: translateY(6px);
+
+}
+
+.window-header:active {
+
+}
+
+.window-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 2px;
+  transition: background-color 0.2s;
+}
+
+.window-header button:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Subtle hover effect */
+}
+
+.window-content {
+  padding: 15px;
+  font-family: "Arial", sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  background-color: #f9f9f900; /* Softer light background */
+  color: #333333; /* Darker text for readability */
+  border-top: 1px solid #ffffff00; /* Separator line */
+}
+
+.resize-handle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #aaa 25%, #fff 25%, #fff 50%, #aaa 50%, #aaa 75%, #fff 75%, #fff);
+  background-size: 4px 4px;
+  cursor: se-resize; /* Resize cursor for bottom-right corner */
+}
+
+.resize-handle:hover {
+  background: linear-gradient(135deg, #888 25%, #fff 25%, #fff 50%, #888 50%, #888 75%, #fff 75%, #fff);
+}
