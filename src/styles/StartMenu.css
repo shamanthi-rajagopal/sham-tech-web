@@ -1,0 +1,30 @@
+.start-menu {
+    position: absolute;
+    bottom: 50px;
+    left: 10px;
+    width: 200px;
+    background-color: #2c6bb5;
+    border: 2px solid black;
+    border-radius: 5px;
+    display: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  .start-menu.open {
+    display: block;
+  }
+  
+  .menu-items button {
+    width: 100%;
+    background: #c1c1c1;
+    border: none;
+    padding: 8px;
+    text-align: left;
+    font-family: "Arial", sans-serif;
+    cursor: pointer;
+  }
+  
+  .menu-items button:hover {
+    background-color: #a1a1a1;
+  }
+  

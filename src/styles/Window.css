@@ -1,0 +1,31 @@
+.window {
+    position: absolute;
+    width: 300px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+  }
+  
+  .window-header {
+    background-color: #2c6bb5;
+    padding: 5px;
+    color: white;
+    cursor: move;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .window-header button {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .window-content {
+    padding: 10px;
+    font-family: "Arial", sans-serif;
+    background-color: #f4f4f4;
+  }
+  
