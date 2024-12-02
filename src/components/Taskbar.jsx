@@ -8,6 +8,7 @@ import windowslogo from "../assets/images/windowslogo1.png";
 
 const Taskbar = ({ toggleStartMenu, windows, closeWindow }) => {
   const [currentTime, setCurrentTime] = useState(dayjs().format("hh:mm A"));
+  const [isPressed, setIsPressed] = useState(false); // Track the pressed state of the button
 
   // Update the time every second
   useEffect(() => {
@@ -19,9 +20,18 @@ const Taskbar = ({ toggleStartMenu, windows, closeWindow }) => {
     return () => clearInterval(interval);
   }, []);
 
+  // Handle button click to toggle pressed state
+  const handleStartButtonClick = () => {
+    setIsPressed(!isPressed); // Toggle the pressed state
+    toggleStartMenu(); // Call the toggleStartMenu function passed via props
+  };
+
   return (
     <div className="taskbar">
-      <button className="start-button" onClick={toggleStartMenu}>
+      <button 
+        className={`start-button ${isPressed ? 'pressed' : ''}`} // Apply 'pressed' class when button is pressed
+        onClick={handleStartButtonClick}
+      >
         <img src={windowslogo} className="start-button-icon" />
         <span>Start</span>
       </button>

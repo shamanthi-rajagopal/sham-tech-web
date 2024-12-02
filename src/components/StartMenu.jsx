@@ -1,16 +1,29 @@
-//import React from "react";
 import PropTypes from "prop-types";  // Import PropTypes
 import "../styles/StartMenu.css";
 
 const StartMenu = ({ open, toggleStartMenu }) => {
+  const handleLinkClick = (event) => {
+    // Prevent the toggleStartMenu function from being called when clicking the link
+    event.stopPropagation();
+  };
+
   return (
-    <div className={`start-menu ${open ? "open" : ""}`}>
+    <div className={`start-menu ${open ? "open" : ""}`} onClick={toggleStartMenu}>
       <button onClick={toggleStartMenu}>Close</button>
       <div className="menu-items">
-        <button onClick={() => alert("Opening Programs...")}>Programs</button>
-        <button onClick={() => alert("Opening Documents...")}>Documents</button>
-        <button onClick={() => alert("Opening Settings...")}>Settings</button>
-        <button onClick={() => alert("Shutting Down...")}>Shut Down</button>
+        <a
+          href="https://github.com/shamanthi-rajagopal"
+          onClick={(event) => {
+            handleLinkClick(event); // Prevent menu toggle
+          }}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Programs
+        </a>
+        <a href="/documents" onClick={toggleStartMenu}>Documents</a>
+        <a href="/settings" onClick={toggleStartMenu}>Settings</a>
+        <a href="/shutdown" onClick={toggleStartMenu}>Shut Down</a>
       </div>
     </div>
   );
