@@ -1,15 +1,29 @@
-//import React from "react";
 import PropTypes from "prop-types"; // Import PropTypes for validation
+import { useState, useEffect } from "react"; // Import hooks for managing state and effects
 import "../styles/Taskbar.css";
 import dayjs from "dayjs";
-
-const currentTime = dayjs().format("hh:mm A");
+import earth from "../assets/images/windowsearth.png";
+import plug from "../assets/images/windowsplug.png";
+import windowslogo from "../assets/images/windowslogo1.png";
 
 const Taskbar = ({ toggleStartMenu, windows, closeWindow }) => {
+  const [currentTime, setCurrentTime] = useState(dayjs().format("hh:mm A"));
+
+  // Update the time every second
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(dayjs().format("hh:mm A"));
+    }, 1000);
+
+    // Cleanup the interval on component unmount
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="taskbar">
       <button className="start-button" onClick={toggleStartMenu}>
-        Start
+        <img src={windowslogo} className="start-button-icon" />
+        <span>Start</span>
       </button>
       <div className="open-windows">
         {windows.map((window, index) => (
@@ -23,8 +37,15 @@ const Taskbar = ({ toggleStartMenu, windows, closeWindow }) => {
           </button>
         ))}
       </div>
+
       {/* Display the current time */}
       <p className="current-time">{currentTime}</p>
+      <div className="taskbar-icon">
+        <img src={earth} className="earth" />
+      </div>
+      <div className="taskbar-icon">
+        <img src={plug} className="plug" />
+      </div>
     </div>
   );
 };

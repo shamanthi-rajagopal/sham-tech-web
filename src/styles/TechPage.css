@@ -1,0 +1,16 @@
+.tech-page {
+    height: 100vh; /* Full viewport height */
+    width: 100%;   /* Full width */
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+    background-image: url('../assets/images/windowsblue.png'); /* Path to your image */
+    background-size: cover; /* Ensure the image covers the whole area */
+    background-repeat: no-repeat; /* Prevent tiling */
+    background-position: center; /* Center the image */
+    overflow: hidden; /* Hide anything that goes outside */
+    font-family: "Tahoma", sans-serif; /* Windows 95 font style */
+    color: black; /* Default text color */
+  }
+  

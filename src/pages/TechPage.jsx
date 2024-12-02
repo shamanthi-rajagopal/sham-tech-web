@@ -24,7 +24,7 @@ const TechPage = () => {
 
   return (
     <div className="tech-page">
-      <h1>Windows 95 UI</h1>
+      <h1></h1>
 
       {/* Add Button to Open Window */}
       <button onClick={() => openWindow("Example Window")}>Open Window</button>
