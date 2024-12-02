@@ -1,12 +1,12 @@
 import { useState, useRef } from "react";
 import PropTypes from "prop-types";
 import "../styles/Window.css";
+import square from "../assets/images/square1.png";
 
 const Window = ({ name, closeWindow }) => {
   const [position, setPosition] = useState({ x: 100, y: 100 });
   const [size, setSize] = useState({ width: 700, height: 530 });
-  const [isDragging, setIsDragging] = useState(false);
-  const [isResizing, setIsResizing] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
 
   const positionRef = useRef(position);
   const sizeRef = useRef(size);
@@ -23,17 +23,14 @@ const Window = ({ name, closeWindow }) => {
       const deltaX = e.clientX - dragStart.current.x;
       const deltaY = e.clientY - dragStart.current.y;
 
-      // Calculate new position
       const newPosition = {
         x: positionRef.current.x + deltaX,
         y: positionRef.current.y + deltaY,
       };
 
-      // Prevent the window from going off the screen on the top, left, or right side
       const maxX = window.innerWidth - size.width;
       const maxY = window.innerHeight - size.height;
 
-      // Ensure the window doesn't move beyond the viewport
       const clampedPosition = {
         x: Math.max(0, Math.min(newPosition.x, maxX)),
         y: Math.max(0, Math.min(newPosition.y, maxY)),
@@ -52,27 +49,15 @@ const Window = ({ name, closeWindow }) => {
         height: sizeRef.current.height + deltaY,
       };
 
-      // Prevent the window from resizing beyond the right or bottom side
-      const maxWidth = window.innerWidth - position.x;
-      const maxHeight = window.innerHeight - position.y;
-
-      // Ensure the window doesn't resize beyond the viewport
-      const clampedSize = {
-        width: Math.max(100, Math.min(newSize.width, maxWidth)),
-        height: Math.max(100, Math.min(newSize.height, maxHeight)),
-      };
-
-      sizeRef.current = clampedSize;
-      setSize(clampedSize);
+      sizeRef.current = newSize;
+      setSize(newSize);
 
       resizingStart.current = { x: e.clientX, y: e.clientY };
     }
   };
 
   const handlePointerDown = (e) => {
-    // If clicked on the window header, start dragging
     if (e.target.classList.contains("window-header")) {
-      setIsDragging(true);
       dragging.current = true;
       dragStart.current = { x: e.clientX, y: e.clientY };
 
@@ -80,9 +65,7 @@ const Window = ({ name, closeWindow }) => {
       document.addEventListener("pointerup", handlePointerUp);
     }
 
-    // If clicked on the resize handle, start resizing
     if (e.target.classList.contains("resize-handle")) {
-      setIsResizing(true);
       resizing.current = true;
       resizingStart.current = { x: e.clientX, y: e.clientY };
 
@@ -92,13 +75,32 @@ const Window = ({ name, closeWindow }) => {
   };
 
   const handlePointerUp = () => {
-    setIsDragging(false);
-    setIsResizing(false);
     dragging.current = false;
     resizing.current = false;
     document.removeEventListener("pointermove", handlePointerMove);
     document.removeEventListener("pointerup", handlePointerUp);
   };
+
+  const hideWindow = () => {
+    setIsHidden(true);
+  };
+
+  const showWindow = () => {
+    setIsHidden(false);
+  };
+
+  const fullScreenWindow = () => {
+    setPosition({ x: 0, y: 0 });
+    setSize({ width: window.innerWidth, height: window.innerHeight });
+  };
+
+  if (isHidden) {
+    return (
+      <button onClick={showWindow} className="show-window-button">
+        Show {name} Window
+      </button>
+    );
+  }
 
   return (
     <div
@@ -116,13 +118,22 @@ const Window = ({ name, closeWindow }) => {
         style={{
           cursor: "default",
           zIndex: 10,
+          width: `${size.width - 26}px`,
         }}
       >
         <span>{name}</span>
+        <div className="window-controls">
+        <button className="min" onClick={hideWindow}>_</button>
+        <button onClick={fullScreenWindow}>
+          <img className="square" src={square}/>
+        </button>
         <button onClick={() => closeWindow(name)}>X</button>
+        </div>
       </div>
+      <div className="test">Test</div>
+      <div className="window-container">
       <div className="window-content">
-        <p>This is a {name} window content.</p>
+        <p> sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
       </div>
       <div
         className="resize-handle"
@@ -133,9 +144,11 @@ const Window = ({ name, closeWindow }) => {
           bottom: "0",
           width: "20px",
           height: "20px",
-          cursor: "se-resize", // Bottom-right resize cursor
+          cursor: "se-resize",
         }}
       />
+      </div>
+      <p className="copyright">Shamanthi Rajagopal &copy; 2025</p>
     </div>
   );
 };

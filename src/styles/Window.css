@@ -26,10 +26,20 @@
   border-right: 2px solid #000000;
 }
 
+.window-container {
+  width: 99.5%; /* Make the width flexible to take up the available space */
+  height: calc(100% - 35px); /* Ensure this accounts for the window header's height */
+  background-color: #ffffff00;
+  overflow-y: auto; /* Enable vertical scrolling when content overflows */
+  padding: 10px; /* Add padding for some space inside the container */
+  box-sizing: border-box; /* Ensure padding does not affect the width/height */
+  margin-right: 20px; /* Create space on the right for the scrollbar */
+}
 
 .window-header {
   background-color: #102e5f; /* A slightly richer blue */
   width:674px;
+  min-width: 474px;
   padding: 3px 8px;
   color: white;
   display: flex;
@@ -39,7 +49,6 @@
   font-size: 14px;
   margin-left: 5px;
   transform: translateY(6px);
-
 }
 
 .window-header:active {
@@ -47,18 +56,36 @@
 }
 
 .window-header button {
-  background: none;
+  background-color: #cac6cb; /* Grey background */
   border: none;
-  color: white;
+  color: black; /* Text color for better contrast */
+  font-family: "Monaco", monospace;
+  font-style: bold;
   font-size: 12px;
   cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 2px;
+  padding: 2px 6px;
+  border-top: 2px solid white; /* Top border white */
+  border-left: 2px solid white; /* Left border white */
+  border-bottom: 2px solid black; /* Bottom border black */
+  border-right: 2px solid black; /* Right border black */
+  border-radius: 0; /* No rounded corners for classic style */
   transition: background-color 0.2s;
+  transform: translateX(4px);
 }
 
 .window-header button:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Subtle hover effect */
+  background-color: #aaa; /* Darker grey on hover */
+}
+
+.square{
+ width: 10px;
+ height: 12px;
+ margin-top: 2px;
+}
+
+.window-header .window-controls {
+  display: flex; /* Align buttons in a row */
+  gap: 2px; /* Reduced space between buttons */
 }
 
 .window-content {
@@ -71,17 +98,80 @@
   border-top: 1px solid #ffffff00; /* Separator line */
 }
 
+.test{
+  font-size: 5px;
+  color:#cac6cb;
+  position: relative;
+  top:10px;
+  transform: translateX(10px);
+}
+
 .resize-handle {
   position: absolute;
   bottom: 0;
   right: 0;
   width: 20px;
   height: 20px;
-  background: linear-gradient(135deg, #aaa 25%, #fff 25%, #fff 50%, #aaa 50%, #aaa 75%, #fff 75%, #fff);
-  background-size: 4px 4px;
+  background: linear-gradient(135deg, #aaa 25%, #cac6cb 25%, #fff 50%, #aaa 50%, #aaa 75%, #cac6cb 75%, #fff);
+  background-size: 5px 5px;
   cursor: se-resize; /* Resize cursor for bottom-right corner */
+
+  /* Clip the element to a right-angle triangle */
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+  
+  z-index: 2; /* Bring the resize handle on top of other content */
 }
 
-.resize-handle:hover {
-  background: linear-gradient(135deg, #888 25%, #fff 25%, #fff 50%, #888 50%, #888 75%, #fff 75%, #fff);
+.copyright {
+  position: relative;
+  background-color: #cac6cb;
+  border-top: 2px solid #979797; /* Original grey border at the top */
+  bottom: 0; /* Aligns to the bottom of the .window */
+  left: 0; /* Ensures the text starts from the left edge */
+  width: 99%; /* Matches the width of the parent container */
+  text-align: left; /* Aligns text to the left */
+  font-family: 'Windows95Font', sans-serif;
+  font-size: 10px; /* Makes the text small */
+  padding: 4px 5px; /* Adds some space around the text */
+  box-sizing: border-box; /* Ensures padding is included in the width */
+  margin-top: -21px;
+  transform: translateX(3px);
+  z-index: 1; /* Ensure copyright is below the resize handle */
+}
+
+.copyright p {
+  margin: 0; /* Removes default paragraph margin */
+  color: #333; /* Sets the text color */
+}
+
+
+::-webkit-scrollbar {
+  width: 20px; /* Adjust width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background-image: 
+    linear-gradient(90deg, #f1f1f1 50%,  #cac6cb 50%); /* Horizontal stripes */
+  background-size: 2px 50%; /* The width of each stripe */
+}
+
+
+::-webkit-scrollbar-thumb {
+  background: #cac6cb; /* Grey color for the thumb */
+  border-top: 1px solid white; /* Top border white */
+  border-left: 1px solid white; /* Left border white */
+  border-bottom: 1px solid black; /* Bottom border black */
+  border-right: 2px solid rgb(92, 92, 92); /* Right border black */
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+}
+
+
+/* ===================================== GOOGLE FONTS ==========================================*/
+.jersey-10-regular {
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
