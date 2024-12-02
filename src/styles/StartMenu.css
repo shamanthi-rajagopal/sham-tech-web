@@ -1,13 +1,26 @@
+@font-face {
+  font-family: 'Windows95Font';
+  src: url('/fonts/w95fa.woff2') format('woff2'),
+       url('/fonts/w95fa.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .start-menu {
   position: absolute;
-  bottom: 50px;
-  left: 10px;
+  bottom: 42px;
+  left: 1px;
   width: 200px;
-  background-color: #c1bcbc; /* Windows 95 start menu background color */
+  height: 202px;
+  background-color: #051f3d; /* Windows 95 start menu background color */
   border: 2px solid #8b8b8b; /* Dark border to match Windows 95 theme */
-  border-radius: 4px; /* Slightly rounded corners for a vintage feel */
+  border-radius: 0px; /* Slightly rounded corners for a vintage feel */
   display: none;
   font-family: "MS Sans Serif", sans-serif; /* Windows 95 font */
+  border-top: 2px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-bottom: 2px solid #000000;
+  border-right: 2px solid #000000;
 }
 
 .start-menu.open {
@@ -16,25 +29,43 @@
 
 .menu-items a {
   display: block;
-  width: 100%;
-  background: #c1c1c1; /* Light gray background for buttons */
-  border: 1px solid #8b8b8b; /* Border to match Windows 95 button style */
-  padding: 8px 16px; /* Padding for a classic button appearance */
-  text-align: left;
-  font-family: "MS Sans Serif", sans-serif; /* Use Windows 95 font */
+  width: 100px;
+  background: #cac6cb; /* Light gray background for buttons */
+  border: 1px solid #b1aeb1; /* Border to match Windows 95 button style */
+  padding: 16px 29px; /* Padding for a classic button appearance */
+  text-align: center;
+  font-family: 'Windows95Font', sans-serif;
+  font-size: 18px;
   color: black; /* Black text color */
   text-decoration: none; /* Remove underline */
   cursor: pointer;
+  transform: translateX(40px);
 }
 
 .menu-items a:hover {
-  background-color: #a1a1a1; /* Slightly darker background when hovering */
+  background-color: #4063a9; /* Slightly darker background when hovering */
+  color: white;
 }
 
 .menu-items a:active {
-  background-color: #8b8b8b; /* Darker background when clicked */
+  /*background-color: #14115fbf; /* Darker background when clicked */
 }
 
 .menu-items a:focus {
   outline: none; /* Remove outline for focus to mimic the classic look */
+}
+
+/* New CSS for menu-name (Vertical Text) */
+.menu-name {
+  font-family: 'Impact', sans-serif;
+  font-size: 21px;
+  color: #f2f3f4;
+  writing-mode: vertical-lr; /* This makes the text vertical */
+  transform: rotate(180deg); /* Rotate the text counterclockwise */
+  transform-origin: left bottom; /* Ensure rotation happens from the bottom-left */
+  position: absolute;
+  top: -168px; /* Adjust as needed to place it at the left side */
+  left: 40px; /* Adjust as needed to move it to the left */
+  white-space: nowrap; /* Prevents text from wrapping */
+  padding: 5px; /* Adjust padding if needed */
 }

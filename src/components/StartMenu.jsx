@@ -7,17 +7,21 @@ const StartMenu = ({ open, toggleStartMenu }) => {
     event.stopPropagation();
   };
 
+  const handleMenuClick = (event) => {
+    // Prevent the toggleStartMenu function from being called when clicking inside the menu
+    event.stopPropagation();
+  };
+
   return (
-    <div className={`start-menu ${open ? "open" : ""}`} onClick={toggleStartMenu}>
-      <button onClick={toggleStartMenu}>Close</button>
-      <div className="menu-items">
+    <div
+      className={`start-menu ${open ? "open" : ""}`}
+      onClick={toggleStartMenu}  // Toggles the menu on outside click
+    >
+      <div className="menu-name" onClick={handleMenuClick}>Shamanthi's System</div>
+      <div className="menu-items" onClick={handleMenuClick}>
         <a
           href="https://github.com/shamanthi-rajagopal"
-          onClick={(event) => {
-            handleLinkClick(event); // Prevent menu toggle
-          }}
-          target="_blank"
-          rel="noopener noreferrer"
+          onClick={(event) => handleLinkClick(event)} target="_blank" rel="noopener noreferrer"
         >
           Programs
         </a>
