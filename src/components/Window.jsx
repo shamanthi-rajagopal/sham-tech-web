@@ -1,22 +1,42 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import "../styles/Window.css";
 import square from "../assets/images/square1.png";
 
-const Window = ({ name, closeWindow, toggleTaskbarButton, minimizeWindow, isMinimized }) => {
-  const [position, setPosition] = useState({ x: 300, y: 100 });
-  const [size, setSize] = useState({ width: 700, height: 530 });
-  const [isHidden, setIsHidden] = useState(false);
-  const [isFullScreen, setIsFullScreen] = useState(false);
+const Window = ({
+  name,
+  closeWindow,
+  toggleTaskbarButton,
+  minimizeWindow,
+  isMinimized,
+  x = 400, // Default x position
+  y = 100, // Default y position
+  width = 700, // Default width
+  height = 530, // Default height
+  isFullScreen: initialFullScreen = false,
+  updateWindowPosition,
+  content, // Dynamic content as a prop
+}) => {
+  const [currentPosition, setCurrentPosition] = useState({ x, y });
+  const [currentSize, setCurrentSize] = useState({ width, height });
+  const [currentFullScreen, setCurrentFullScreen] = useState(initialFullScreen);
 
-  const positionRef = useRef(position);
-  const sizeRef = useRef(size);
+  const positionRef = useRef(currentPosition);
+  const sizeRef = useRef(currentSize);
+  const previousStateRef = useRef({ position: currentPosition, size: currentSize });
+  const minimizedStateRef = useRef({ position: currentPosition, size: currentSize });
 
   const dragStart = useRef({ x: 0, y: 0 });
   const resizingStart = useRef({ x: 0, y: 0 });
 
   const dragging = useRef(false);
   const resizing = useRef(false);
+
+  useEffect(() => {
+    if (updateWindowPosition) {
+      updateWindowPosition(name, currentPosition);
+    }
+  }, [currentPosition, updateWindowPosition, name]);
 
   const handlePointerMove = (e) => {
     if (dragging.current) {
@@ -28,8 +48,8 @@ const Window = ({ name, closeWindow, toggleTaskbarButton, minimizeWindow, isMini
         y: positionRef.current.y + deltaY,
       };
 
-      const maxX = window.innerWidth - size.width;
-      const maxY = window.innerHeight - size.height;
+      const maxX = window.innerWidth - currentSize.width;
+      const maxY = window.innerHeight - currentSize.height;
 
       const clampedPosition = {
         x: Math.max(0, Math.min(newPosition.x, maxX)),
@@ -37,7 +57,7 @@ const Window = ({ name, closeWindow, toggleTaskbarButton, minimizeWindow, isMini
       };
 
       positionRef.current = clampedPosition;
-      setPosition(clampedPosition);
+      setCurrentPosition(clampedPosition);
 
       dragStart.current = { x: e.clientX, y: e.clientY };
     } else if (resizing.current) {
@@ -51,11 +71,14 @@ const Window = ({ name, closeWindow, toggleTaskbarButton, minimizeWindow, isMini
 
       const minWidth = 200;
       const minHeight = 150;
-      sizeRef.current = {
+
+      const clampedSize = {
         width: Math.max(minWidth, newSize.width),
         height: Math.max(minHeight, newSize.height),
       };
-      setSize(sizeRef.current);
+
+      sizeRef.current = clampedSize;
+      setCurrentSize(clampedSize);
 
       resizingStart.current = { x: e.clientX, y: e.clientY };
     }
@@ -86,33 +109,38 @@ const Window = ({ name, closeWindow, toggleTaskbarButton, minimizeWindow, isMini
     document.removeEventListener("pointerup", handlePointerUp);
   };
 
-  const hideWindow = () => {
-    setIsHidden(true);
-    toggleTaskbarButton(name, true); // Notify the Taskbar to toggle its state
-  };
-
-  const showWindow = () => {
-    setIsHidden(false);
-    toggleTaskbarButton(name, false); // Notify the Taskbar to toggle its state
-  };
-
   const toggleFullScreen = () => {
-    if (isFullScreen) {
-      setSize({ width: 700, height: 530 });
-      setPosition({ x: 100, y: 100 });
+    const newFullScreen = !currentFullScreen;
+
+    if (newFullScreen) {
+      previousStateRef.current = { position: currentPosition, size: currentSize };
+
+      setCurrentPosition({ x: 0, y: 0 });
+      setCurrentSize({ width: window.innerWidth, height: window.innerHeight });
     } else {
-      setPosition({ x: 0, y: 0 });
-      setSize({ width: window.innerWidth, height: window.innerHeight });
+      setCurrentPosition(previousStateRef.current.position);
+      setCurrentSize(previousStateRef.current.size);
     }
 
-    setIsFullScreen((prev) => !prev);
+    setCurrentFullScreen(newFullScreen);
+    toggleTaskbarButton(name, newFullScreen);
   };
 
   const handleMinimize = () => {
-    minimizeWindow(name); // Minimize the window via the Taskbar
+    if (isMinimized) {
+      setCurrentPosition(minimizedStateRef.current.position);
+      setCurrentSize(minimizedStateRef.current.size);
+    } else {
+      minimizedStateRef.current = { position: currentPosition, size: currentSize };
+      setCurrentPosition({ x: 0, y: window.innerHeight });
+      setCurrentSize({ width: 0, height: 0 });
+    }
+
+    minimizeWindow(name);
+    toggleTaskbarButton(name, !isMinimized);
   };
 
-  if (isMinimized || isHidden) {
+  if (isMinimized) {
     return null;
   }
 
@@ -120,10 +148,10 @@ const Window = ({ name, closeWindow, toggleTaskbarButton, minimizeWindow, isMini
     <div
       className="window"
       style={{
-        top: `${position.y}px`,
-        left: `${position.x}px`,
-        width: `${size.width}px`,
-        height: `${size.height}px`,
+        top: `${currentPosition.y}px`,
+        left: `${currentPosition.x}px`,
+        width: `${currentSize.width}px`,
+        height: `${currentSize.height}px`,
       }}
     >
       <div
@@ -132,37 +160,27 @@ const Window = ({ name, closeWindow, toggleTaskbarButton, minimizeWindow, isMini
         style={{
           cursor: "default",
           zIndex: 10,
-          width: `${size.width - 26}px`,
+          width: `${currentSize.width - 26}px`,
         }}
       >
         <span>{name}</span>
         <div className="window-controls">
-          <button className="min" onClick={handleMinimize}>_</button>
+          <button className="min" onClick={handleMinimize}>
+            _
+          </button>
           <button onClick={toggleFullScreen}>
-            <img className="square" src={square} />
+            <img className="square" src={square} alt="Full Screen" />
           </button>
           <button onClick={() => closeWindow(name)}>X</button>
         </div>
       </div>
-      <div className="test">Test</div>
       <div className="window-container">
         <div className="window-content">
-          <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+          {content || <p>Default Content</p>} {/* Render dynamic content or default */}
         </div>
-        <div
-          className="resize-handle"
-          onPointerDown={handlePointerDown}
-          style={{
-            position: "absolute",
-            right: "0",
-            bottom: "0",
-            width: "20px",
-            height: "20px",
-            cursor: "se-resize",
-          }}
-        />
+        <div className="resize-handle" onPointerDown={handlePointerDown} />
       </div>
-      <p className="copyright">Shamanthi Rajagopal &copy; 2025</p>
+      <p className="copyright">Shamanthi Rajagopal 2025</p>
     </div>
   );
 };
@@ -172,7 +190,14 @@ Window.propTypes = {
   closeWindow: PropTypes.func.isRequired,
   toggleTaskbarButton: PropTypes.func.isRequired,
   minimizeWindow: PropTypes.func.isRequired,
-  isMinimized: PropTypes.bool.isRequired, // Prop to indicate whether the window is minimized
+  isMinimized: PropTypes.bool.isRequired,
+  x: PropTypes.number,
+  y: PropTypes.number,
+  width: PropTypes.number,
+  height: PropTypes.number,
+  isFullScreen: PropTypes.bool,
+  updateWindowPosition: PropTypes.func.isRequired,
+  content: PropTypes.node,
 };
 
 export default Window;

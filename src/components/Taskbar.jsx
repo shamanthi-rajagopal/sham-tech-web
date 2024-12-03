@@ -6,7 +6,7 @@ import plug from "../assets/images/windowsplug.png";
 import windowslogo from "../assets/images/windowslogo1.png";
 import "../styles/Taskbar.css";
 
-const Taskbar = ({ toggleStartMenu, windows, minimizeWindow, minimizedWindows, closeWindow, toggleTaskbarButton, windowPressedState }) => {
+const Taskbar = ({ toggleStartMenu, windows, minimizeWindow, minimizedWindows, toggleTaskbarButton, windowPressedState }) => {
   const [currentTime, setCurrentTime] = useState(dayjs().format("hh:mm A"));
   const [isPressedStart, setIsPressedStart] = useState(false); // Manage pressed state for the start button
 

@@ -8,9 +8,8 @@
 
 .window {
   position: absolute;
-  width: 700px;
   min-width: 500px;
-  min-height: 500px; /* Set a minimum height for consistency */
+  min-height: 300px; /* Set a minimum height for consistency */
   background-color: #cac6cb; /* Slightly off-white to resemble a classic OS window */
   border: 2px solid #000000;
   box-shadow: 
@@ -24,6 +23,7 @@
   border-left: 2px solid #ffffff;
   border-bottom: 2px solid #000000;
   border-right: 2px solid #000000;
+  z-index: 3;
 }
 
 .window-container {
@@ -134,7 +134,7 @@
   font-size: 10px; /* Makes the text small */
   padding: 4px 5px; /* Adds some space around the text */
   box-sizing: border-box; /* Ensures padding is included in the width */
-  margin-top: -21px;
+  margin-top: -19px;
   transform: translateX(3px);
   z-index: 1; /* Ensure copyright is below the resize handle */
 }

@@ -1,3 +1,22 @@
+@font-face {
+  font-family: 'Windows95Font';
+  src: url('/fonts/w95fa.woff2') format('woff2'),
+       url('/fonts/w95fa.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+  overflow-x: hidden;
+  margin: 0; 
+}
+
+.no-scroll{
+overflow-y: hidden; 
+overflow-x: hidden;
+margin: 0;
+}
+
 .tech-page {
     height: 100vh; /* Full viewport height */
     width: 100%;   /* Full width */
@@ -14,17 +33,51 @@
     color: black; /* Default text color */
     overflow-y: hidden; 
   }
-
-body{
-    overflow-x: hidden;
-    margin: 0; 
-  }
-
-.no-scroll{
-  overflow-y: hidden; 
-  overflow-x: hidden;
-  margin: 0;
+  
+  /* Add styles to arrange buttons vertically */
+.button-container {
+  display: flex;
+  flex-direction: column; /* Arrange buttons in a column */
+  gap: 15px; /* Add space between each button */
+  transform: translateY(-10px);
+  margin: 20px 0; /* Optional: Add some margin around the container */
+  margin-left: 20px;
 }
 
-  
-  
+.basic {
+  display: flex;
+  flex-direction: column; /* Stack the icon and text vertically */
+  align-items: center; /* Center the content horizontally */
+  justify-content: center; /* Center the content vertically */
+  padding: 0px;
+  font-size: 14px;
+  width: 70px;
+  height: 80px; /* Increase the height to accommodate both the icon and text */
+  cursor: pointer;
+  font-family: 'Windows95Font', sans-serif;
+  color: #ffffff;
+  background-color: rgba(255, 228, 196, 0);
+  border: 0px;
+}
+
+.basic:hover {
+background-color: rgba(230, 230, 230, 0);
+border:0px;
+}
+
+.button-icon {
+  width: 90px; /* Adjust to preferred size of the icon */
+  height: 90px; /* Adjust to preferred size of the icon */
+  margin-bottom: -8px; /* Add space between the icon and the text */
+}
+
+.basic span {
+  margin-top: 5px; /* Optional: This can adjust space between icon and text further */
+}
+
+.button-icon-other {
+  width: 60px; /* Adjust to preferred size of the icon */
+  height: 60px; /* Adjust to preferred size of the icon */
+  margin-bottom: 0px; /* Add space between the icon and the text */
+  margin-top: 20px;
+}
