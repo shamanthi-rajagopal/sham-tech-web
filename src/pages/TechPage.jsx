@@ -4,8 +4,12 @@ import StartMenu from "../components/StartMenu";
 import Window from "../components/Window";
 import Taskbar from "../components/Taskbar";
 
-
 const TechPage = () => {
+
+  if (window.location.pathname === '/tech') {
+    document.body.style.overflow = 'hidden';
+  }
+  
   const [windows, setWindows] = useState([]);
   const [startMenuOpen, setStartMenuOpen] = useState(false);
   const [minimizedWindows, setMinimizedWindows] = useState([]); // State to track minimized windows

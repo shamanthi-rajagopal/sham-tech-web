@@ -13,15 +13,18 @@
     font-family: "Tahoma", sans-serif; /* Windows 95 font style */
     color: black; /* Default text color */
     overflow-y: hidden; 
+  }
+
+body{
     overflow-x: hidden;
     margin: 0; 
   }
 
-  .no-scroll{
-    overflow-y: hidden; 
-    overflow-x: hidden;
-    margin: 0; 
-  }
+.no-scroll{
+  overflow-y: hidden; 
+  overflow-x: hidden;
+  margin: 0;
+}
 
   
   
