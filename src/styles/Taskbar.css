@@ -82,8 +82,22 @@
 }
 
 .window-button {
-  background-color: #c1c1c1;
-  border: none;
+  background-color: #cac6cb;
+  border-top: 2px solid rgb(0, 0, 0); /* Top border white */
+  border-left: 2px solid rgb(0, 0, 0); /* Left border white */
+  border-bottom: 1px solid rgb(255, 255, 255); /* Bottom border black */
+  border-right: 1px solid rgb(255, 255, 255); /* Right border black */
+  padding: 5px 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.window-button.pressed {
+  background-color: #cac6cb;
+  border-top: 1px solid white; /* Top border white */
+  border-left: 2px solid white; /* Left border white */
+  border-bottom: 2px solid black; /* Bottom border black */
+  border-right: 2px solid black; /* Right border black */
   padding: 5px 10px;
   margin-right: 10px;
   cursor: pointer;

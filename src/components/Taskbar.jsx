@@ -1,54 +1,64 @@
-import PropTypes from "prop-types"; // Import PropTypes for validation
-import { useState, useEffect } from "react"; // Import hooks for managing state and effects
+import PropTypes from "prop-types";
+import { useState, useEffect } from "react";
 import "../styles/Taskbar.css";
 import dayjs from "dayjs";
 import earth from "../assets/images/windowsearth.png";
 import plug from "../assets/images/windowsplug.png";
 import windowslogo from "../assets/images/windowslogo1.png";
 
-const Taskbar = ({ toggleStartMenu, windows, closeWindow }) => {
+const Taskbar = ({ toggleStartMenu, windows, minimizeWindow }) => {
   const [currentTime, setCurrentTime] = useState(dayjs().format("hh:mm A"));
-  const [isPressed, setIsPressed] = useState(false); // Track the pressed state of the button
+  
+  // State to track the pressed status of each window button
+  const [windowPressedState, setWindowPressedState] = useState({});
+  const [isPressedStart, setIsPressedStart] = useState(false); // Manage pressed state for the start button
 
-  // Update the time every second
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(dayjs().format("hh:mm A"));
     }, 1000);
 
-    // Cleanup the interval on component unmount
     return () => clearInterval(interval);
   }, []);
 
-  // Handle button click to toggle pressed state
   const handleStartButtonClick = () => {
-    setIsPressed(!isPressed); // Toggle the pressed state
-    toggleStartMenu(); // Call the toggleStartMenu function passed via props
+    // Toggle the start button's pressed state
+    setIsPressedStart((prev) => !prev);
+    toggleStartMenu();
+  };
+
+  // Handle window button click, toggling the pressed state of the window button
+  const handleWindowButtonClick = (windowName) => {
+    setWindowPressedState((prevState) => ({
+      ...prevState,
+      [windowName]: !prevState[windowName], // Toggle pressed state for the clicked window
+    }));
+
+    minimizeWindow(windowName); // Call minimizeWindow function when a window button is clicked
   };
 
   return (
     <div className="taskbar">
-      <button 
-        className={`start-button ${isPressed ? 'pressed' : ''}`} // Apply 'pressed' class when button is pressed
+      <button
+        className={`start-button ${isPressedStart ? "pressed" : ""}`} // Apply "pressed" class based on state
         onClick={handleStartButtonClick}
       >
         <img src={windowslogo} className="start-button-icon" />
         <span>Start</span>
       </button>
+
       <div className="open-windows">
         {windows.map((window, index) => (
           <button
             key={index}
-            onClick={() => alert(`Switching to ${window}`)}
-            className="window-button"
+            onClick={() => handleWindowButtonClick(window)} // Toggle the pressed state for each window
+            className={`window-button ${windowPressedState[window] ? "pressed" : ""}`} // Apply "pressed" class based on window's pressed state
           >
             {window}
-            <span onClick={(e) => { e.stopPropagation(); closeWindow(window); }}> X</span>
           </button>
         ))}
       </div>
 
-      {/* Display the current time */}
       <p className="current-time">{currentTime}</p>
       <div className="taskbar-icon">
         <img src={earth} className="earth" />
@@ -60,11 +70,10 @@ const Taskbar = ({ toggleStartMenu, windows, closeWindow }) => {
   );
 };
 
-// PropTypes validation for the props
 Taskbar.propTypes = {
-  toggleStartMenu: PropTypes.func.isRequired, // Expecting a function for toggleStartMenu
-  windows: PropTypes.array.isRequired,        // Expecting an array for windows
-  closeWindow: PropTypes.func.isRequired,     // Expecting a function for closeWindow
+  toggleStartMenu: PropTypes.func.isRequired,
+  windows: PropTypes.array.isRequired,
+  minimizeWindow: PropTypes.func.isRequired,
 };
 
 export default Taskbar;

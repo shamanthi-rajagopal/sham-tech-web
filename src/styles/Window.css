@@ -74,7 +74,7 @@
 }
 
 .window-header button:hover {
-  background-color: #aaa; /* Darker grey on hover */
+  background-color: #dddde3; /* Darker grey on hover */
 }
 
 .square{
@@ -146,7 +146,7 @@
 
 
 ::-webkit-scrollbar {
-  width: 20px; /* Adjust width of the scrollbar */
+  width: 18px; /* Adjust width of the scrollbar */
 }
 
 ::-webkit-scrollbar-track {
@@ -159,7 +159,7 @@
 ::-webkit-scrollbar-thumb {
   background: #cac6cb; /* Grey color for the thumb */
   border-top: 1px solid white; /* Top border white */
-  border-left: 1px solid white; /* Left border white */
+  border-left: 2px solid white; /* Left border white */
   border-bottom: 1px solid black; /* Bottom border black */
   border-right: 2px solid rgb(92, 92, 92); /* Right border black */
 }
