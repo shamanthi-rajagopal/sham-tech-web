@@ -18,6 +18,7 @@ const TechPage = () => {
   const [windowPressedState, setWindowPressedState] = useState({}); // Track window state (pressed or not)
   const [windowPositions, setWindowPositions] = useState({}); // Track window positions
   const [windowSizes, setWindowSizes] = useState({}); // Track window sizes
+  const [activeWindow, setActiveWindow] = useState(null); // Track the active window for z-index
 
   const toggleStartMenu = () => setStartMenuOpen(!startMenuOpen);
 
@@ -98,6 +99,11 @@ const TechPage = () => {
     }));
   };
 
+  // Function to bring the window to the front
+  const bringToFront = (windowName) => {
+    setActiveWindow(windowName);
+  };
+
   useEffect(() => {
     // Ensure window positions and sizes are applied dynamically when the component is rendered
     windowPositions && setWindowPositions(windowPositions);
@@ -166,6 +172,9 @@ const TechPage = () => {
               break;
           }
 
+          // Apply dynamic z-index based on active window
+          const zIndex = windowName === activeWindow ? 10 : 1;
+
           return (
             <Window
               key={index}
@@ -180,6 +189,8 @@ const TechPage = () => {
               y={windowPositions[windowName]?.y || 100}  // Set position dynamically
               width={windowSizes[windowName]?.width || 700}  // Set size dynamically
               height={windowSizes[windowName]?.height || 530}  // Set size dynamically
+              bringToFront={() => bringToFront(windowName)} // Bring window to the front when clicked
+              zIndex={zIndex}  // Apply dynamic z-index
             />
           );
         })}

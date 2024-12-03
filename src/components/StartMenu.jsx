@@ -23,11 +23,16 @@ const StartMenu = ({ open, toggleStartMenu }) => {
           href="https://github.com/shamanthi-rajagopal"
           onClick={(event) => handleLinkClick(event)} target="_blank" rel="noopener noreferrer"
         >
-          Programs
+          Resume
         </a>
-        <a href="/documents" onClick={toggleStartMenu}>Documents</a>
-        <a href="/settings" onClick={toggleStartMenu}>Settings</a>
-        <a href="/shutdown" onClick={toggleStartMenu}>Shut Down</a>
+        <a href="/my-world" onClick={toggleStartMenu}>My World</a>
+        <a href="/" onClick={toggleStartMenu}>Main Page</a>
+        <a
+          href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+          onClick={(event) => handleLinkClick(event)} target="_blank" rel="noopener noreferrer"
+        >
+          Shutdown
+        </a>
       </div>
     </div>
   );
