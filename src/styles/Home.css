@@ -1,4 +1,13 @@
 /* General styling for the Home page => ALL CSS NEEDED FOR HOME PAGE IS HERE!!! */
+
+@font-face {
+    font-family: 'Windows95Font';
+    src: url('/fonts/w95fa.woff2') format('woff2'),
+         url('/fonts/w95fa.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 .home {
     display: flex;
     flex-direction: column; /* Stack navbar and content */
@@ -347,6 +356,7 @@
 .copy{
     font-size: 14px;
     font-style: normal;
+    font-family: 'Windows95Font', sans-serif;
 }
 
  
@@ -397,6 +407,8 @@
     margin: 20px auto; /* Centers the button below the polaroid */
     margin-top: 20px;
 }
+
+
 
 
 /* ============================================================ Google Fonts =========================================================*/

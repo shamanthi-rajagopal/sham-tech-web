@@ -4,6 +4,7 @@ import StartMenu from "../components/StartMenu";
 import Window from "../components/Window";
 import Taskbar from "../components/Taskbar";
 
+
 const TechPage = () => {
   const [windows, setWindows] = useState([]);
   const [startMenuOpen, setStartMenuOpen] = useState(false);
@@ -31,8 +32,9 @@ const TechPage = () => {
 
   return (
     <div className="tech-page">
+      <div className="no-scroll">
       <h1></h1>
-
+      
       {/* Add Button to Open Window */}
       <button onClick={() => openWindow("Example Window")}>Open Window</button>
 
@@ -54,6 +56,7 @@ const TechPage = () => {
         minimizedWindows={minimizedWindows}
         closeWindow={closeWindow}
       />
+      </div>
     </div>
   );
 };

@@ -19,44 +19,52 @@ const Window = ({ name, closeWindow, toggleTaskbarButton }) => {  // Added toggl
   const resizing = useRef(false);
 
 
-  // Handle window dragging
   const handlePointerMove = (e) => {
     if (dragging.current) {
       const deltaX = e.clientX - dragStart.current.x;
       const deltaY = e.clientY - dragStart.current.y;
-
+  
       const newPosition = {
         x: positionRef.current.x + deltaX,
         y: positionRef.current.y + deltaY,
       };
-
+  
+      // Calculate the maximum X and Y positions to prevent the window from going out of bounds
       const maxX = window.innerWidth - size.width;
       const maxY = window.innerHeight - size.height;
-
+  
+      // Ensure the window stays within bounds
       const clampedPosition = {
-        x: Math.max(0, Math.min(newPosition.x, maxX)),
-        y: Math.max(0, Math.min(newPosition.y, maxY)),
+        x: Math.max(0, Math.min(newPosition.x, maxX)),  // Prevent window from going past left and right edges
+        y: Math.max(0, Math.min(newPosition.y, maxY)),  // Prevent window from going past top and bottom edges
       };
-
+  
       positionRef.current = clampedPosition;
       setPosition(clampedPosition);
-
+  
       dragStart.current = { x: e.clientX, y: e.clientY };
     } else if (resizing.current) {
       const deltaX = e.clientX - resizingStart.current.x;
       const deltaY = e.clientY - resizingStart.current.y;
-
+  
       const newSize = {
         width: sizeRef.current.width + deltaX,
         height: sizeRef.current.height + deltaY,
       };
-
-      sizeRef.current = newSize;
-      setSize(newSize);
-
+  
+      // Ensure the window does not get smaller than a certain size (optional)
+      const minWidth = 200;
+      const minHeight = 150;
+      sizeRef.current = {
+        width: Math.max(minWidth, newSize.width),
+        height: Math.max(minHeight, newSize.height),
+      };
+      setSize(sizeRef.current);
+  
       resizingStart.current = { x: e.clientX, y: e.clientY };
     }
   };
+  
 
   const handlePointerDown = (e) => {
     if (e.target.classList.contains("window-header")) {
@@ -86,11 +94,7 @@ const Window = ({ name, closeWindow, toggleTaskbarButton }) => {  // Added toggl
   const hideWindow = () => {
     setIsHidden(true);
     toggleTaskbarButton(name, true);  // Hide the taskbar button for this window
-  };
-
-  const showWindow = () => {
-    setIsHidden(false);
-    toggleTaskbarButton(name, true, hideWindow);  // Show the taskbar button again
+    
   };
 
   const toggleFullScreen = () => {

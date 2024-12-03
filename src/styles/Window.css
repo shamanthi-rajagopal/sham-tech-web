@@ -145,18 +145,18 @@
 }
 
 
-::-webkit-scrollbar {
+/* Apply scrollbar styles only to the .window-container */
+.window-container::-webkit-scrollbar {
   width: 18px; /* Adjust width of the scrollbar */
 }
 
-::-webkit-scrollbar-track {
+.window-container::-webkit-scrollbar-track {
   background-image: 
     linear-gradient(90deg, #f1f1f1 50%,  #cac6cb 50%); /* Horizontal stripes */
   background-size: 2px 50%; /* The width of each stripe */
 }
 
-
-::-webkit-scrollbar-thumb {
+.window-container::-webkit-scrollbar-thumb {
   background: #cac6cb; /* Grey color for the thumb */
   border-top: 1px solid white; /* Top border white */
   border-left: 2px solid white; /* Left border white */
@@ -164,9 +164,10 @@
   border-right: 2px solid rgb(92, 92, 92); /* Right border black */
 }
 
-
-::-webkit-scrollbar-thumb:hover {
+.window-container::-webkit-scrollbar-thumb:hover {
+  /* Optional: Add hover effect here */
 }
+
 
 
 /* ===================================== GOOGLE FONTS ==========================================*/
