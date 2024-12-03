@@ -1,16 +1,13 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
-import "../styles/Taskbar.css";
 import dayjs from "dayjs";
 import earth from "../assets/images/windowsearth.png";
 import plug from "../assets/images/windowsplug.png";
 import windowslogo from "../assets/images/windowslogo1.png";
+import "../styles/Taskbar.css";
 
-const Taskbar = ({ toggleStartMenu, windows, minimizeWindow }) => {
+const Taskbar = ({ toggleStartMenu, windows, minimizeWindow, minimizedWindows, closeWindow, toggleTaskbarButton, windowPressedState }) => {
   const [currentTime, setCurrentTime] = useState(dayjs().format("hh:mm A"));
-  
-  // State to track the pressed status of each window button
-  const [windowPressedState, setWindowPressedState] = useState({});
   const [isPressedStart, setIsPressedStart] = useState(false); // Manage pressed state for the start button
 
   useEffect(() => {
@@ -22,25 +19,19 @@ const Taskbar = ({ toggleStartMenu, windows, minimizeWindow }) => {
   }, []);
 
   const handleStartButtonClick = () => {
-    // Toggle the start button's pressed state
     setIsPressedStart((prev) => !prev);
     toggleStartMenu();
   };
 
-  // Handle window button click, toggling the pressed state of the window button
   const handleWindowButtonClick = (windowName) => {
-    setWindowPressedState((prevState) => ({
-      ...prevState,
-      [windowName]: !prevState[windowName], // Toggle pressed state for the clicked window
-    }));
-
-    minimizeWindow(windowName); // Call minimizeWindow function when a window button is clicked
+    minimizeWindow(windowName);
+    toggleTaskbarButton(windowName, !minimizedWindows.includes(windowName)); // Update the button's state when clicked
   };
 
   return (
     <div className="taskbar">
       <button
-        className={`start-button ${isPressedStart ? "pressed" : ""}`} // Apply "pressed" class based on state
+        className={`start-button ${isPressedStart ? "pressed" : ""}`}
         onClick={handleStartButtonClick}
       >
         <img src={windowslogo} className="start-button-icon" />
@@ -51,8 +42,8 @@ const Taskbar = ({ toggleStartMenu, windows, minimizeWindow }) => {
         {windows.map((window, index) => (
           <button
             key={index}
-            onClick={() => handleWindowButtonClick(window)} // Toggle the pressed state for each window
-            className={`window-button ${windowPressedState[window] ? "pressed" : ""}`} // Apply "pressed" class based on window's pressed state
+            onClick={() => handleWindowButtonClick(window)}
+            className={`window-button ${windowPressedState[window] ? "pressed" : ""}`}
           >
             {window}
           </button>
@@ -74,6 +65,10 @@ Taskbar.propTypes = {
   toggleStartMenu: PropTypes.func.isRequired,
   windows: PropTypes.array.isRequired,
   minimizeWindow: PropTypes.func.isRequired,
+  minimizedWindows: PropTypes.array.isRequired,
+  closeWindow: PropTypes.func.isRequired,
+  toggleTaskbarButton: PropTypes.func.isRequired,
+  windowPressedState: PropTypes.object.isRequired, // Prop type for windowPressedState
 };
 
 export default Taskbar;

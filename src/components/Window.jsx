@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import "../styles/Window.css";
 import square from "../assets/images/square1.png";
 
-const Window = ({ name, closeWindow, toggleTaskbarButton }) => {  // Added toggleTaskbarButton prop
+const Window = ({ name, closeWindow, toggleTaskbarButton, minimizeWindow, isMinimized }) => {
   const [position, setPosition] = useState({ x: 300, y: 100 });
   const [size, setSize] = useState({ width: 700, height: 530 });
   const [isHidden, setIsHidden] = useState(false);
-  const [isFullScreen, setIsFullScreen] = useState(false); // Track full-screen state
+  const [isFullScreen, setIsFullScreen] = useState(false);
 
   const positionRef = useRef(position);
   const sizeRef = useRef(size);
@@ -18,41 +18,37 @@ const Window = ({ name, closeWindow, toggleTaskbarButton }) => {  // Added toggl
   const dragging = useRef(false);
   const resizing = useRef(false);
 
-
   const handlePointerMove = (e) => {
     if (dragging.current) {
       const deltaX = e.clientX - dragStart.current.x;
       const deltaY = e.clientY - dragStart.current.y;
-  
+
       const newPosition = {
         x: positionRef.current.x + deltaX,
         y: positionRef.current.y + deltaY,
       };
-  
-      // Calculate the maximum X and Y positions to prevent the window from going out of bounds
+
       const maxX = window.innerWidth - size.width;
       const maxY = window.innerHeight - size.height;
-  
-      // Ensure the window stays within bounds
+
       const clampedPosition = {
-        x: Math.max(0, Math.min(newPosition.x, maxX)),  // Prevent window from going past left and right edges
-        y: Math.max(0, Math.min(newPosition.y, maxY)),  // Prevent window from going past top and bottom edges
+        x: Math.max(0, Math.min(newPosition.x, maxX)),
+        y: Math.max(0, Math.min(newPosition.y, maxY)),
       };
-  
+
       positionRef.current = clampedPosition;
       setPosition(clampedPosition);
-  
+
       dragStart.current = { x: e.clientX, y: e.clientY };
     } else if (resizing.current) {
       const deltaX = e.clientX - resizingStart.current.x;
       const deltaY = e.clientY - resizingStart.current.y;
-  
+
       const newSize = {
         width: sizeRef.current.width + deltaX,
         height: sizeRef.current.height + deltaY,
       };
-  
-      // Ensure the window does not get smaller than a certain size (optional)
+
       const minWidth = 200;
       const minHeight = 150;
       sizeRef.current = {
@@ -60,11 +56,10 @@ const Window = ({ name, closeWindow, toggleTaskbarButton }) => {  // Added toggl
         height: Math.max(minHeight, newSize.height),
       };
       setSize(sizeRef.current);
-  
+
       resizingStart.current = { x: e.clientX, y: e.clientY };
     }
   };
-  
 
   const handlePointerDown = (e) => {
     if (e.target.classList.contains("window-header")) {
@@ -93,25 +88,31 @@ const Window = ({ name, closeWindow, toggleTaskbarButton }) => {  // Added toggl
 
   const hideWindow = () => {
     setIsHidden(true);
-    toggleTaskbarButton(name, true);  // Hide the taskbar button for this window
-    
+    toggleTaskbarButton(name, true); // Notify the Taskbar to toggle its state
+  };
+
+  const showWindow = () => {
+    setIsHidden(false);
+    toggleTaskbarButton(name, false); // Notify the Taskbar to toggle its state
   };
 
   const toggleFullScreen = () => {
     if (isFullScreen) {
-      // If already in full-screen, revert to the original size
       setSize({ width: 700, height: 530 });
       setPosition({ x: 100, y: 100 });
     } else {
-      // If not full-screen, make it full-screen
       setPosition({ x: 0, y: 0 });
       setSize({ width: window.innerWidth, height: window.innerHeight });
     }
 
-    setIsFullScreen((prev) => !prev); // Toggle the full-screen state
+    setIsFullScreen((prev) => !prev);
   };
 
-  if (isHidden) {
+  const handleMinimize = () => {
+    minimizeWindow(name); // Minimize the window via the Taskbar
+  };
+
+  if (isMinimized || isHidden) {
     return null;
   }
 
@@ -136,7 +137,7 @@ const Window = ({ name, closeWindow, toggleTaskbarButton }) => {  // Added toggl
       >
         <span>{name}</span>
         <div className="window-controls">
-          <button className="min" onClick={hideWindow}>_</button>
+          <button className="min" onClick={handleMinimize}>_</button>
           <button onClick={toggleFullScreen}>
             <img className="square" src={square} />
           </button>
@@ -146,7 +147,7 @@ const Window = ({ name, closeWindow, toggleTaskbarButton }) => {  // Added toggl
       <div className="test">Test</div>
       <div className="window-container">
         <div className="window-content">
-          <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</p>
+          <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
         </div>
         <div
           className="resize-handle"
@@ -169,7 +170,9 @@ const Window = ({ name, closeWindow, toggleTaskbarButton }) => {  // Added toggl
 Window.propTypes = {
   name: PropTypes.string.isRequired,
   closeWindow: PropTypes.func.isRequired,
-  toggleTaskbarButton: PropTypes.func.isRequired,  // Added prop type for the callback
+  toggleTaskbarButton: PropTypes.func.isRequired,
+  minimizeWindow: PropTypes.func.isRequired,
+  isMinimized: PropTypes.bool.isRequired, // Prop to indicate whether the window is minimized
 };
 
 export default Window;
