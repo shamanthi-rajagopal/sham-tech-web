@@ -6,11 +6,34 @@ import Taskbar from "../components/Taskbar";
 import HomeImage from "../assets/images/window-home.png";
 import PortfolioImage from "../assets/images/window-portfolio.png";
 import OtherImage from "../assets/images/window-other.png";
+import PhotoImage from "../assets/images/windows-camera.png";
+import Background from "../assets/images/window-background.png";
+import Background1 from "../assets/images/windowsblue.png";
+import Background2 from "../assets/images/pixelspace.png";
+import Background3 from "../assets/images/pixelspace3.png";
+import Background4 from "../assets/images/bluesky.jpg";
+import Background5 from "../assets/images/pinksky.png";
+import csa1 from "../assets/photos/csa1.jpg";
+import csa2 from "../assets/photos/csa2.jpg";
+import csa3 from "../assets/photos/csa3.jpg";
+import csa4 from "../assets/photos/csa4.jpg";
+import csa5 from "../assets/photos/csa5.jpg";
+import csa6 from "../assets/photos/csa6.jpg";
+import csa7 from "../assets/photos/csa16.jpg";
+import csa8 from "../assets/photos/csa17.jpg";
+import csasham from "../assets/photos/csa-sham.jpg";
 
 const TechPage = () => {
   if (window.location.pathname === "/tech") {
     document.body.style.overflow = "hidden";
   }
+
+  const backgrounds = [Background1, Background2, Background3, Background4, Background5]; // Array of backgrounds
+  const [currentBackground, setCurrentBackground] = useState(0);
+
+  const switchBackground = () => {
+    setCurrentBackground((prevIndex) => (prevIndex + 1) % backgrounds.length);
+  };
 
   const [windows, setWindows] = useState([]); // Track open windows
   const [startMenuOpen, setStartMenuOpen] = useState(false);
@@ -35,13 +58,17 @@ const TechPage = () => {
           newWindowSizes[windowName] = { width: 500, height: 300 };
           break;
         case "Portfolio":
-          newWindowPositions[windowName] = { x: 250, y: 150 };
-          newWindowSizes[windowName] = { width: 600, height: 650 };
+          newWindowPositions[windowName] = { x: 350, y: 50 };
+          newWindowSizes[windowName] = { width: 800, height: 600 };
           break;
         case "Other":
-          newWindowPositions[windowName] = { x: 400, y: 200 };
-          newWindowSizes[windowName] = { width: 600, height: 600 };
+          newWindowPositions[windowName] = { x: 100, y: 200 };
+          newWindowSizes[windowName] = { width: 400, height: 400 };
           break;
+          case "Photos":
+            newWindowPositions[windowName] = { x: 700, y: 150 };
+            newWindowSizes[windowName] = { width: 700, height: 500 };
+            break;
         default:
           break;
       }
@@ -111,7 +138,17 @@ const TechPage = () => {
   }, [windows, windowPositions, windowSizes]);
 
   return (
-    <div className="tech-page">
+    
+    <div className="tech-page"
+    style={{
+      backgroundImage: `url(${backgrounds[currentBackground]})`, // Set background dynamically
+      backgroundSize: "cover", // Ensure the background covers the entire area
+      backgroundRepeat: "no-repeat", // Prevent repeating
+      backgroundPosition: "center", // Center the background
+      height: "100vh", // Full height of the viewport
+      width: "100%",
+    }}
+    >
       <div className="no-scroll">
         <h1> </h1>
 
@@ -162,11 +199,38 @@ const TechPage = () => {
             case "Other":
               windowContent = (
                 <div>
-                  <h2>Other Content</h2>
-                  <p>This is the Other window with additional content.</p>
+                  <div className="other-back">
+                  <button className="basic-photo" onClick={() => openWindow("Photos")}>
+                  <img src={PhotoImage} className="button-icon-other-photo" />Photos</button>
+                  
+                  <button className="basic-drive" onClick={switchBackground}>
+                  <img src={Background} className="button-icon-other-drive" />Background</button>
+                  </div>
                 </div>
               );
               break;
+              case "Photos":
+                windowContent = (
+              <div>
+                <h1 className="photo-header">Photos</h1>
+                <div className="filler">Catch a glimpse of some of my favorite moments!</div>
+                {/* Content */}
+                <div id="csa-section" className="CSA">
+                  <div className="photo-heading">CSA Photo Dump</div>
+                  <div><img className="photo-img" src={csa2} alt="A description of the image" /></div>
+                  <div><img className="photo-img" src={csa1} alt="A description of the image" /></div>
+                  <div><img className="photo-img" src={csa3} alt="A description of the image" /></div>
+                  <div><img className="photo-img" src={csa4} alt="A description of the image" /></div>
+                  <div><img className="photo-img" src={csa5} alt="A description of the image" /></div>
+                  <div><img className="photo-img" src={csa6} alt="A description of the image" /></div>
+                  <div><img className="photo-img" src={csa7} alt="A description of the image" /></div>
+                  <div><img className="photo-img" src={csa8} alt="A description of the image" /></div>
+                  <div><img className="photo-img" src={csasham} alt="A description of the image" /></div>
+                </div>
+              </div>
+
+                );
+                break;
             default:
               windowContent = <div>Default Content</div>;
               break;

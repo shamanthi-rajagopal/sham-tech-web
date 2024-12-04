@@ -159,7 +159,7 @@ const Window = ({
         onPointerDown={handlePointerDown}
         style={{
           cursor: "default",
-          zIndex: 10,
+          zIndex: 1,
           width: `${currentSize.width - 26}px`,
         }}
       >
@@ -174,13 +174,16 @@ const Window = ({
           <button onClick={() => closeWindow(name)}>X</button>
         </div>
       </div>
+      
+      {/* Navbar: Sticks to top and has a blue background */}
+
       <div className="window-container">
         <div className="window-content">
           {content || <p>Default Content</p>} {/* Render dynamic content or default */}
         </div>
         <div className="resize-handle" onPointerDown={handlePointerDown} />
       </div>
-      <p className="copyright">Shamanthi Rajagopal 2025</p>
+      <div className="copyright">Shamanthi Rajagopal &copy; 2025</div>
     </div>
   );
 };

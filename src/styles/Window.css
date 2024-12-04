@@ -38,7 +38,7 @@
 
 .window-header {
   background-color: #102e5f; /* A slightly richer blue */
-  width:674px;
+  width: 675px;
   min-width: 474px;
   padding: 3px 8px;
   color: white;
@@ -119,7 +119,7 @@
   /* Clip the element to a right-angle triangle */
   clip-path: polygon(0 100%, 100% 0, 100% 100%);
   
-  z-index: 2; /* Bring the resize handle on top of other content */
+  z-index: 6; /* Bring the resize handle on top of other content */
 }
 
 .copyright {
@@ -136,7 +136,7 @@
   box-sizing: border-box; /* Ensures padding is included in the width */
   margin-top: -19px;
   transform: translateX(3px);
-  z-index: 1; /* Ensure copyright is below the resize handle */
+  z-index: 5; /* Ensure copyright is below the resize handle */
 }
 
 .copyright p {
@@ -167,6 +167,11 @@
 .window-container::-webkit-scrollbar-thumb:hover {
   /* Optional: Add hover effect here */
 }
+
+.side{
+
+}
+/* Navbar styles */
 
 
 
