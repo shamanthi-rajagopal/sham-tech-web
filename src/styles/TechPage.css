@@ -24,9 +24,8 @@ margin: 0;
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center; */
-    overflow: hidden; 
     color: black; 
-    overflow-y: hidden; 
+ 
   }
   
   /* Add styles to arrange buttons vertically */

@@ -16,6 +16,8 @@ const Window = ({
   isFullScreen: initialFullScreen = false,
   updateWindowPosition,
   content, // Dynamic content as a prop
+  zIndex, // Current zIndex passed from parent
+  setActiveWindow, // Function to set this window as active
 }) => {
   const [currentPosition, setCurrentPosition] = useState({ x, y });
   const [currentSize, setCurrentSize] = useState({ width, height });
@@ -100,6 +102,9 @@ const Window = ({
       document.addEventListener("pointermove", handlePointerMove);
       document.addEventListener("pointerup", handlePointerUp);
     }
+
+    // Set the current window as active
+    setActiveWindow(name);
   };
 
   const handlePointerUp = () => {
@@ -152,7 +157,9 @@ const Window = ({
         left: `${currentPosition.x}px`,
         width: `${currentSize.width}px`,
         height: `${currentSize.height}px`,
+        zIndex, // Apply dynamic zIndex
       }}
+      onPointerDown={() => setActiveWindow(name)} // Bring window to front
     >
       <div
         className="window-header"
@@ -174,8 +181,6 @@ const Window = ({
           <button onClick={() => closeWindow(name)}>X</button>
         </div>
       </div>
-      
-      {/* Navbar: Sticks to top and has a blue background */}
 
       <div className="window-container">
         <div className="window-content">
@@ -201,6 +206,8 @@ Window.propTypes = {
   isFullScreen: PropTypes.bool,
   updateWindowPosition: PropTypes.func.isRequired,
   content: PropTypes.node,
+  zIndex: PropTypes.number.isRequired, // New zIndex prop
+  setActiveWindow: PropTypes.func.isRequired, // New setActiveWindow prop
 };
 
 export default Window;
