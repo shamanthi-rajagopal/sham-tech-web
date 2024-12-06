@@ -45,13 +45,12 @@ const TechPage = () => {
 
   const toggleStartMenu = () => setStartMenuOpen(!startMenuOpen);
 
-  // Open a new window with a unique size and position
   const openWindow = (windowName) => {
     if (!windows.includes(windowName)) {
       const newWindowPositions = { ...windowPositions };
       const newWindowSizes = { ...windowSizes };
-
-      // Set unique position and size for each window
+  
+      // Ensure fresh state for new windows
       switch (windowName) {
         case "Home":
           newWindowPositions[windowName] = { x: 500, y: 100 };
@@ -65,24 +64,28 @@ const TechPage = () => {
           newWindowPositions[windowName] = { x: 100, y: 200 };
           newWindowSizes[windowName] = { width: 400, height: 400 };
           break;
-          case "Photos":
-            newWindowPositions[windowName] = { x: 700, y: 150 };
-            newWindowSizes[windowName] = { width: 700, height: 500 };
-            break;
+        case "Photos":
+          newWindowPositions[windowName] = { x: 700, y: 150 };
+          newWindowSizes[windowName] = { width: 700, height: 500 };
+          break;
         default:
           break;
       }
-
-      setWindows([...windows, windowName]);
+  
+      // Remove the position and size of the closed windows to prevent issues
+      setWindows((prevWindows) => [...prevWindows, windowName]);
       setWindowPositions(newWindowPositions);
       setWindowSizes(newWindowSizes);
     }
   };
+  
 
-  // Close a window
+
   const closeWindow = (windowName) => {
     setWindows(windows.filter((window) => window !== windowName));
     setMinimizedWindows(minimizedWindows.filter((window) => window !== windowName));
+  
+    // Ensure you clear the position and size state for the closed window
     setWindowPositions((prevPositions) => {
       const { [windowName]: _, ...rest } = prevPositions;
       return rest;
@@ -92,6 +95,8 @@ const TechPage = () => {
       return rest;
     });
   };
+  
+
 
   // Minimize or restore a window
   const minimizeWindow = (windowName) => {
@@ -241,23 +246,22 @@ const TechPage = () => {
 
           return (
             <Window
-              key={index}
-              name={windowName}
-              content={windowContent}
-              closeWindow={closeWindow}
-              minimizeWindow={minimizeWindow}
-              toggleTaskbarButton={toggleTaskbarButton}
-              updateWindowPosition={updateWindowPosition}
-              updateWindowSize={updateWindowSize}
-              x={windowPositions[windowName]?.x || 400}  // Set position dynamically
-              y={windowPositions[windowName]?.y || 100}  // Set position dynamically
-              width={windowSizes[windowName]?.width || 700}  // Set size dynamically
-              height={windowSizes[windowName]?.height || 530}  // Set size dynamically
-              bringToFront={() => bringToFront(windowName)} // Bring window to the front when clicked
-              zIndex={zIndex}  // Apply dynamic z-index
+                key={index}
+                name={windowName}
+                content={windowContent}
+                closeWindow={closeWindow}
+                minimizeWindow={minimizeWindow}
+                updateWindowPosition={updateWindowPosition}
+                updateWindowSize={updateWindowSize}
+                bringToFront={() => bringToFront(windowName)} // Bring window to front on click
+                zIndex={zIndex}  // Apply dynamic z-index
+                x={windowPositions[windowName]?.x || 400}
+                y={windowPositions[windowName]?.y || 100}
+                width={windowSizes[windowName]?.width || 700}
+                height={windowSizes[windowName]?.height || 530}
             />
-          );
-        })}
+        );
+    })}
 
         {/* Taskbar */}
         <Taskbar

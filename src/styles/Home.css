@@ -14,7 +14,7 @@
     min-height: 115vh; /* Make the whole page at least the height of the viewport */
     background-color: black;
     color: white;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    /*overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Navbar styling */

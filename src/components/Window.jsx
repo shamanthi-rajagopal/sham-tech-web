@@ -16,12 +16,14 @@ const Window = ({
   isFullScreen: initialFullScreen = false,
   updateWindowPosition,
   content, // Dynamic content as a prop
-  zIndex, // Current zIndex passed from parent
+  zIndex: parentZIndex, // Current zIndex passed from parent
   setActiveWindow, // Function to set this window as active
+  bringToFront, // New bringToFront prop
 }) => {
   const [currentPosition, setCurrentPosition] = useState({ x, y });
   const [currentSize, setCurrentSize] = useState({ width, height });
   const [currentFullScreen, setCurrentFullScreen] = useState(initialFullScreen);
+  const [currentZIndex, setCurrentZIndex] = useState(parentZIndex);
 
   const positionRef = useRef(currentPosition);
   const sizeRef = useRef(currentSize);
@@ -103,8 +105,9 @@ const Window = ({
       document.addEventListener("pointerup", handlePointerUp);
     }
 
-    // Set the current window as active
+    // Set the current window as active and bring it to front
     setActiveWindow(name);
+    setCurrentZIndex((prevZIndex) => prevZIndex + 1); // Increment zIndex to bring it to front
   };
 
   const handlePointerUp = () => {
@@ -145,6 +148,11 @@ const Window = ({
     toggleTaskbarButton(name, !isMinimized);
   };
 
+  const bringWindowToFront = () => {
+    setCurrentZIndex((prevZIndex) => prevZIndex + 1); // Bring window to the front
+    bringToFront(name); // Call the bringToFront function passed from the parent
+  };
+
   if (isMinimized) {
     return null;
   }
@@ -157,9 +165,10 @@ const Window = ({
         left: `${currentPosition.x}px`,
         width: `${currentSize.width}px`,
         height: `${currentSize.height}px`,
-        zIndex, // Apply dynamic zIndex
+        zIndex: currentZIndex, // Apply dynamic zIndex
       }}
-      onPointerDown={() => setActiveWindow(name)} // Bring window to front
+      onClick={bringWindowToFront} // Bring the window to front when clicked
+      onPointerDown={handlePointerDown} // Bring window to front on drag
     >
       <div
         className="window-header"
@@ -208,6 +217,7 @@ Window.propTypes = {
   content: PropTypes.node,
   zIndex: PropTypes.number.isRequired, // New zIndex prop
   setActiveWindow: PropTypes.func.isRequired, // New setActiveWindow prop
+  bringToFront: PropTypes.func.isRequired, // New bringToFront prop
 };
 
 export default Window;

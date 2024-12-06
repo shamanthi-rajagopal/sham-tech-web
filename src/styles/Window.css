@@ -23,7 +23,7 @@
   border-left: 2px solid #ffffff;
   border-bottom: 2px solid #000000;
   border-right: 2px solid #000000;
-  z-index: 3;
+  z-index: 1;
 }
 
 .window-container {
@@ -136,7 +136,7 @@
   box-sizing: border-box; /* Ensures padding is included in the width */
   margin-top: -19px;
   transform: translateX(3px);
-  z-index: 5; /* Ensure copyright is below the resize handle */
+  z-index: 3; /* Ensure copyright is below the resize handle */
 }
 
 .copyright p {
@@ -173,7 +173,9 @@
 }
 /* Navbar styles */
 
-
+.window.active {
+  z-index: 9999; /* Bring active window to the front */
+}
 
 /* ===================================== GOOGLE FONTS ==========================================*/
 .jersey-10-regular {
