@@ -15,6 +15,10 @@ import Background3 from "../assets/images/pixelgalaxy.png";
 import Background4 from "../assets/images/pixelspace3.png";
 import Background5 from "../assets/images/bluesky.jpg";
 import Background6 from "../assets/images/pinksky.png";
+import linkedin from "../assets/images/linkedin.png";
+import github from "../assets/images/github.png";
+import email from "../assets/images/email.png";
+import youtube from "../assets/images/youtube.png";
 import csa1 from "../assets/photos/csa1.jpg";
 import csa2 from "../assets/photos/csa2.jpg";
 import csa3 from "../assets/photos/csa3.jpg";
@@ -213,10 +217,13 @@ const TechPage = () => {
           switch (windowName) {
             case "Home":
               windowContent = (
-                <div>
-                  <h1 className="home-window">Shamanthi Rajagopal</h1>
-                  <div className="home-text">Dive into my world of tech—uncover my journey, creations, and connections.</div>
-                </div>
+            <div>
+              <h1 className="home-window">Shamanthi Rajagopal</h1>
+              <div className="home-text">Dive into my world of <strong><u>TECH</u></strong>—uncover my journey, creations, and contributions.</div>
+              <div className="home-text-1">(Click around to explore my tech portfolio - operates like any computer!)</div>
+
+            </div>
+
               );
               break;
             case "Portfolio":

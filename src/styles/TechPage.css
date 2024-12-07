@@ -208,19 +208,46 @@ border:0px;
   font-style: normal;
   text-align: center;
   font-size: 24px;
-  color: #292a2f;
+  color: #38393f;
   background: linear-gradient(45deg, #b8b8b8, #e1e1e1, #a0a0a0); /* Metallic gradient */
   background-clip: text;
   -webkit-background-clip: text;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.385), -2px -2px 5px rgba(255, 255, 255, 0.5);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), -2px -2px 5px rgba(255, 255, 255, 0.143);
+
+  opacity: 0; /* Start as invisible */
+  animation: fadeIn 2s forwards; /* Fade-in animation over 2 seconds */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Start invisible */
+  }
+  100% {
+    opacity: 1; /* End fully visible */
+  }
 }
 
 .home-text{
   font-family: "Signika", sans-serif;
   font-optical-sizing: auto;
   font-weight: 300;
-  font-style: normal;
+  font-style: italic;
   font-size: 15px;
+  text-align: center;
+  color: rgb(42, 51, 65);
+  margin-bottom: 10px;
+  animation: fadeIn 4s forwards; /* Fade-in animation over 2 seconds */
+}
+
+.home-text-1{
+  font-family: "Signika", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 12px;
+  text-align: center;
+  color: rgb(42, 51, 65);
+  animation: fadeIn 5s forwards; /* Fade-in animation over 2 seconds */
 }
 
 /* ====================================================================GOOGLEFONTS===================================================================*/
