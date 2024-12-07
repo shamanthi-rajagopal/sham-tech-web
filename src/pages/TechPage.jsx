@@ -7,6 +7,7 @@ import HomeImage from "../assets/images/window-home.png";
 import PortfolioImage from "../assets/images/window-portfolio.png";
 import OtherImage from "../assets/images/window-other.png";
 import PhotoImage from "../assets/images/windows-camera.png";
+import File from "../assets/images/window-resume.png";
 import Background from "../assets/images/window-background.png";
 import Background1 from "../assets/images/windowsblue.png";
 import Background2 from "../assets/images/pixelspace.png";
@@ -62,11 +63,23 @@ const TechPage = () => {
           break;
         case "Other":
           newWindowPositions[windowName] = { x: 100, y: 200 };
-          newWindowSizes[windowName] = { width: 400, height: 400 };
+          newWindowSizes[windowName] = { width: 400, height: 300 };
           break;
         case "Photos":
+            newWindowPositions[windowName] = { x: 300, y: 50 };
+            newWindowSizes[windowName] = { width: 400, height: 400 };
+        break;
+        case "CSA-1":
           newWindowPositions[windowName] = { x: 700, y: 150 };
           newWindowSizes[windowName] = { width: 700, height: 500 };
+          break;
+        case "CSA-2":
+            newWindowPositions[windowName] = { x: 700, y: 150 };
+            newWindowSizes[windowName] = { width: 700, height: 500 };
+          break;
+        case "Sunsets":
+            newWindowPositions[windowName] = { x: 700, y: 150 };
+            newWindowSizes[windowName] = { width: 700, height: 500 };
           break;
         default:
           break;
@@ -217,25 +230,68 @@ const TechPage = () => {
               case "Photos":
                 windowContent = (
               <div>
-                <h1 className="photo-header">Photos</h1>
-                <div className="filler">Catch a glimpse of some of my favorite moments!</div>
-                {/* Content */}
-                <div id="csa-section" className="CSA">
-                  <div className="photo-heading">CSA Photo Dump</div>
-                  <div><img className="photo-img" src={csa2} alt="A description of the image" /></div>
-                  <div><img className="photo-img" src={csa1} alt="A description of the image" /></div>
-                  <div><img className="photo-img" src={csa3} alt="A description of the image" /></div>
-                  <div><img className="photo-img" src={csa4} alt="A description of the image" /></div>
-                  <div><img className="photo-img" src={csa5} alt="A description of the image" /></div>
-                  <div><img className="photo-img" src={csa6} alt="A description of the image" /></div>
-                  <div><img className="photo-img" src={csa7} alt="A description of the image" /></div>
-                  <div><img className="photo-img" src={csa8} alt="A description of the image" /></div>
-                  <div><img className="photo-img" src={csasham} alt="A description of the image" /></div>
+                <div className="other-back">
+                  <button className="basic-photo" onClick={() => openWindow("CSA-1")}>
+                  <img src={File} className="button-icon-other-csa" />CSA-1</button> 
+
+                  <button className="basic-photo" onClick={() => openWindow("CSA-2")}>
+                  <img src={File} className="button-icon-other-csa" />CSA-2</button> 
+
+                  <button className="basic-photo" onClick={() => openWindow("Sunsets")}>
+                  <img src={File} className="button-icon-other-csa" />Sunsets</button> 
+
                 </div>
               </div>
 
                 );
                 break;
+              case "CSA-1":
+                windowContent =(
+                  <div>
+                    
+                <h1 className="photo-header">CSA Photo Dump #1</h1>
+                <div className="filler">I was an intern @ CSA and here's a photo dump on my first day in-person!</div>
+                <div className="filler">Fun fact: There was a special astronaut event happening, and I saw 8 astronauts for the first time!!!</div>
+                <div className="filler">(If you ever see me in person, maybe I can show you the photo! 👨‍🚀)</div>
+                {/* Content */}
+                <div id="csa-section" className="CSA">
+                  <div><img className="photo-img" src={csa2}/></div>
+                  <div><img className="photo-img" src={csa1}/></div>
+                  <div><img className="photo-img" src={csa3}/></div>
+                  <div><img className="photo-img" src={csa4}/></div>
+                  <div><img className="photo-img" src={csa5}/></div>
+                  <div><img className="photo-img" src={csa6}/></div>
+                  <div><img className="photo-img" src={csa7}/></div>
+                  <div><img className="photo-img" src={csa8}/></div>
+                  <div><img className="photo-img" src={csasham}/></div>
+                  <div className="photo-heading">I ♥ CSA</div>
+                </div>
+                  </div>
+                );
+                break;
+                case "CSA-2":
+                  windowContent =(
+                    <div>
+                      
+                  <h1 className="photo-header">CSA Photo Dump #2</h1>
+                  <div className="filler">Some more csa photos...</div>
+                  <div className="filler">Fun Fact: I was on the ✨ moon ✨! 🌚</div>
+                
+                  {/* Content */}
+                  <div id="csa-section" className="CSA">
+                    <div><img className="photo-img" src={csa2} alt="A description of the image" /></div>
+                    <div className="photo-heading">I ♥ CSA 🚀🌌 </div>
+                  </div>
+                    </div>
+                  );
+                  break;
+                  case "Sunsets":
+                    windowContent =(
+                      <div>
+
+                      </div>
+                    );
+                    break;
             default:
               windowContent = <div>Default Content</div>;
               break;

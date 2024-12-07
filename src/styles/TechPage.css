@@ -112,6 +112,20 @@ border:0px;
   color: black;
 }
 
+.button-icon-other-csa {
+  width: 90px; /* Icon size */
+  height: 90px; /* Icon size */
+  margin-bottom: -10px; /* Reduce space between icon and text */
+  margin-top: 20px; /* Space above the icon */
+  color: black;
+}
+
+.button-icon-other-csa span {
+  margin-top: -5px; /* Adjust this value to move text up */
+  display: inline-block; /* Ensure the text respects the margin */
+  font-size: 14px; /* Optional: Adjust the font size for better alignment */
+}
+
 .basic-drive {
   display: flex;
   flex-direction: column; /* Stack the icon and text vertically */
@@ -164,7 +178,7 @@ border:0px;
 
 .filler{
   font-family: 'Windows95Font', sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   
 }
 
