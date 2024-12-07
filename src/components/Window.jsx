@@ -167,12 +167,11 @@ const Window = ({
         height: `${currentSize.height}px`,
         zIndex: currentZIndex, // Apply dynamic zIndex
       }}
-      onClick={bringWindowToFront} // Bring the window to front when clicked
-      onPointerDown={handlePointerDown} // Bring window to front on drag
     >
       <div
         className="window-header"
         onPointerDown={handlePointerDown}
+        onClick={bringWindowToFront} // Bring the window to front only when the header is clicked
         style={{
           cursor: "default",
           zIndex: 1,
