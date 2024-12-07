@@ -11,9 +11,10 @@ import File from "../assets/images/window-resume.png";
 import Background from "../assets/images/window-background.png";
 import Background1 from "../assets/images/windowsblue.png";
 import Background2 from "../assets/images/pixelspace.png";
-import Background3 from "../assets/images/pixelspace3.png";
-import Background4 from "../assets/images/bluesky.jpg";
-import Background5 from "../assets/images/pinksky.png";
+import Background3 from "../assets/images/pixelgalaxy.png";
+import Background4 from "../assets/images/pixelspace3.png";
+import Background5 from "../assets/images/bluesky.jpg";
+import Background6 from "../assets/images/pinksky.png";
 import csa1 from "../assets/photos/csa1.jpg";
 import csa2 from "../assets/photos/csa2.jpg";
 import csa3 from "../assets/photos/csa3.jpg";
@@ -22,6 +23,18 @@ import csa5 from "../assets/photos/csa5.jpg";
 import csa6 from "../assets/photos/csa6.jpg";
 import csa7 from "../assets/photos/csa16.jpg";
 import csa8 from "../assets/photos/csa17.jpg";
+import csa01 from "../assets/photos/csa-1.jpg";
+import csa02 from "../assets/photos/csa-2.jpg";
+import csa03 from "../assets/photos/csa-3.jpg";
+import csa04 from "../assets/photos/csa-4.jpg";
+import csa05 from "../assets/photos/csa-5.jpg";
+import csa07 from "../assets/photos/csa-7.jpg";
+import sky1 from "../assets/photos/sky1.jpg";
+import sky2 from "../assets/photos/sky2.jpg";
+import sky3 from "../assets/photos/sky3.jpg";
+import sky4 from "../assets/photos/sky4.jpg";
+import sky5 from "../assets/photos/sky5.jpg";
+import sky8 from "../assets/photos/sky8.jpg";
 import csasham from "../assets/photos/csa-sham.jpg";
 
 const TechPage = () => {
@@ -29,7 +42,7 @@ const TechPage = () => {
     document.body.style.overflow = "hidden";
   }
 
-  const backgrounds = [Background1, Background2, Background3, Background4, Background5]; // Array of backgrounds
+  const backgrounds = [Background1, Background2, Background3, Background4, Background5, Background6]; // Array of backgrounds
   const [currentBackground, setCurrentBackground] = useState(0);
 
   const switchBackground = () => {
@@ -55,7 +68,7 @@ const TechPage = () => {
       switch (windowName) {
         case "Home":
           newWindowPositions[windowName] = { x: 500, y: 100 };
-          newWindowSizes[windowName] = { width: 500, height: 300 };
+          newWindowSizes[windowName] = { width: 570, height: 300 };
           break;
         case "Portfolio":
           newWindowPositions[windowName] = { x: 350, y: 50 };
@@ -201,8 +214,8 @@ const TechPage = () => {
             case "Home":
               windowContent = (
                 <div>
-                  <h2>Welcome to Home</h2>
-                  <p>Here is the content for the Home window.</p>
+                  <h1 className="home-window">Shamanthi Rajagopal</h1>
+                  <div className="home-text">Dive into my world of tech—uncover my journey, creations, and connections.</div>
                 </div>
               );
               break;
@@ -279,7 +292,18 @@ const TechPage = () => {
                 
                   {/* Content */}
                   <div id="csa-section" className="CSA">
-                    <div><img className="photo-img" src={csa2} alt="A description of the image" /></div>
+                    <div><img className="photo-img" src={csa01}/></div>
+                    <div className="filler-cap">Trying out a Lunar Rover VR Simulation! 🌑</div>
+                    <div><img className="photo-img" src={csa02}/></div>
+                    <div className="filler-cap">Another pic with the iconic Canada Arm 🦾</div>
+                    <div><img className="photo-img" src={csa07}/></div>
+                    <div className="filler-cap">Rocket 🚀</div>
+                    <div><img className="photo-img" src={csa04}/></div>
+                    <div className="filler-cap">ISS 🛰️</div>
+                    <div><img className="photo-img" src={csa03}/></div>
+                    <div className="filler-cap">3D csa</div>
+                    <div><img className="photo-img" src={csa05}/></div>
+                    <div className="filler-cap">Christmas 🎄</div>
                     <div className="photo-heading">I ♥ CSA 🚀🌌 </div>
                   </div>
                     </div>
@@ -288,7 +312,16 @@ const TechPage = () => {
                   case "Sunsets":
                     windowContent =(
                       <div>
-
+                      <h1 className="photo-header">Pretty Sky 🌌</h1>
+                      <div className="filler">Sunsets, sunrises, beautiful colors in the sky!</div>
+                      <div className="filler">Yes, I am a sunset person...and a starry sky person too...🌠</div>
+                      <div><img className="photo-img" src={sky1}/></div>
+                      <div><img className="photo-img" src={sky2}/></div>
+                      <div><img className="photo-img" src={sky3}/></div>
+                      <div><img className="photo-img" src={sky4}/></div>
+                      <div><img className="photo-img" src={sky5}/></div>
+                      <div><img className="photo-img" src={sky8}/></div>
+                      <div className="filler">Someone please take me to see the ✨ stars ✨...</div>
                       </div>
                     );
                     break;
