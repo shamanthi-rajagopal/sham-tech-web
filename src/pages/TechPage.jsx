@@ -41,10 +41,13 @@ import sky5 from "../assets/photos/sky5.jpg";
 import sky8 from "../assets/photos/sky8.jpg";
 import csasham from "../assets/photos/csa-sham.jpg";
 
+
+
 const TechPage = () => {
   if (window.location.pathname === "/tech") {
     document.body.style.overflow = "hidden";
   }
+  
 
   const backgrounds = [Background1, Background2, Background3, Background4, Background5, Background6]; // Array of backgrounds
   const [currentBackground, setCurrentBackground] = useState(0);
@@ -67,6 +70,10 @@ const TechPage = () => {
     if (!windows.includes(windowName)) {
       const newWindowPositions = { ...windowPositions };
       const newWindowSizes = { ...windowSizes };
+
+      if (windows.includes(windowName)) {
+        return; // Prevent duplicate entries
+      }
   
       // Ensure fresh state for new windows
       switch (windowName) {
@@ -172,6 +179,13 @@ const TechPage = () => {
     windowSizes && setWindowSizes(windowSizes);
   }, [windows, windowPositions, windowSizes]);
 
+  useEffect(() => {
+    if (!windows.includes("Home")) {
+      openWindow("Home"); // Open the Home window on the first render
+    }
+  }, []); // Empty dependency array ensures this runs only once
+  
+
   return (
     
     <div className="tech-page"
@@ -185,7 +199,6 @@ const TechPage = () => {
     }}
     >
       <div className="no-scroll">
-        <h1> </h1>
 
         {/* Button Container */}
         <div className="button-container">
@@ -220,7 +233,7 @@ const TechPage = () => {
             <div>
               <h1 className="home-window">Shamanthi Rajagopal</h1>
               <div className="home-text">Dive into my world of <strong><u>TECH</u></strong>—uncover my journey, creations, and contributions.</div>
-              <div className="home-text-1">(Click around to explore my tech portfolio - operates like any computer!)</div>
+              <div className="home-text-1">(Click around to explore my tech portfolio - it operates like any computer!)</div>
 
             </div>
 

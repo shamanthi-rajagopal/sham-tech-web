@@ -250,6 +250,32 @@ border:0px;
   animation: fadeIn 5s forwards; /* Fade-in animation over 2 seconds */
 }
 
+.home-buttons {
+  display: flex;  /* Align buttons side by side */
+  justify-content: center; /* Center the buttons */
+  gap: 5px; /* Add space between buttons */
+  margin-top: 20px; /* Add space above the button container */
+}
+
+.home-button {
+  font-family: 'Windows95Font', sans-serif;
+  color: white; /* Button text color */
+  padding: 0px 3px; /* Padding inside the button */
+  text-decoration: none; /* Remove underline from links */
+  font-size: 16px; /* Button text size */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+  margin-top: 25px;
+
+}
+
+.home-img{
+  width: 18px;
+  height: 18px;
+  margin-top: 5px;
+}
+
+
 /* ====================================================================GOOGLEFONTS===================================================================*/
 .gravitas-one-regular {
   font-family: "Gravitas One", serif;
