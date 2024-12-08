@@ -67,13 +67,14 @@ const TechPage = () => {
   const toggleStartMenu = () => setStartMenuOpen(!startMenuOpen);
 
   const openWindow = (windowName) => {
+
+    if (windows.includes(windowName)) {
+      return; // Prevent duplicate entries
+    }
+
     if (!windows.includes(windowName)) {
       const newWindowPositions = { ...windowPositions };
       const newWindowSizes = { ...windowSizes };
-
-      if (windows.includes(windowName)) {
-        return; // Prevent duplicate entries
-      }
   
       // Ensure fresh state for new windows
       switch (windowName) {
@@ -181,10 +182,19 @@ const TechPage = () => {
 
   useEffect(() => {
     if (!windows.includes("Home")) {
-      openWindow("Home"); // Open the Home window on the first render
+      setWindows(["Home"]); // Directly set the initial state for windows
+      setWindowPositions((prevPositions) => ({
+        ...prevPositions,
+        Home: { x: 500, y: 100 }, // Customize "Home" position here
+      }));
+      setWindowSizes((prevSizes) => ({
+        ...prevSizes,
+        Home: { width: 570, height: 300 }, // Customize "Home" size here
+      }));
     }
-  }, []); // Empty dependency array ensures this runs only once
+  }, []);
   
+
 
   return (
     
