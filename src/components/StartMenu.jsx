@@ -20,7 +20,7 @@ const StartMenu = ({ open, toggleStartMenu }) => {
       <div className="menu-name" onClick={handleMenuClick}>Shamanthi's System</div>
       <div className="menu-items" onClick={handleMenuClick}>
         <a
-          href="https://github.com/shamanthi-rajagopal"
+          href="https://github.com/shamanthi-rajagopal/shamanthi-rajagopal/blob/main/Shamanthi_Public__Resume.pdf"
           onClick={(event) => handleLinkClick(event)} target="_blank" rel="noopener noreferrer"
         >
           Resume

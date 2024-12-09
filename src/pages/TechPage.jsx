@@ -325,7 +325,7 @@ const TechPage = () => {
                     <div><img className="photo-img" src={csa01}/></div>
                     <div className="filler-cap">Trying out a Lunar Rover VR Simulation! 🌑</div>
                     <div><img className="photo-img" src={csa02}/></div>
-                    <div className="filler-cap">Another pic with the iconic Canada Arm 🦾</div>
+                    <div className="filler-cap">Another pic with the iconic Canada Arm Bar Thing 🦾</div>
                     <div><img className="photo-img" src={csa07}/></div>
                     <div className="filler-cap">Rocket 🚀</div>
                     <div><img className="photo-img" src={csa04}/></div>
