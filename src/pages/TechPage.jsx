@@ -62,7 +62,12 @@ const TechPage = () => {
   const [windowPressedState, setWindowPressedState] = useState({}); // Track window state (pressed or not)
   const [windowPositions, setWindowPositions] = useState({}); // Track window positions
   const [windowSizes, setWindowSizes] = useState({}); // Track window sizes
-  const [activeWindow, setActiveWindow] = useState(null); // Track the active window for z-index
+  const [activeWindow, setActiveWindow] = useState("Portfolio"); // Or any default window
+  const [activeSection, setActiveSection] = useState("about"); // Default section for Portfolio
+
+  const handleNavClick = (section) => {
+    setActiveSection(section); // Update the active section based on the clicked button
+  };
 
   const toggleStartMenu = () => setStartMenuOpen(!startMenuOpen);
 
@@ -251,9 +256,67 @@ const TechPage = () => {
               break;
             case "Portfolio":
               windowContent = (
-                <div>
-                  <h2>Portfolio</h2>
-                  <p>Check out my projects and achievements!</p>
+                <div className="portfolio-window-container">
+                  {/* Portfolio Container */}
+                  <div className="portfolio-container">
+                    {/* Portfolio Nav Bar */}
+                    <div className="portfolio-nav">
+                      <button
+                        className={`portfolio-nav-button ${activeSection === "about" ? "active" : ""}`}
+                        onClick={() => handleNavClick("about")}
+                      >
+                        About Me
+                      </button>
+                      <button
+                        className={`portfolio-nav-button ${activeSection === "projects" ? "active" : ""}`}
+                        onClick={() => handleNavClick("projects")}
+                      >
+                        Projects
+                      </button>
+                      <button
+                        className={`portfolio-nav-button ${activeSection === "experiences" ? "active" : ""}`}
+                        onClick={() => handleNavClick("experiences")}
+                      >
+                        Experiences
+                      </button>
+                      <button
+                        className={`portfolio-nav-button ${activeSection === "contact" ? "active" : ""}`}
+                        onClick={() => handleNavClick("contact")}
+                      >
+                        Contact
+                      </button>
+                    </div>
+        
+                    {/* Content Section */}
+                    <div className="portfolio-content">
+                      {activeSection === "about" && (
+                        <div className="portfolio-about">
+                          <h2>About Me</h2>
+                          <p>
+                            Hello! I'm a passionate developer with a background in computer engineering. I love working on exciting projects that make a real impact. My goal is to use technology to solve meaningful problems.
+                          </p>
+                        </div>
+                      )}
+                      {activeSection === "projects" && (
+                        <div className="portfolio-projects">
+                          <h2>Projects</h2>
+                          <p>Here are some of the projects I’ve worked on...</p>
+                        </div>
+                      )}
+                      {activeSection === "experiences" && (
+                        <div className="portfolio-experiences">
+                          <h2>Experiences</h2>
+                          <p>Here's a list of my relevant work and academic experiences...</p>
+                        </div>
+                      )}
+                      {activeSection === "contact" && (
+                        <div className="portfolio-contact">
+                          <h2>Contact</h2>
+                          <p>If you want to get in touch, feel free to reach out!</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
                 </div>
               );
               break;
