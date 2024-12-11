@@ -8,6 +8,10 @@ import PortfolioImage from "../assets/images/window-portfolio.png";
 import OtherImage from "../assets/images/window-other.png";
 import PhotoImage from "../assets/images/windows-camera.png";
 import File from "../assets/images/window-resume.png";
+import about from "../assets/images/smile.png";
+import project from "../assets/images/computer-home.png";
+import experience from "../assets/images/suitcase.png";
+import mail from "../assets/images/mail.png";
 import Background from "../assets/images/window-background.png";
 import Background1 from "../assets/images/windowsblue.png";
 import Background2 from "../assets/images/pixelspace.png";
@@ -265,31 +269,36 @@ const TechPage = () => {
                   {/* Portfolio Navigation Buttons */}
                   <div className="portfolio-home-container">
                   <div className="portfolio-home-buttons">
-                    <button
-                      className="portfolio-home-button"
-                      onClick={() => handleHomeClick("about")}
-                    >
-                      About Me
-                    </button>
-                    <button
-                      className="portfolio-home-button"
-                      onClick={() => handleHomeClick("projects")}
-                    >
-                      Projects
-                    </button>
-                    <button
-                      className="portfolio-home-button"
-                      onClick={() => handleHomeClick("experiences")}
-                    >
-                      Experiences
-                    </button>
-                    <button
-                      className="portfolio-home-button"
-                      onClick={() => handleHomeClick("contact")}
-                    >
-                      Contact
-                    </button>
-                    </div>
+                  <button
+                    className="portfolio-home-button"
+                    onClick={() => handleHomeClick("about")}
+                  >
+                    About Me
+                    <img className="home-button-icon" src={about}/>
+                  </button>
+                  <button
+                    className="portfolio-home-button"
+                    onClick={() => handleHomeClick("projects")}
+                  >
+                    Projects
+                    <img className="home-button-icon" src={project}/>
+                  </button>
+                  <button
+                    className="portfolio-home-button"
+                    onClick={() => handleHomeClick("experiences")}
+                  >
+                    Experiences
+                    <img className="home-button-icon" src={experience} />
+                  </button>
+                  <button
+                    className="portfolio-home-button"
+                    onClick={() => handleHomeClick("contact")}
+                  >
+                    Contact
+                    <img className="home-button-icon" src={mail} />
+                  </button>
+                </div>
+
                   </div>
                 </div>
               );

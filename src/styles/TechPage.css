@@ -280,7 +280,8 @@ border:0px;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
   height: 100%; /* Full height of the parent container */
-  animation: fadeIn 5s forwards; /* Fade-in animation over 2 seconds */
+  animation: fadeIn 5s forwards; /* Fade-in animation over 5 seconds */
+  gap: 10px; /* Add spacing between buttons */
 }
 
 .portfolio-home-button {
@@ -294,11 +295,20 @@ border:0px;
   cursor: pointer; /* Pointer on hover */
   text-align: center; /* Center-align the text */
   padding: 5px 10px; /* Some padding for better spacing */
-  margin: 0 10px; /* Add horizontal spacing between buttons */
+  display: flex; /* Flex layout to align text and image */
+  align-items: center; /* Vertically center text and image */
+  gap: 5px; /* Space between text and image */
+  flex-direction: row;
 }
 
+.home-button-icon {
+  width: 20px; /* Adjust icon size */
+  height: 20px; /* Adjust icon size */
+}
+
+
 .portfolio-home-button:hover {
-  color: #73848c;
+
 }
 
 .portfolio-container {
@@ -342,7 +352,6 @@ border:0px;
 
 .portfolio-nav-button:hover {
   transition: color 0.3s ease; /* Smooth transition for the hover effect */
-  color: #48606b;
 
 }
 
@@ -361,10 +370,6 @@ border:0px;
 .portfolio-about{
   height:100vh;
 }
-
-
-
-
 
 
 
