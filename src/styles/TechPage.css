@@ -334,7 +334,7 @@ border:0px;
   background-color: transparent; /* No background color */
   color: rgb(0, 0, 0); /* Default text color */
   border: none; /* No border */
-  font-size: 18px; /* Text size */
+  font-size: 16px; /* Text size */
   cursor: pointer; /* Pointer on hover */
   text-align: center; /* Center-align the text */
   padding: 5px 10px; /* Some padding for better spacing */
@@ -342,6 +342,8 @@ border:0px;
 
 .portfolio-nav-button:hover {
   transition: color 0.3s ease; /* Smooth transition for the hover effect */
+  color: #48606b;
+
 }
 
 .portfolio-nav-button:focus {
