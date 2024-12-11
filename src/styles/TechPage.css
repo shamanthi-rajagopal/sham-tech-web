@@ -297,6 +297,9 @@ border:0px;
   margin: 0 10px; /* Add horizontal spacing between buttons */
 }
 
+.portfolio-home-button:hover {
+  color: #73848c;
+}
 
 .portfolio-container {
   display: flex; /* Makes the container use flex layout */
@@ -338,8 +341,11 @@ border:0px;
 }
 
 .portfolio-nav-button:hover {
-  color: #ffffff; /* Change text color to blue on hover */
   transition: color 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.portfolio-nav-button:focus {
+ text-decoration: underline;
 }
 
 .portfolio-content {
