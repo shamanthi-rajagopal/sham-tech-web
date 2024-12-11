@@ -69,6 +69,13 @@ const TechPage = () => {
     setActiveSection(section); // Update the active section based on the clicked button
   };
 
+  const handleHomeClick = (section) => {
+    setActiveSection(section);
+    // Logic to open the portfolio window or show the content
+    openWindow("Portfolio"); // Assuming you have a way to set the window type
+  };
+  
+
   const toggleStartMenu = () => setStartMenuOpen(!startMenuOpen);
 
   const openWindow = (windowName) => {
@@ -88,8 +95,8 @@ const TechPage = () => {
           newWindowSizes[windowName] = { width: 570, height: 300 };
           break;
         case "Portfolio":
-          newWindowPositions[windowName] = { x: 350, y: 50 };
-          newWindowSizes[windowName] = { width: 800, height: 600 };
+          newWindowPositions[windowName] = { x: 400, y: 25 };
+          newWindowSizes[windowName] = { width: 800, height: 630 };
           break;
         case "Other":
           newWindowPositions[windowName] = { x: 100, y: 200 };
@@ -245,15 +252,49 @@ const TechPage = () => {
           switch (windowName) {
             case "Home":
               windowContent = (
-            <div>
-              <h1 className="home-window">Shamanthi Rajagopal</h1>
-              <div className="home-text">Dive into my world of <strong><u>TECH</u></strong>—uncover my journey, creations, and contributions.</div>
-              <div className="home-text-1">(Click around to explore my tech portfolio - it operates like any computer!)</div>
-
-            </div>
-
+                <div>
+                  <h1 className="home-window">Shamanthi Rajagopal</h1>
+                  <div className="home-text">
+                    Dive into my world of <strong><u>TECH</u></strong>—uncover my journey, creations, and contributions.
+                  </div>
+                  <div className="home-text-1">
+                    (Click around to explore my tech portfolio - it operates like any computer!)
+                  </div>
+                  <br></br>
+            
+                  {/* Portfolio Navigation Buttons */}
+                  <div className="portfolio-home-container">
+                  <div className="portfolio-home-buttons">
+                    <button
+                      className="portfolio-home-button"
+                      onClick={() => handleHomeClick("about")}
+                    >
+                      About Me
+                    </button>
+                    <button
+                      className="portfolio-home-button"
+                      onClick={() => handleHomeClick("projects")}
+                    >
+                      Projects
+                    </button>
+                    <button
+                      className="portfolio-home-button"
+                      onClick={() => handleHomeClick("experiences")}
+                    >
+                      Experiences
+                    </button>
+                    <button
+                      className="portfolio-home-button"
+                      onClick={() => handleHomeClick("contact")}
+                    >
+                      Contact
+                    </button>
+                    </div>
+                  </div>
+                </div>
               );
               break;
+            
             case "Portfolio":
               windowContent = (
                 <div className="portfolio-window-container">

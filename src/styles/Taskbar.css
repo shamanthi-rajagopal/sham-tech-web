@@ -87,9 +87,13 @@
   border-left: 2px solid rgb(0, 0, 0); /* Left border white */
   border-bottom: 1px solid rgb(255, 255, 255); /* Bottom border black */
   border-right: 1px solid rgb(255, 255, 255); /* Right border black */
-  padding: 6px 10px;
+  padding: 6px 20px;
   margin-right: 10px;
   cursor: pointer;
+  font-family: 'Windows95Font';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 15px;
 }
 
 .window-button.pressed {
@@ -98,7 +102,7 @@
   border-left: 1px solid white; /* Left border white */
   border-bottom: 3px solid black; /* Bottom border black */
   border-right: 3px solid black; /* Right border black */
-  padding: 6px 10px;
+  padding: 6px 20px;
   margin-right: 10px;
   cursor: pointer;
 }
