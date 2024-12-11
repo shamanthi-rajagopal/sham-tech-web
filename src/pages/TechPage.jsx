@@ -274,7 +274,7 @@ const TechPage = () => {
                     onClick={() => handleHomeClick("about")}
                   >
                     About Me
-                    <img className="home-button-icon" src={about}/>
+                    <img className="home-button-icon-smile" src={about}/>
                   </button>
                   <button
                     className="portfolio-home-button"

@@ -276,12 +276,19 @@ border:0px;
 }
 
 .portfolio-home-container {
-  display: flex; /* Use flexbox for layout */
+  display: flex; /* Flex container for centering the buttons container */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
-  height: 100%; /* Full height of the parent container */
-  animation: fadeIn 5s forwards; /* Fade-in animation over 5 seconds */
-  gap: 10px; /* Add spacing between buttons */
+  height: 100%; /* Full height of parent container */
+  animation: fadeIn 5s forwards; /* Optional fade-in animation */
+}
+
+.portfolio-home-buttons {
+  display: flex; /* Flex container for buttons */
+  flex-direction: row; /* Align buttons side by side */
+  justify-content: center; /* Center the buttons */
+  align-items: center; /* Vertically align buttons */
+  gap: 15px; /* Add spacing between buttons */
 }
 
 .portfolio-home-button {
@@ -293,18 +300,23 @@ border:0px;
   border: none; /* No border */
   font-size: 15px; /* Text size */
   cursor: pointer; /* Pointer on hover */
-  text-align: center; /* Center-align the text */
-  padding: 5px 10px; /* Some padding for better spacing */
-  display: flex; /* Flex layout to align text and image */
-  align-items: center; /* Vertically center text and image */
-  gap: 5px; /* Space between text and image */
-  flex-direction: row;
+  text-align: center; /* Center-align text */
+  padding: 5px 10px; /* Padding for spacing */
+  display: flex; /* Flex layout for text and image */
+  align-items: center; /* Center align text and image */
+  gap: 5px; /* Space between text and icon */
 }
 
 .home-button-icon {
   width: 20px; /* Adjust icon size */
   height: 20px; /* Adjust icon size */
 }
+
+.home-button-icon-smile {
+  width: 15px; /* Adjust icon size */
+  height: 15px; /* Adjust icon size */
+}
+
 
 
 .portfolio-home-button:hover {
