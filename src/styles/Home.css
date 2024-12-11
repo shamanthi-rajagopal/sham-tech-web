@@ -144,7 +144,7 @@
     white-space: nowrap;
     overflow: hidden;
     display: inline-block;
-    animation: typing 1.5s steps(30) 1s 1 normal forwards, /* Faster typing effect */
+    animation: typing 1.5s steps(30) 0s 1 normal forwards, /* Faster typing effect */
     blinkCursor 500ms steps(1) infinite; /* Blinking cursor */
     text-align: left; /* Aligns the text to the left */
     margin-left: -525px;
@@ -204,7 +204,7 @@
     font-size: 25px;
     color: #ffffff;
     display: inline-block;
-    animation: typing 1.0s steps(30) 3s 1 normal forwards, /* Faster typing effect with delay */
+    animation: typing 1s steps(30) 3s 1 normal forwards, /* Faster typing effect with delay */
     blinkCursor 500ms steps(1) infinite; /* Blinking cursor */
     text-align: left; /* Aligns the text to the left */
     margin-left: -610px;
@@ -266,7 +266,7 @@
     font-style: normal;
     margin-top: -30px;
     margin-left: 150px;
-    animation-delay: 4.5s; /* Start fade-in after delay-1 ends */
+    animation-delay: 4s; /* Start fade-in after delay-1 ends */
 }
 
 /* Last name fade-in with delay (after first name and before delay-2) */
@@ -277,7 +277,7 @@
     font-style: normal;
     margin-top: -10px;
     margin-left: 150px;
-    animation-delay: 5s; /* Start fade-in after first name */
+    animation-delay: 4.5s; /* Start fade-in after first name */
 }
 
   
