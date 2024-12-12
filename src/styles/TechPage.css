@@ -447,6 +447,46 @@ border:0px;
   font-weight: 300;
   font-style: normal;
   font-size: 14px;
+  margin-top: -10px;
+}
+
+.about-interest-text{
+  font-family: "Signika", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+  margin-top: -10px;
+}
+
+.about-space-header{
+  font-size: 18px;
+  font-family: 'Windows95Font';
+  font-weight: 600;
+  font-style: italic;
+}
+
+.about-space{
+  font-family: "Signika", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+  margin-top: -10px;
+}
+
+.about-robotics{
+  font-family: "Signika", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+  margin-top: -10px;
+}
+
+.about-ML{
+  font-family: "Signika", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
+  margin-top: -10px;
 }
 
 .portfolio-contact-header{

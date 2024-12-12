@@ -359,15 +359,36 @@ const TechPage = () => {
                         <div className="about-eng">Why Engineering?</div>
                         <div className="about-eng-text"><p> When I was a kid I always loved MATH! Whether it was acing multiplication tables or solving for x & y, math was always my thing.
                            I thought I would forever continue to obsess over math, but a reality check kicked in. When people started asking what I wanted to be when I grew up, I realized I couldn’t do much with just my favorite subject. After a deep pondering session during my early days of high school, I figured out there where other things that fascinated me. <b>TECH!</b> I grew up surrounded by all kinds of technology—my father&apos;s 
-                           various retro windows computers, my first xbox 360 (which I still treasure today), and so on. I then learned about the engineer career path and how they created different types of gadgets.
+                           various <u>retro</u> windows computers, my first xbox 360 (which I still treasure today), and so on. I then learned about the engineer career path and how they created different types of gadgets.
                            Despite not fully understanding the role of an engineer yet, I decided to dedicate myself to the career. I mean, I liked the idea of making my own tech and I was told engineers do ALOT OF MATH, and that sealed the deal. </p>
                            <p> During my start to university, I learned the importance of engineers and their impact on society. Engineers create new innovations and solve impossible problems, to help improve the future.
                             I realized that I had made the right choice back then. I wanted to be an engineer. An <b>impactful engineer </b> who helps people through my creations, and makes their lives better.</p>
-                            <p>I am currently expanding my engineering skill set and experiences for both of my passions of software and hardware (hence why I choose comp eng). I have been learning through school and online courses, working on design teams, internships, and creating really cool projects to expand my knowledge and get my hands busy.
-                             If you're curious about what I've crafted, check out my projects <button className={`about-intro-here ${activeSection === "projects" ? "active" : ""}`} onClick={() => handleNavClick("projects")}>here</button>.
+                            <p>I am currently expanding my engineering skill set and experiences for both of my passions of software and hardware (hence why I choose comp eng). I have been learning through school and online courses, working on design teams, internships, and creating really cool projects to expand my knowledge and get my hands dirty. Projects (personal or hackathons) are my favourite method of learning and expanding my knowledge since it allows me to add my own creativity and personalization,
+                              while focusing on my own desired objectives and goals.
+                              If you're curious about what I've crafted, check out my projects <button className={`about-intro-here ${activeSection === "projects" ? "active" : ""}`} onClick={() => handleNavClick("projects")}>here</button>.
                             </p>
                             <br></br>
                            </div>
+                           <div className="about-eng">Areas of Interest</div>
+                           <div className="about-interest-text">
+                           <p>As a well-rounded and slightly indecisive person, I've consistently looked for opportunities to explore various areas, and I pride myself on being versatile.
+                            That's why I work multiple types of jobs, listen to a vast number of different music genres, and why I like to embrace skills from different sectors in the tech industry.
+                            At the moment, I am drawn to 3 types of tech sectors:
+                           </p>
+                           <div className="about-space-header">Space</div>
+                           <div className="about-space">
+                            <p>Hello</p>
+                            </div>
+                           <div className="about-space-header">Robotics & Embedded Systems</div>
+                           <div className="about-robotics">
+                            <p>Hello</p>
+                            </div>
+                           <div className="about-space-header">ML & AI</div>
+                           <div className="about-ML">
+                            <p>Hello</p>
+                            </div>
+                           <p>(it is cool to see the overlap that is present between these sectors)</p>
+                          </div>
                         </div>
                       )}
                       {activeSection === "projects" && (
