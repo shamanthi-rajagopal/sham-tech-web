@@ -44,6 +44,7 @@ import sky4 from "../assets/photos/sky4.jpg";
 import sky5 from "../assets/photos/sky5.jpg";
 import sky8 from "../assets/photos/sky8.jpg";
 import csasham from "../assets/photos/csa-sham.jpg";
+import aboutintro from "../assets/photos/sham-4.jpg";
 
 
 
@@ -99,8 +100,8 @@ const TechPage = () => {
           newWindowSizes[windowName] = { width: 570, height: 300 };
           break;
         case "Portfolio":
-          newWindowPositions[windowName] = { x: 400, y: 25 };
-          newWindowSizes[windowName] = { width: 800, height: 630 };
+          newWindowPositions[windowName] = { x: 320, y: 25 };
+          newWindowSizes[windowName] = { width: 900, height: 630 };
           break;
         case "Other":
           newWindowPositions[windowName] = { x: 100, y: 200 };
@@ -342,9 +343,18 @@ const TechPage = () => {
                       {activeSection === "about" && (
                         <div className="portfolio-about">
                           <h2 className="portfolio-contact-header">About Me</h2>
-                          <div className="about-intro">
-                            Hello there👋! My name is Shamanthi Rajagopal and I am a Computer Engineering Student at the University of Waterloo. This section showcases a glimpse into my world (mostly tech-wise). I hope you enjoy reading through it and the rest of my portfolio! 
+                          <div className="about-intro-container">
+                          <div className="about-intro-text">
+                            <p>
+                              Hello there👋! My name is <a href="https://www.linkedin.com/in/shamanthi-rajagopal/" target="_blank" className="about-intro-here">Shamanthi Rajagopal</a> and I am a Computer Engineering Student at the University of Waterloo. This section showcases a glimpse into my world and who I really am (mostly tech-wise). I hope you enjoy reading through it and the rest of my portfolio! If you have any questions or comments feel free to reach out to me or connect with me <button
+                              className={`about-intro-here ${activeSection === "contact" ? "active" : ""}`}
+                              onClick={() => handleNavClick("contact")}>here</button>. Happy Exploring 👾!
+                            </p>
                           </div>
+                          <div className="about-intro-img-container">
+                            <img className="about-intro-img" src={aboutintro} alt="About Intro"/>
+                          </div>
+                        </div>
                         </div>
                       )}
                       {activeSection === "projects" && (

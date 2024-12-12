@@ -383,7 +383,57 @@ border:0px;
 .portfolio-about{
   height:100vh;
 }
+.about-intro-container {
+  display: flex;
+  align-items: center; /* Aligns text and image vertically */
+  gap: 20px; /* Reduces spacing between text and image */
+}
 
+.about-intro-text {
+  flex: 2; /* Gives the text container more space */
+  font-family: "Signika", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #1b1a1a;
+  font-size: 14px;
+}
+
+.about-intro-img-container {
+  flex: 1; /* Reduces the width of the image container */
+  display: flex;
+  justify-content: center; /* Centers the image */
+}
+
+.about-intro-img {
+  width: 350px; /* Slightly smaller width for the image */
+  height: auto;
+  padding: 3px;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  border-top: 2px solid #fdfdfd;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  box-shadow: 
+    4px 4px 8px rgba(0, 0, 0, 0.008), /* Outer shadow for depth */
+    inset 0 0 0 1px #636363,
+    inset 0 0 0 2px #8a9eb0;
+}
+
+
+.about-intro-here{
+  font-family: "Signika", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  border: 0px;
+  background-color: #00000000;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0px 1px;
+  color: #0c6fb0;
+  font-size: 14px;
+}
 
 .portfolio-contact-header{
   font-family: "Changa One", sans-serif;
