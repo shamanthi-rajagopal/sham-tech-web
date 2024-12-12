@@ -101,7 +101,7 @@ const TechPage = () => {
           break;
         case "Portfolio":
           newWindowPositions[windowName] = { x: 320, y: 25 };
-          newWindowSizes[windowName] = { width: 900, height: 630 };
+          newWindowSizes[windowName] = { width: 920, height: 630 };
           break;
         case "Other":
           newWindowPositions[windowName] = { x: 100, y: 200 };
@@ -377,7 +377,8 @@ const TechPage = () => {
                            </p>
                            <div className="about-space-header">Space</div>
                            <div className="about-space">
-                            <p>Hello</p>
+                            <p>Space is—a realm of infinite possibility, where time bends and the very fabric of reality is stitched with starlight and shadows. Well, this is my interpretation of space.
+                               </p>
                             </div>
                            <div className="about-space-header">Robotics & Embedded Systems</div>
                            <div className="about-robotics">
