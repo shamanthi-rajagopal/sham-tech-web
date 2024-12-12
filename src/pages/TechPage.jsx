@@ -377,7 +377,8 @@ const TechPage = () => {
                            </p>
                            <div className="about-space-header">Space</div>
                            <div className="about-space">
-                            <p>Space is—a realm of infinite possibility, where time bends and the very fabric of reality is stitched with starlight and shadows. Well, this is my interpretation of space.
+                            <p>When I was younger, I was obsessed with learning about the wonders of outer space. Despite not liking to read, I always brought home a new library book to learn about planets, galaxies, and so on. Space sparked my interest in sci-fi and I loved admiring the beauty of the stars in our universe 🌠.
+                              Then I took a LONG hiatus from my love for space exploration, to focus in high school (plus my fear of heights shattered my dreams of being an astronaut). After debating and picking comp eng over aerospace, I thought my space dreams were over, until I started interning @ CSA. I realized there were many career paths for engineers in the space tech industry and now I am determined to make my mark!
                                </p>
                             </div>
                            <div className="about-space-header">Robotics & Embedded Systems</div>
