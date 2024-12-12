@@ -378,16 +378,20 @@ const TechPage = () => {
                            <div className="about-space-header">Space</div>
                            <div className="about-space">
                             <p>When I was younger, I was obsessed with learning about the wonders of outer space. Despite not liking to read, I always brought home a new library book to learn about planets, galaxies, and so on. Space sparked my interest in sci-fi and I loved admiring the beauty of the stars in our universe 🌠.
-                              Then I took a LONG hiatus from my love for space exploration, to focus in high school (plus my fear of heights shattered my dreams of being an astronaut). After debating and picking comp eng over aerospace, I thought my space dreams were over, until I started interning @ CSA. I realized there were many career paths for engineers in the space tech industry and now I am determined to make my mark!
+                              Then I took a LONG hiatus from my love for space exploration, to focus in high school (plus my fear of heights shattered my dreams of being an astronaut). After debating and picking computer engineering over aerospace, I thought my space dreams were over, until I started interning @ CSA. I realized there were many career paths for engineers in the space tech industry and now I am determined to make my mark!
                                </p>
                             </div>
                            <div className="about-space-header">Robotics & Embedded Systems</div>
                            <div className="about-robotics">
-                            <p>Hello</p>
+                            <p>I have had my fair share of experiences with robotics. From being on my high school robotics team to watching futuristic & dystopian movies and shows, I always thought this cybernetic tech was next level. I am now getting into the more theoretical
+                              concepts for robots and embedded systems, and I am excited to develop more in this area through projects and internships 🤖.
+                            </p>
                             </div>
                            <div className="about-space-header">ML & AI</div>
                            <div className="about-ML">
-                            <p>Hello</p>
+                            <p>Machine learning and artificial intelligence as a whole is a hot topic right now, and I've hoped on the trend too. In my opinon, the idea of not only mimicing human intelligence but exponentially optimizing
+                              our actions through advance calculations, pattern recognition, and data-driven decision-making is not just fascinating but transformative. I never really believed in the whole robots will take over the world, but I have a feeling AI will 🧠!
+                            </p>
                             </div>
                            <p>(it is cool to see the overlap that is present between these sectors)</p>
                           </div>
