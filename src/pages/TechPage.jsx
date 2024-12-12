@@ -341,21 +341,21 @@ const TechPage = () => {
                     <div className="portfolio-content">
                       {activeSection === "about" && (
                         <div className="portfolio-about">
-                          <h2>About Me</h2>
-                          <p>
-                            Hello! I'm a passionate developer with a background in computer engineering. I love working on exciting projects that make a real impact. My goal is to use technology to solve meaningful problems.
-                          </p>
+                          <h2 className="portfolio-contact-header">About Me</h2>
+                          <div className="about-intro">
+                            Hello there👋! My name is Shamanthi Rajagopal and I am a Computer Engineering Student at the University of Waterloo. This section showcases a glimpse into my world (mostly tech-wise). I hope you enjoy reading through it and the rest of my portfolio! 
+                          </div>
                         </div>
                       )}
                       {activeSection === "projects" && (
                         <div className="portfolio-projects">
-                          <h2>Projects</h2>
+                          <h2 className="portfolio-contact-header">Projects</h2>
                           <p>Here are some of the projects I’ve worked on...</p>
                         </div>
                       )}
                       {activeSection === "experiences" && (
                         <div className="portfolio-experiences">
-                          <h2>Experiences</h2>
+                          <h2 className="portfolio-contact-header">Experiences</h2>
                           <p>Here's a list of my relevant work and academic experiences...</p>
                         </div>
                       )}

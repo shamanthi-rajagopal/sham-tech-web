@@ -259,7 +259,7 @@ border:0px;
 
 .home-button {
   font-family: 'Windows95Font', sans-serif;
-  color: white; /* Button text color */
+  color: rgb(0, 0, 0); /* Button text color */
   padding: 0px 3px; /* Padding inside the button */
   text-decoration: none; /* Remove underline from links */
   font-size: 16px; /* Button text size */
@@ -296,7 +296,7 @@ border:0px;
   font-weight: 400;
   font-style: normal;
   background-color: transparent; /* No background color */
-  color: rgb(0, 0, 0); /* Default text color */
+  color: rgb(34, 34, 34);
   border: none; /* No border */
   font-size: 20px; /* Text size */
   cursor: pointer; /* Pointer on hover */
@@ -321,7 +321,7 @@ border:0px;
 
 .portfolio-home-button:hover {
   color: #ffffff;
-  transition: color 0.3s ease; /* Smooth transition for the hover effect */
+  transition: color 0.2s ease; /* Smooth transition for the hover effect */
 }
 
 .portfolio-container {
@@ -383,29 +383,6 @@ border:0px;
 .portfolio-about{
   height:100vh;
 }
-
-
-
-/* Apply scrollbar styles only to the .window-container */
-.portfolio-content::-webkit-scrollbar {
-  width: 18px; /* Adjust width of the scrollbar */
-}
-
-.portfolio-content::-webkit-scrollbar-track {
-  background-image: 
-    linear-gradient(90deg, #f1f1f1 50%,  #cac6cb 50%); /* Horizontal stripes */
-  background-size: 2px 50%; /* The width of each stripe */
-}
-
-.portfolio-content::-webkit-scrollbar-thumb {
-  background: #cac6cb; /* Grey color for the thumb */
-  border-top: 1px solid white; /* Top border white */
-  border-left: 2px solid white; /* Left border white */
-  border-bottom: 1px solid black; /* Bottom border black */
-  border-right: 2px solid rgb(92, 92, 92); /* Right border black */
-}
-
-
 
 
 .portfolio-contact-header{
@@ -489,6 +466,25 @@ border:0px;
   width: 40px; /* Adjust image width as needed */
   height: 40px; /* Adjust image height as needed */
   margin-bottom: 5px; /* Add a small margin below the image */
+}
+
+/* Apply scrollbar styles only to the .window-container */
+.portfolio-content::-webkit-scrollbar {
+  width: 18px; /* Adjust width of the scrollbar */
+}
+
+.portfolio-content::-webkit-scrollbar-track {
+  background-image: 
+    linear-gradient(90deg, #f1f1f1 50%,  #cac6cb 50%); /* Horizontal stripes */
+  background-size: 2px 50%; /* The width of each stripe */
+}
+
+.portfolio-content::-webkit-scrollbar-thumb {
+  background: #cac6cb; /* Grey color for the thumb */
+  border-top: 1px solid white; /* Top border white */
+  border-left: 2px solid white; /* Left border white */
+  border-bottom: 1px solid black; /* Bottom border black */
+  border-right: 2px solid rgb(92, 92, 92); /* Right border black */
 }
 
 /* ====================================================================GOOGLEFONTS===================================================================*/
