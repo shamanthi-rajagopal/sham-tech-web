@@ -386,7 +386,7 @@ border:0px;
 .about-intro-container {
   display: flex;
   align-items: center; /* Aligns text and image vertically */
-  gap: 20px; /* Reduces spacing between text and image */
+  gap:10px; /* Reduces spacing between text and image */
 }
 
 .about-intro-text {
@@ -432,6 +432,20 @@ border:0px;
   cursor: pointer;
   padding: 0px 1px;
   color: #0c6fb0;
+  font-size: 14px;
+}
+
+.about-eng{
+  font-size: 27px;
+  font-family: "Jersey 10", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.about-eng-text{
+  font-family: "Signika", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   font-size: 14px;
 }
 

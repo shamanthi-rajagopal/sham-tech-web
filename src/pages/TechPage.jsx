@@ -346,7 +346,7 @@ const TechPage = () => {
                           <div className="about-intro-container">
                           <div className="about-intro-text">
                             <p>
-                              Hello there👋! My name is <a href="https://www.linkedin.com/in/shamanthi-rajagopal/" target="_blank" className="about-intro-here">Shamanthi Rajagopal</a> and I am a Computer Engineering Student at the University of Waterloo. This section showcases a glimpse into my world and who I really am (mostly tech-wise). I hope you enjoy reading through it and the rest of my portfolio! If you have any questions or comments feel free to reach out to me or connect with me <button
+                              Hello there👋! My name is <a href="https://www.linkedin.com/in/shamanthi-rajagopal/" target="_blank" className="about-intro-here">Shamanthi Rajagopal</a> and I am a Computer Engineering Student at the University of Waterloo. This section showcases a glimpse into my world and is the essence of who I am (well... tech-wise... mostly). I hope you enjoy reading through it and the rest of my portfolio! If you have any questions or comments feel free to reach out to me or connect with me <button
                               className={`about-intro-here ${activeSection === "contact" ? "active" : ""}`}
                               onClick={() => handleNavClick("contact")}>here</button>. Happy Exploring 👾!
                             </p>
@@ -355,6 +355,19 @@ const TechPage = () => {
                             <img className="about-intro-img" src={aboutintro} alt="About Intro"/>
                           </div>
                         </div>
+                        <br></br>
+                        <div className="about-eng">Why Engineering?</div>
+                        <div className="about-eng-text"><p> When I was a kid I always loved MATH! Whether it was acing multiplication tables or solving for x & y, math was always my thing.
+                           I thought I would forever continue to obsess over math, but a reality check kicked in. When people started asking what I wanted to be when I grew up, I realized I couldn’t do much with just my favorite subject. After a deep pondering session during my early days of high school, I figured out there where other things that fascinated me. <b>TECH!</b> I grew up surrounded by all kinds of technology—my father&apos;s 
+                           various retro windows computers, my first xbox 360 (which I still treasure today), and so on. I then learned about the engineer career path and how they created different types of gadgets.
+                           Despite not fully understanding the role of an engineer yet, I decided to dedicate myself to the career. I mean, I liked the idea of making my own tech and I was told engineers do ALOT OF MATH, and that sealed the deal. </p>
+                           <p> During my start to university, I learned the importance of engineers and their impact on society. Engineers create new innovations and solve impossible problems, to help improve the future.
+                            I realized that I had made the right choice back then. I wanted to be an engineer. An <b>impactful engineer </b> who helps people through my creations, and makes their lives better.</p>
+                            <p>I am currently expanding my engineering skill set and experiences for both of my passions of software and hardware (hence why I choose comp eng). I have been learning through school and online courses, working on design teams, internships, and creating really cool projects to expand my knowledge and get my hands busy.
+                             If you're curious about what I've crafted, check out my projects <button className={`about-intro-here ${activeSection === "projects" ? "active" : ""}`} onClick={() => handleNavClick("projects")}>here</button>.
+                            </p>
+                            <br></br>
+                           </div>
                         </div>
                       )}
                       {activeSection === "projects" && (
