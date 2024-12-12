@@ -19,9 +19,9 @@ import Background3 from "../assets/images/pixelgalaxy.png";
 import Background4 from "../assets/images/pixelspace3.png";
 import Background5 from "../assets/images/bluesky.jpg";
 import Background6 from "../assets/images/pinksky.png";
-import linkedin from "../assets/images/linkedin.png";
-import github from "../assets/images/github.png";
-import email from "../assets/images/email.png";
+import linkedin from "../assets/images/linkedin-1.png";
+import github from "../assets/images/github-1.png";
+import email from "../assets/images/email-1.png";
 import youtube from "../assets/images/youtube.png";
 import csa1 from "../assets/photos/csa1.jpg";
 import csa2 from "../assets/photos/csa2.jpg";
@@ -361,8 +361,23 @@ const TechPage = () => {
                       )}
                       {activeSection === "contact" && (
                         <div className="portfolio-contact">
-                          <h2>Contact</h2>
-                          <p>If you want to get in touch, feel free to reach out!</p>
+                          <h2 className="portfolio-contact-header">Contact & Socials</h2>
+                          <p className="portfolio-contact-text">If you want to get in touch, feel free to reach out!</p>
+                          <br></br><br></br>
+                          <div className="portfolio-contact-buttons">
+                          <a href="https://www.linkedin.com/in/shamanthi-rajagopal/" target="_blank" rel="noopener noreferrer" className="contact-button">
+                            <img src={linkedin} alt="LinkedIn"></img>
+                            LinkedIn
+                          </a>
+                          <a href="https://github.com/shamanthi-rajagopal" target="_blank" rel="noopener noreferrer" className="contact-button">
+                            <img src={github} alt="GitHub"></img>
+                            GitHub
+                          </a>
+                          <a href="mailto:s2rajago@uwaterloo.ca?subject=Inquiry" target="_blank" rel="noopener noreferrer" className="contact-button">
+                            <img src={email} alt="Email"></img>
+                            Email
+                          </a>
+                        </div>
                         </div>
                       )}
                     </div>
