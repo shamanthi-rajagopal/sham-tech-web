@@ -418,6 +418,11 @@ const TechPage = () => {
                            </p>
                            </div>
 
+                           <div className="about-space-header">Sports</div>
+                            <p>Machine learning and artificial intelligence as a whole is a hot topic right now, and I've hoped on the trend too. In my opinon, the idea of not only mimicing human intelligence but exponentially optimizing
+                              our actions through advance calculations, pattern recognition, and data-driven decision-making is not just fascinating but transformative. I never really believed in the whole robots will take over the world, but I have a feeling AI will 🧠!
+                            </p>
+
                           </div>
                         </div>
                       )}
