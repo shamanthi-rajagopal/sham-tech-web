@@ -398,20 +398,26 @@ const TechPage = () => {
                             </p>
                             </div>
                             </div>
-                            <div className="about-robo-img-container">
-                            <img className="about-robo-img" src={robo}/><img className="about-robo-img" src={robosham}/>
-                            </div>
                             <br></br>
-                            
-                           <div className="about-ML">
+                            <div className="about-ML">
                            <div className="about-space-header">ML & AI</div>
                             <p>Machine learning and artificial intelligence as a whole is a hot topic right now, and I've hoped on the trend too. In my opinon, the idea of not only mimicing human intelligence but exponentially optimizing
                               our actions through advance calculations, pattern recognition, and data-driven decision-making is not just fascinating but transformative. I never really believed in the whole robots will take over the world, but I have a feeling AI will 🧠!
                             </p>
                             </div>
-                           
-                           <p><i>(it is cool to see the overlap that is present between these sectors)</i></p>
-                          <br></br>
+                           <p className="interest-final"><i>(it is cool to see the overlap that is present between these sectors)</i></p>
+
+                            <div className="about-robo-img-container">
+                            <img className="about-robo-img" src={robo}/><img className="about-robo-img" src={robosham}/>
+                            </div>
+                            <br></br>
+
+                          <div className="about-eng">Non-Tech Side Quests</div>
+                          <div className="about-interest-text">
+                           <p> I know I intended for this portfolio to only display my tech-savviness, but I couldn't resist. I may not have many hobbies...yet (I know I must be SUCH a boring person 😒), but sometimes when I'm not studying, building projects, or working for an internship, I do have some time to explore my other passions.
+                           </p>
+                           </div>
+
                           </div>
                         </div>
                       )}
