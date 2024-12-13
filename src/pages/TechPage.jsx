@@ -48,9 +48,9 @@ import aboutintro from "../assets/photos/sham-4.jpg";
 import spacesham from "../assets/photos/space-sham.jpg";
 import robosham from "../assets/photos/robo-sham.jpg";
 import robo from "../assets/photos/robo.jpg";
-/*import ball1 from "../assets/photos/ball1.jpg";*/
+import ball1 from "../assets/photos/ball1.jpg";
 import ball2 from "../assets/photos/ball2.jpg";
-/*import ball3 from "../assets/photos/ball3.jpg";*/
+import ball3 from "../assets/photos/ball3.jpg";
 import ball4 from "../assets/photos/ball4.jpg";
 import ball5 from "../assets/photos/ball5.jpg";
 
@@ -360,9 +360,11 @@ const TechPage = () => {
                             </p>
                           </div>
                           <div className="about-intro-img-container">
-                            <img className="about-intro-img" src={aboutintro} alt="About Intro"/>
+                            <img className="about-intro-img" src={aboutintro} alt="About Intro" />
+                            <div className="about-intro-caption">That's Me 🙂‍↔️!</div>
                           </div>
                         </div>
+
                         <br></br>
                         <div className="about-eng">Why Engineering?</div>
                         <div className="about-eng-text"><p>
@@ -386,17 +388,20 @@ const TechPage = () => {
                            </p>
                            <br></br>
                            <div className="about-space-container">
-                           <div className="about-space">
-                           <div className="about-space-header">Space</div>
-                            <p>When I was younger, I was absolutely fascinated by the wonders of outer space. Even though I wasn’t a big fan of reading, I would always bring home a new library book to dive into planets, galaxies, and the mysteries of the universe. Space ignited my love for sci-fi and sparked my admiration for the breathtaking beauty of the stars in the universe 🌠.  
-                              However, as I grew older, I took a LONG hiatus from my passion for space exploration to focus on high school (plus, my fear of heights dashed my dreams of becoming an astronaut). When it came time to choose a field of study, I debated between aerospace and computer engineering and ultimately chose the latter, assuming my space dreams were over.  
-                              That all changed when I began interning at the Canadian Space Agency. I realized just how many opportunities there are for engineers in the space tech industry. Now, I’m more determined than ever to make my mark in this incredible field!
-                            </p>
+                            <div className="about-space">
+                              <div className="about-space-header">Space</div>
+                              <p>
+                                When I was younger, I was absolutely fascinated by the wonders of outer space. Even though I wasn’t a big fan of reading, I would always bring home a new library book to dive into planets, galaxies, and the mysteries of the universe. Space ignited my love for sci-fi and sparked my admiration for the breathtaking beauty of the stars in the universe 🌠.  
+                                However, as I grew older, I took a LONG hiatus from my passion for space exploration to focus on high school (plus, my fear of heights dashed my dreams of becoming an astronaut). When it came time to choose a field of study, I debated between aerospace and computer engineering and ultimately chose the latter, assuming my space dreams were over.  
+                                That all changed when I began interning at the Canadian Space Agency. I realized just how many opportunities there are for engineers in the space tech industry. Now, I’m more determined than ever to make my mark in this incredible field!
+                              </p>
                             </div>
                             <div className="about-space-img-container">
-                            <img className="about-space-img" src={spacesham}/>
+                              <img className="about-space-img" src={spacesham} alt="Space and Shamanthi" />
+                              <div className="about-intro-caption">Interstellar...a cosmic masterpiec 🪐</div>
+                            </div>
                           </div>
-                          </div>
+
                           
                           <br></br>
                           <div className="about-robo-container">
@@ -416,10 +421,18 @@ const TechPage = () => {
                             </div>
                            <p className="interest-final"><i>(it is cool to see the overlap that is present between these sectors)</i></p>
 
-                            <div className="about-robo-img-container">
-                            <img className="about-robo-img" src={robo}/><img className="about-robo-img" src={robosham}/>
+                           <div className="about-robo-img-container">
+                            <div className="about-robo-img-wrapper">
+                              <img className="about-robo-img" src={robo} alt="Robot Image 1" />
+                              <div className="about-intro-caption">Our Robot ⚙️</div>
                             </div>
-                            <br></br>
+                            <div className="about-robo-img-wrapper">
+                              <img className="about-robo-img" src={robosham} alt="Shamanthi with Robot" />
+                              <div className="about-intro-caption">FRC Programming Techie 💻 </div>
+                            </div>
+                          </div>
+                          <br />
+
 
                           <div className="about-eng">Non-Tech Side Quests</div>
                           <div className="about-interest-text">
@@ -436,8 +449,9 @@ const TechPage = () => {
                                 However, basketball wasn’t always easy. The game was physically and mentally demanding, and things didn’t always go my way. Despite the challenges, I’m genuinely grateful for every setback and triumph I experienced on the court.
                               </p>
                             </div>
-                            <div className="about-ball-img-container">
+                            <div className="about-space-img-container">
                             <img className="about-ball-img" src={ball5}/>
+                            <div className="about-intro-caption">Your fav baller 🏀 </div>
                           </div>
                           </div>
                             <p>
@@ -445,8 +459,15 @@ const TechPage = () => {
                             Beyond playing, I now work as a basketball coach and referee. I truly value my ongoing involvement in the sport and take pride in being a positive role model for the athletes I train. Basketball will always hold a special place in my heart, and if you’re up for the challenge, <u>let’s play a 1v1!</u>
                             </p>
                             <div className="about-robo-img-container">
-                            <img className="about-ball1-img" src={ball2}/><img className="about-ball1-img" src={ball4}/>
+                            <div className="about-robo-img-wrapper">
+                              <img className="about-ball1-img" src={ball3} />
+                              <div className="about-intro-caption">I made that 3-pointer!</div>
                             </div>
+                            <div className="about-robo-img-wrapper">
+                              <img className="about-ball1-img" src={ball4} />
+                              <div className="about-intro-caption"> First place with the kiddos 🤩</div>
+                            </div>
+                          </div>
                           <br></br>
                           </div>
                         </div>

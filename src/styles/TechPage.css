@@ -383,10 +383,11 @@ border:0px;
 .portfolio-about{
   height:100vh;
 }
+
 .about-intro-container {
   display: flex;
   align-items: center; /* Aligns text and image vertically */
-  gap:10px; /* Reduces spacing between text and image */
+  gap: 10px; /* Reduces spacing between text and image */
 }
 
 .about-intro-text {
@@ -400,7 +401,8 @@ border:0px;
 .about-intro-img-container {
   flex: 1; /* Reduces the width of the image container */
   display: flex;
-  justify-content: center; /* Centers the image */
+  flex-direction: column; /* Stacks image and caption vertically */
+  align-items: center; /* Centers image and caption */
 }
 
 .about-intro-img {
@@ -419,6 +421,17 @@ border:0px;
     inset 0 0 0 1px #636363,
     inset 0 0 0 2px #8a9eb0;
 }
+
+.about-intro-caption {
+  font-family: "Signika", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 12px; /* Smaller font size for caption */
+  color: #3d3c3c; /* Subtle color for caption */
+  margin-top: 5px; /* Space between image and caption */
+  text-align: center; /* Centers caption text */
+}
+
 
 
 .about-intro-here{
@@ -475,17 +488,26 @@ border:0px;
 .about-space-container {
   display: flex;
   align-items: center; /* Aligns text and image vertically */
-  gap:10px; /* Reduces spacing between text and image */
+  gap: 10px; /* Space between text and image */
+}
+
+.about-space {
+  flex: 2; /* Gives the text container more space */
+  font-family: "Signika", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 14px;
 }
 
 .about-space-img-container {
   flex: 1; /* Reduces the width of the image container */
   display: flex;
-  justify-content: center; /* Centers the image */
+  flex-direction: column; /* Stacks image and caption vertically */
+  align-items: center; /* Centers the image and caption */
 }
 
 .about-space-img {
-  width: 220px; /* Slightly smaller width for the image */
+  width: 220px;
   height: 300px;
   padding: 3px;
   display: block;
@@ -500,6 +522,14 @@ border:0px;
     inset 0 0 0 1px #636363,
     inset 0 0 0 2px #8a9eb0;
 }
+
+.about-space-caption {
+  font-size: 12px; /* Smaller font for the caption */
+  color: #555; /* Subtle gray color */
+  margin-top: 5px; /* Space between image and caption */
+  text-align: center; /* Center-align the caption */
+}
+
 
 .about-robotics{
   font-family: "Signika", sans-serif;
@@ -517,18 +547,23 @@ border:0px;
 .about-robo-img-container {
   display: flex; /* Aligns images side by side */
   justify-content: center; /* Centers the images horizontally */
-  align-items: center; /* Aligns the images vertically within the container */
-  gap: 10px; /* Adds space between images, adjust as needed */
+  align-items: flex-start; /* Aligns the image wrappers vertically at the top */
+  gap: 10px; /* Adds space between images */
   margin-top: 10px; /* Adds spacing above the images */
+}
+
+.about-robo-img-wrapper {
+  display: flex;
+  flex-direction: column; /* Stacks image and caption vertically */
+  align-items: center; /* Centers the image and caption */
 }
 
 .about-robo-img {
   width: 230px; /* Adjusts image width */
   height: 250px; /* Adjusts image height */
   object-fit: cover; /* Ensures consistent scaling and cropping */
-  padding: 0; /* Removes any additional padding */
-  margin: 0; /* Removes any additional margin */
-
+  padding: 0;
+  margin: 0;
   border-top: 2px solid #abafb4;
   border-left: 2px solid #abafb4;
   border-right: 2px solid #abafb4;
@@ -536,13 +571,14 @@ border:0px;
   box-shadow: 
     4px 4px 8px rgba(0, 0, 0, 0.008), /* Outer shadow for depth */
     inset 0 0 0 1px #636363,
-    inset 0 0 0 2px #8a9eb0;
+    inset 0 0 0 2px #8a9eb0; /* Inner border effect */
+}
 
-  /* Shadows and inner borders */
-  box-shadow: 
-    0 0 0 1px #636363, /* First inner grey border */
-    0 0 0 2px #ffffff, /* Second inner grey border */
-    4px 4px 8px rgba(0, 0, 0, 0.059); /* Outer shadow for depth */
+.about-robo-caption {
+  font-size: 12px; /* Smaller font for captions */
+  color: #555; /* Subtle gray color */
+  margin-top: 5px; /* Adds spacing between image and caption */
+  text-align: center; /* Centers the caption */
 }
 
 
@@ -592,8 +628,8 @@ border:0px;
 }
 
 .about-ball-img {
-  width: 420px; /* Slightly smaller width for the image */
-  height: 300px;
+  width: 380px; /* Slightly smaller width for the image */
+  height: 260px;
   padding: 3px;
   display: block;
   margin: 0 auto;
@@ -610,7 +646,7 @@ border:0px;
 
 .about-ball1-img {
   width: 300px; /* Adjusts image width */
-  height: 300px; /* Adjusts image height */
+  height: 270px; /* Adjusts image height */
   object-fit: cover; /* Ensures consistent scaling and cropping */
   padding: 0; /* Removes any additional padding */
   margin: 0; /* Removes any additional margin */
