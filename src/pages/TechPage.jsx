@@ -46,6 +46,8 @@ import sky8 from "../assets/photos/sky8.jpg";
 import csasham from "../assets/photos/csa-sham.jpg";
 import aboutintro from "../assets/photos/sham-4.jpg";
 import spacesham from "../assets/photos/space-sham.jpg";
+import robosham from "../assets/photos/robo-sham.jpg";
+import robo from "../assets/photos/robo.jpg";
 
 
 
@@ -384,23 +386,32 @@ const TechPage = () => {
                                </p>
                             </div>
                             <div className="about-space-img-container">
-                            <img className="about-space-img" src={spacesham} alt="About Intro"/>
+                            <img className="about-space-img" src={spacesham}/>
                           </div>
                           </div>
 
-                           <div className="about-space-header">Robotics & Embedded Systems</div>
+                          <div className="about-robo-container">
                            <div className="about-robotics">
+                           <div className="about-space-header">Robotics & Embedded Systems</div>
                             <p>I have had my fair share of experiences with robotics. From being on my high school robotics team to watching futuristic & dystopian movies and shows, I always thought this cybernetic tech was next level. I am now getting into the more theoretical
                               concepts for robots and embedded systems, and I am excited to develop more in this area through projects and internships 🤖.
                             </p>
                             </div>
-                           <div className="about-space-header">ML & AI</div>
+                            </div>
+                            <div className="about-robo-img-container">
+                            <img className="about-robo-img" src={robo}/><img className="about-robo-img" src={robosham}/>
+                            </div>
+                            <br></br>
+                            
                            <div className="about-ML">
+                           <div className="about-space-header">ML & AI</div>
                             <p>Machine learning and artificial intelligence as a whole is a hot topic right now, and I've hoped on the trend too. In my opinon, the idea of not only mimicing human intelligence but exponentially optimizing
                               our actions through advance calculations, pattern recognition, and data-driven decision-making is not just fascinating but transformative. I never really believed in the whole robots will take over the world, but I have a feeling AI will 🧠!
                             </p>
                             </div>
-                           <p>(it is cool to see the overlap that is present between these sectors)</p>
+                           
+                           <p><i>(it is cool to see the overlap that is present between these sectors)</i></p>
+                          <br></br>
                           </div>
                         </div>
                       )}

@@ -486,8 +486,8 @@ border:0px;
 }
 
 .about-space-img {
-  width: 250px; /* Slightly smaller width for the image */
-  height: 320px;
+  width: 220px; /* Slightly smaller width for the image */
+  height: 300px;
   padding: 3px;
   display: block;
   margin: 0 auto;
@@ -509,6 +509,36 @@ border:0px;
   font-size: 14px;
   margin-top: -10px;
 }
+
+.about-robo-container {
+  display: flex; /* Ensures the images and text containers align flexibly */
+  flex-direction: column; /* Stacks elements vertically */
+}
+
+.about-robo-img-container {
+  display: flex; /* Aligns images side by side */
+  justify-content: center; /* Centers the images horizontally */
+  align-items: center; /* Aligns the images vertically within the container */
+  gap: 10px; /* Adds space between images, adjust as needed */
+  margin-top: 10px; /* Adds spacing above the images */
+}
+
+.about-robo-img {
+  width: 230px; /* Adjusts image width */
+  height: 250px; /* Adjusts image height */
+  object-fit: cover; /* Ensures consistent scaling and cropping */
+  padding: 0; /* Removes any additional padding */
+  margin: 0; /* Removes any additional margin */
+
+  border: 2px solid #a7adb2; /* Outer white border */
+
+  /* Shadows and inner borders */
+  box-shadow: 
+    0 0 0 1px #636363, /* First inner grey border */
+    0 0 0 3px #ffffff, /* Second inner grey border */
+    4px 4px 8px rgba(0, 0, 0, 0.08); /* Outer shadow for depth */
+}
+
 
 .about-ML{
   font-family: "Signika", sans-serif;
