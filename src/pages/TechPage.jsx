@@ -22,7 +22,7 @@ import Background6 from "../assets/images/pinksky.png";
 import linkedin from "../assets/images/linkedin-1.png";
 import github from "../assets/images/github-1.png";
 import email from "../assets/images/email-1.png";
-import youtube from "../assets/images/youtube.png";
+/*import youtube from "../assets/images/youtube.png";*/
 import csa1 from "../assets/photos/csa1.jpg";
 import csa2 from "../assets/photos/csa2.jpg";
 import csa3 from "../assets/photos/csa3.jpg";
@@ -48,6 +48,11 @@ import aboutintro from "../assets/photos/sham-4.jpg";
 import spacesham from "../assets/photos/space-sham.jpg";
 import robosham from "../assets/photos/robo-sham.jpg";
 import robo from "../assets/photos/robo.jpg";
+/*import ball1 from "../assets/photos/ball1.jpg";*/
+import ball2 from "../assets/photos/ball2.jpg";
+/*import ball3 from "../assets/photos/ball3.jpg";*/
+import ball4 from "../assets/photos/ball4.jpg";
+import ball5 from "../assets/photos/ball5.jpg";
 
 
 
@@ -360,11 +365,12 @@ const TechPage = () => {
                         </div>
                         <br></br>
                         <div className="about-eng">Why Engineering?</div>
-                        <div className="about-eng-text"><p> When I was a kid I always loved MATH! Whether it was acing multiplication tables or solving for x & y, math was always my thing.
-                           I thought I would forever continue to obsess over math, but a reality check kicked in. When people started asking what I wanted to be when I grew up, I realized I couldn’t do much with just my favorite subject. After a deep pondering session during my early days of high school, I figured out there where other things that fascinated me. <b>TECH!</b> I grew up surrounded by all kinds of technology—my father&apos;s 
-                           various <u>retro</u> windows computers, my first xbox 360 (which I still treasure today), and so on. I then learned about the engineer career path and how they created different types of gadgets.
-                           Despite not fully understanding the role of an engineer yet, I decided to dedicate myself to the career. I mean, I liked the idea of making my own tech and I was told engineers do ALOT OF MATH, and that sealed the deal. </p>
-                           <p> During my start to university, I learned the importance of engineers and their impact on society. Engineers create new innovations and solve impossible problems, to help improve the future.
+                        <div className="about-eng-text"><p>
+                            When I was a kid, I always loved MATH! Whether it was acing multiplication tables or solving for x and y, math was my thing. I thought my obsession with math would last forever, but reality hit when people started asking what I wanted to be when I grew up. That’s when I realized math alone wouldn’t pave a career path.  
+                            After some reflection in my early high school days, I discovered something else that fascinated me: <b>TECH!</b> I grew up surrounded by it—my dad’s various <u>retro</u> Windows computers, my first Xbox 360 (which I still treasure today), and more.  
+                            Then I learned about engineering and how engineers create amazing gadgets. I didn’t fully understand their role at the time, but I loved the idea of making my own tech. Plus, when I heard engineers use A LOT OF MATH, and that sealed the deal.  
+                          </p>
+                            <p> During my start to university, I learned the importance of engineers and their impact on society. Engineers create new innovations and solve impossible problems, to help improve the future.
                             I realized that I had made the right choice back then. I wanted to be an engineer. An <b>impactful engineer </b> who helps people through my creations, and makes their lives better.</p>
                             <p>I am currently expanding my engineering skill set and experiences for both of my passions of software and hardware (hence why I choose comp eng). I have been learning through school and online courses, working on design teams, internships, and creating really cool projects to expand my knowledge and get my hands dirty. Projects (personal or hackathons) are my favourite method of learning and expanding my knowledge since it allows me to add my own creativity and personalization,
                               while focusing on my own desired objectives and goals.
@@ -378,22 +384,25 @@ const TechPage = () => {
                             That's why I work multiple types of jobs, listen to a vast number of different music genres, and why I like to embrace skills from different sectors in the tech industry.
                             At the moment, I am drawn to 3 types of tech sectors:
                            </p>
+                           <br></br>
                            <div className="about-space-container">
                            <div className="about-space">
                            <div className="about-space-header">Space</div>
-                            <p>When I was younger, I was obsessed with learning about the wonders of outer space. Despite not liking to read, I always brought home a new library book to learn about planets, galaxies, and so on. Space sparked my interest in sci-fi and I loved admiring the beauty of the stars in our universe 🌠.
-                              Then I took a LONG hiatus from my love for space exploration, to focus in high school (plus my fear of heights shattered my dreams of being an astronaut). After debating and picking computer engineering over aerospace, I thought my space dreams were over, until I started interning @ CSA. I realized there were many career paths for engineers in the space tech industry and now I am determined to make my mark!
-                               </p>
+                            <p>When I was younger, I was absolutely fascinated by the wonders of outer space. Even though I wasn’t a big fan of reading, I would always bring home a new library book to dive into planets, galaxies, and the mysteries of the universe. Space ignited my love for sci-fi and sparked my admiration for the breathtaking beauty of the stars in the universe 🌠.  
+                              However, as I grew older, I took a LONG hiatus from my passion for space exploration to focus on high school (plus, my fear of heights dashed my dreams of becoming an astronaut). When it came time to choose a field of study, I debated between aerospace and computer engineering and ultimately chose the latter, assuming my space dreams were over.  
+                              That all changed when I began interning at the Canadian Space Agency. I realized just how many opportunities there are for engineers in the space tech industry. Now, I’m more determined than ever to make my mark in this incredible field!
+                            </p>
                             </div>
                             <div className="about-space-img-container">
                             <img className="about-space-img" src={spacesham}/>
                           </div>
                           </div>
-
+                          
+                          <br></br>
                           <div className="about-robo-container">
                            <div className="about-robotics">
                            <div className="about-space-header">Robotics & Embedded Systems</div>
-                            <p>I have had my fair share of experiences with robotics. From being on my high school robotics team to watching futuristic & dystopian movies and shows, I always thought this cybernetic tech was next level. I am now getting into the more theoretical
+                            <p>I have had my fair share of experiences with robotics. From being on my high school robotics team to watching futuristic & dystopian shows, I always thought this cybernetic tech was next level. I am now getting into the more theoretical
                               concepts for robots and embedded systems, and I am excited to develop more in this area through projects and internships 🤖.
                             </p>
                             </div>
@@ -417,12 +426,28 @@ const TechPage = () => {
                            <p> I know I intended for this portfolio to only display my tech-savviness, but I couldn't resist. I may not have many hobbies...yet (I know I must be SUCH a boring person 😒), but sometimes when I'm not studying, building projects, or working for an internship, I do have some time to explore my other passions.
                            </p>
                            </div>
-
+                          
+                            <br></br>
+                           <div className="about-space-container">
+                           <div className="about-space">
                            <div className="about-space-header">Sports</div>
-                            <p>Machine learning and artificial intelligence as a whole is a hot topic right now, and I've hoped on the trend too. In my opinon, the idea of not only mimicing human intelligence but exponentially optimizing
-                              our actions through advance calculations, pattern recognition, and data-driven decision-making is not just fascinating but transformative. I never really believed in the whole robots will take over the world, but I have a feeling AI will 🧠!
+                           <p>
+                                Growing up, I played numerous sports because I valued staying active, and I loved the thrill of competing and collaborating with dynamic teams. <b><i>Basketball</i></b> was my go-to and all-time favorite! I started playing when I was just five years old and essentially grew up with the sport. Over the years, I played for many competitive teams, attended several training camps, and watched countless games.  
+                                However, basketball wasn’t always easy. The game was physically and mentally demanding, and things didn’t always go my way. Despite the challenges, I’m genuinely grateful for every setback and triumph I experienced on the court.
+                              </p>
+                            </div>
+                            <div className="about-ball-img-container">
+                            <img className="about-ball-img" src={ball5}/>
+                          </div>
+                          </div>
+                            <p>
+                            To me, basketball wasn’t just a game—it was a lesson in dedication and perseverance. It taught me the importance of commitment, grit, and resilience in the face of adversity. The sport shaped my mindset, encouraging me to push through obstacles and stay mentally and physically tough. Ultimately, the lessons I learned on the court extended far beyond basketball and into my everyday life.  
+                            Beyond playing, I now work as a basketball coach and referee. I truly value my ongoing involvement in the sport and take pride in being a positive role model for the athletes I train. Basketball will always hold a special place in my heart, and if you’re up for the challenge, <u>let’s play a 1v1!</u>
                             </p>
-
+                            <div className="about-robo-img-container">
+                            <img className="about-ball1-img" src={ball2}/><img className="about-ball1-img" src={ball4}/>
+                            </div>
+                          <br></br>
                           </div>
                         </div>
                       )}

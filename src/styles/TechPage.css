@@ -412,8 +412,8 @@ border:0px;
   object-fit: cover;
   border-top: 1px solid #fdfdfd;
   border-left: 1px solid #ffffff;
-  border-right: 1px solid #000000;
-  border-bottom: 1px solid #000000;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
   box-shadow: 
     4px 4px 8px rgba(0, 0, 0, 0.008), /* Outer shadow for depth */
     inset 0 0 0 1px #636363,
@@ -493,8 +493,8 @@ border:0px;
   object-fit: cover;
   border-top: 1px solid #fdfdfd;
   border-left: 1px solid #ffffff;
-  border-right: 1px solid #000000;
-  border-bottom: 1px solid #000000;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
   box-shadow: 
     4px 4px 8px rgba(0, 0, 0, 0.008), /* Outer shadow for depth */
     inset 0 0 0 1px #636363,
@@ -561,6 +561,77 @@ border:0px;
   font-size: 14px;
   text-align: center;
 }
+
+
+.about-ball-container {
+  display: flex;
+  flex-direction: column; /* Stacks the heading on top of the text */
+  align-items: flex-start; /* Aligns text and image to the left */
+  gap: 10px; /* Adds spacing between heading and content */
+}
+
+.about-ball-header {
+  font-size: 17px;
+  font-family: 'Windows95Font';
+  font-weight: 600;
+  font-style: italic;
+  margin-top: 0px;
+}
+
+.about-ball-content {
+  display: flex;
+  flex-direction: row; /* Aligns text and image side by side */
+  gap: 10px; /* Adds spacing between the text and the image */
+  align-items: center; /* Vertically aligns content */
+}
+
+.about-ball-img-container {
+  flex: 1; /* Reduces the width of the image container */
+  display: flex;
+  justify-content: center; /* Centers the image horizontally */
+}
+
+.about-ball-img {
+  width: 420px; /* Slightly smaller width for the image */
+  height: 300px;
+  padding: 3px;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  border-top: 1px solid #fdfdfd;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  box-shadow: 
+    4px 4px 8px rgba(0, 0, 0, 0.008), /* Outer shadow for depth */
+    inset 0 0 0 1px #636363,
+    inset 0 0 0 2px #8a9eb0;
+}
+
+.about-ball1-img {
+  width: 300px; /* Adjusts image width */
+  height: 300px; /* Adjusts image height */
+  object-fit: cover; /* Ensures consistent scaling and cropping */
+  padding: 0; /* Removes any additional padding */
+  margin: 0; /* Removes any additional margin */
+
+  border-top: 2px solid #abafb4;
+  border-left: 2px solid #abafb4;
+  border-right: 2px solid #abafb4;
+  border-bottom: 2px solid #abafb4;
+  box-shadow: 
+    4px 4px 8px rgba(0, 0, 0, 0.008), /* Outer shadow for depth */
+    inset 0 0 0 1px #636363,
+    inset 0 0 0 2px #8a9eb0;
+
+  /* Shadows and inner borders */
+  box-shadow: 
+    0 0 0 1px #636363, /* First inner grey border */
+    0 0 0 2px #ffffff, /* Second inner grey border */
+    4px 4px 8px rgba(0, 0, 0, 0.059); /* Outer shadow for depth */
+}
+
+
 
 .portfolio-contact-header{
   font-family: "Changa One", sans-serif;
