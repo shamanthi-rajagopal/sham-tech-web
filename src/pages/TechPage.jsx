@@ -45,6 +45,7 @@ import sky5 from "../assets/photos/sky5.jpg";
 import sky8 from "../assets/photos/sky8.jpg";
 import csasham from "../assets/photos/csa-sham.jpg";
 import aboutintro from "../assets/photos/sham-4.jpg";
+import spacesham from "../assets/photos/space-sham.jpg";
 
 
 
@@ -375,12 +376,18 @@ const TechPage = () => {
                             That's why I work multiple types of jobs, listen to a vast number of different music genres, and why I like to embrace skills from different sectors in the tech industry.
                             At the moment, I am drawn to 3 types of tech sectors:
                            </p>
-                           <div className="about-space-header">Space</div>
+                           <div className="about-space-container">
                            <div className="about-space">
+                           <div className="about-space-header">Space</div>
                             <p>When I was younger, I was obsessed with learning about the wonders of outer space. Despite not liking to read, I always brought home a new library book to learn about planets, galaxies, and so on. Space sparked my interest in sci-fi and I loved admiring the beauty of the stars in our universe 🌠.
                               Then I took a LONG hiatus from my love for space exploration, to focus in high school (plus my fear of heights shattered my dreams of being an astronaut). After debating and picking computer engineering over aerospace, I thought my space dreams were over, until I started interning @ CSA. I realized there were many career paths for engineers in the space tech industry and now I am determined to make my mark!
                                </p>
                             </div>
+                            <div className="about-space-img-container">
+                            <img className="about-space-img" src={spacesham} alt="About Intro"/>
+                          </div>
+                          </div>
+
                            <div className="about-space-header">Robotics & Embedded Systems</div>
                            <div className="about-robotics">
                             <p>I have had my fair share of experiences with robotics. From being on my high school robotics team to watching futuristic & dystopian movies and shows, I always thought this cybernetic tech was next level. I am now getting into the more theoretical
@@ -400,7 +407,7 @@ const TechPage = () => {
                       {activeSection === "projects" && (
                         <div className="portfolio-projects">
                           <h2 className="portfolio-contact-header">Projects</h2>
-                          <p>Here are some of the projects I’ve worked on...</p>
+                          <div className="about-interest-text">Here are some of the projects I’ve worked on...</div>
                         </div>
                       )}
                       {activeSection === "experiences" && (

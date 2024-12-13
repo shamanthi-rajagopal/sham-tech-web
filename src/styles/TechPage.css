@@ -473,6 +473,35 @@ border:0px;
   margin-top: -10px;
 }
 
+.about-space-container {
+  display: flex;
+  align-items: center; /* Aligns text and image vertically */
+  gap:10px; /* Reduces spacing between text and image */
+}
+
+.about-space-img-container {
+  flex: 1; /* Reduces the width of the image container */
+  display: flex;
+  justify-content: center; /* Centers the image */
+}
+
+.about-space-img {
+  width: 250px; /* Slightly smaller width for the image */
+  height: 320px;
+  padding: 3px;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;
+  border-top: 2px solid #fdfdfd;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  box-shadow: 
+    4px 4px 8px rgba(0, 0, 0, 0.008), /* Outer shadow for depth */
+    inset 0 0 0 1px #636363,
+    inset 0 0 0 2px #8a9eb0;
+}
+
 .about-robotics{
   font-family: "Signika", sans-serif;
   font-weight: 300;
