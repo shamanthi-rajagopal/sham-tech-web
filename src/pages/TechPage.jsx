@@ -470,6 +470,7 @@ const TechPage = () => {
                           </div>
                           <br></br>
                           <p>hello</p>
+                          <p>hello</p>
                           </div>
                         </div>
                       )}
