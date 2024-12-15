@@ -469,6 +469,10 @@ const TechPage = () => {
                             </div>
                           </div>
                           <br></br>
+                          <div className="about-space-header">Trying New Things?</div>
+                          <p>
+                          Trying new things and exploring more unique hobbies is one of my personal goals I am working on. Despite wanting to be a perfectionist and hardworder all the time, I have learned...    
+                          </p>
                           </div>
                         </div>
                       )}
