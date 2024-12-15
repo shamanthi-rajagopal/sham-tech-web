@@ -369,8 +369,8 @@ const TechPage = () => {
                         <div className="about-eng">Why Engineering?</div>
                         <div className="about-eng-text"><p>
                             When I was a kid, I always loved MATH! Whether it was acing multiplication tables or solving for x and y, math was my thing. I thought my obsession with math would last forever, but reality hit when people started asking what I wanted to be when I grew up. That’s when I realized math alone wouldn’t pave a career path.  
-                            After some reflection in my early high school days, I discovered something else that fascinated me: <b>TECH!</b> I grew up surrounded by it—my dad’s various <u>retro</u> Windows computers, my first Xbox 360 (which I still treasure today), and more.  
-                            Then I learned about engineering and how engineers create amazing gadgets. I didn’t fully understand their role at the time, but I loved the idea of making my own tech. Plus, when I heard engineers use A LOT OF MATH, and that sealed the deal.  
+                            After some pondering during my early high school days, I discovered something else that fascinated me: <b>TECH!</b> I grew up surrounded by it—my dad’s various <u>retro</u> Windows computers, my first Xbox 360 (which I still treasure today), and more.  
+                            Then I learned about engineering and how engineers create amazing gadgets. I didn’t fully understand their role at the time, but I loved the idea of making my own tech. Plus, when I heard engineers use A LOT OF MATH, that sealed the deal.  
                           </p>
                             <p> During my start to university, I learned the importance of engineers and their impact on society. Engineers create new innovations and solve impossible problems, to help improve the future.
                             I realized that I had made the right choice back then. I wanted to be an engineer. An <b>impactful engineer </b> who helps people through my creations, and makes their lives better.</p>
@@ -398,7 +398,7 @@ const TechPage = () => {
                             </div>
                             <div className="about-space-img-container">
                               <img className="about-space-img" src={spacesham} alt="Space and Shamanthi" />
-                              <div className="about-intro-caption">Interstellar...a cosmic masterpiec 🪐</div>
+                              <div className="about-intro-caption">Interstellar...a cosmic masterpiece 🪐</div>
                             </div>
                           </div>
 
@@ -469,6 +469,7 @@ const TechPage = () => {
                             </div>
                           </div>
                           <br></br>
+                          <p>hello</p>
                           </div>
                         </div>
                       )}
