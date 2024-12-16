@@ -663,7 +663,16 @@ border:0px;
     4px 4px 8px rgba(0, 0, 0, 0.059); /* Outer shadow for depth */
 }
 
-
+.about-hobbies {
+  width: 230px;
+  height: 310px;
+  object-fit: cover;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ffffff; /* Outer border */
+  outline: 2px solid #8a9eb0; /* Inner border */
+  outline-offset: -3px; /* Adjusts the position of the inner border */
+}
 
 .portfolio-contact-header{
   font-family: "Changa One", sans-serif;

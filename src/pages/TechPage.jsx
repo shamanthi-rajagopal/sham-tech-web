@@ -47,6 +47,9 @@ import csasham from "../assets/photos/csa-sham.jpg";
 import aboutintro from "../assets/photos/sham-4.jpg";
 import spacesham from "../assets/photos/space-sham.jpg";
 import robosham from "../assets/photos/robo-sham.jpg";
+import funsham from "../assets/photos/sham-11.jpg";
+import funsham1 from "../assets/photos/sham-2.jpg";
+import funsham2 from "../assets/photos/shamsky.jpg";
 import robo from "../assets/photos/robo.jpg";
 import ball1 from "../assets/photos/ball1.jpg";
 import ball2 from "../assets/photos/ball2.jpg";
@@ -471,9 +474,26 @@ const TechPage = () => {
                           <br></br>
                           <div className="about-space-header">Trying New Things?</div>
                           <p>
-                          Trying new things and exploring unique hobbies is one of my personal goals. As someone who strives for perfection and works hard, I’ve come to realize that balance is essential for both success and happiness (and to avoid burnout).
-                          Some people jokingly say I “live under a rock,” so I’m determined to beat the Patrick Star allegations by stepping out of my comfort zone and experiencing new things with my family and friends!
+                          Trying new things and exploring unique hobbies is one of my personal goals. As someone who strives for perfection and constantly works hard, I’ve come to realize that balance is essential for both success and happiness (and to avoid burnout).
+                          Some people jokingly say I “live under a rock 🪨,” so I’m determined to beat the Patrick Star ⭐ allegations by stepping out of my comfort zone and experiencing new things with my family and friends!
                           </p>
+                          <div className="about-robo-img-container">
+                            <div className="about-robo-img-wrapper">
+                              <img className="about-hobbies" src={funsham} />
+                              <div className="about-intro-caption">Roasting a marshmello @ a bonfire 🔥🏕️</div>
+                            </div>
+                            <div className="about-robo-img-wrapper">
+                              <img className="about-hobbies" src={funsham2} />
+                              <div className="about-intro-caption"> Admiring the view 🌅</div>
+                            </div>
+                            <div className="about-robo-img-wrapper">
+                              <img className="about-hobbies" src={funsham1} />
+                              <div className="about-intro-caption"> Exploring DT and trying yummy foods 🍙</div>
+                            </div>
+                          </div>
+                          <br></br>
+                          <p>That's all about me for now...click around my portfolio for more!</p>
+                          <br></br>
                           </div>
                         </div>
                       )}
