@@ -433,7 +433,6 @@ border:0px;
 }
 
 
-
 .about-intro-here{
   font-family: "Signika", sans-serif;
   font-weight: 400;
@@ -775,6 +774,9 @@ border:0px;
   border-bottom: 1px solid black; /* Bottom border black */
   border-right: 2px solid rgb(92, 92, 92); /* Right border black */
 }
+
+
+/*  ==== ==== ==== ==== ====*/
 
 /* ====================================================================GOOGLEFONTS===================================================================*/
 .gravitas-one-regular {
