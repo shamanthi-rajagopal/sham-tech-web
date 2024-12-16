@@ -491,7 +491,7 @@ const TechPage = () => {
                               <div className="about-intro-caption"> Exploring DT and trying yummy foods 🍙</div>
                             </div>
                           </div>
-                          <br></br><br></br><br></br>
+                          <br></br><br></br>
                           <p>That's all about me for now...click around my portfolio for more!</p>
                           <br></br>
                           </div>
