@@ -471,7 +471,8 @@ const TechPage = () => {
                           <br></br>
                           <div className="about-space-header">Trying New Things?</div>
                           <p>
-                          Trying new things and exploring more unique hobbies is one of my personal goals I am working on. Despite wanting to be a perfectionist and hardworder all the time, I have learned...    
+                          Trying new things and exploring unique hobbies is one of my personal goals. As someone who strives for perfection and works hard, I’ve come to realize that balance is essential for both success and happiness (and to avoid burnout).
+                          Some people jokingly say I “live under a rock,” so I’m determined to beat the Patrick Star allegations by stepping out of my comfort zone and experiencing new things with my family and friends!
                           </p>
                           </div>
                         </div>

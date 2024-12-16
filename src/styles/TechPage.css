@@ -559,20 +559,16 @@ border:0px;
 }
 
 .about-robo-img {
-  width: 230px; /* Adjusts image width */
-  height: 250px; /* Adjusts image height */
-  object-fit: cover; /* Ensures consistent scaling and cropping */
+  width: 230px;
+  height: 250px;
+  object-fit: cover;
   padding: 0;
   margin: 0;
-  border-top: 2px solid #abafb4;
-  border-left: 2px solid #abafb4;
-  border-right: 2px solid #abafb4;
-  border-bottom: 2px solid #abafb4;
-  box-shadow: 
-    4px 4px 8px rgba(0, 0, 0, 0.008), /* Outer shadow for depth */
-    inset 0 0 0 1px #636363,
-    inset 0 0 0 2px #8a9eb0; /* Inner border effect */
+  border: 1px solid #ffffff; /* Outer border */
+  outline: 2px solid #8a9eb0; /* Inner border */
+  outline-offset: -3px; /* Adjusts the position of the inner border */
 }
+
 
 .about-robo-caption {
   font-size: 12px; /* Smaller font for captions */
