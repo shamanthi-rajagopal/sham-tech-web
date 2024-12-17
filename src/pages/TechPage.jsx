@@ -58,7 +58,6 @@ import ball4 from "../assets/photos/ball4.jpg";
 import ball5 from "../assets/photos/ball5.jpg";
 
 
-
 const TechPage = () => {
   if (window.location.pathname === "/tech") {
     document.body.style.overflow = "hidden";
@@ -80,6 +79,89 @@ const TechPage = () => {
   const [windowSizes, setWindowSizes] = useState({}); // Track window sizes
   const [activeWindow, setActiveWindow] = useState("Portfolio"); // Or any default window
   const [activeSection, setActiveSection] = useState("about"); // Default section for Portfolio
+  const [activeCategory, setActiveCategory] = useState("All");
+  const [expandedProject, setExpandedProject] = useState(null);
+
+  const projects = [
+    {
+      id: 1,
+      title: "IoT Smart Home System",
+      category: "Hardware",
+      image: "/images/smart_home.jpg",
+      date: "2024-04-10", // Example date
+      shortDescription: "A smart home automation project.",
+      fullDescription: "Detailed overview of IoT Smart Home System...",
+      links: {
+        code: "https://github.com/yourusername/iot-smart-home",
+        demo: "https://example.com/smart-home-demo",
+      },
+      customContent: (
+        <div>
+          <h3>IoT Smart Home System</h3>
+          <p>
+            A comprehensive home automation project using sensors and microcontrollers. Key features include:
+          </p>
+          <ul>
+            <li>ESP32 and Raspberry Pi integration</li>
+            <li>Remote control via a mobile app</li>
+            <li>Energy-efficient IoT design</li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      id: 2,
+      title: "Robotics Arm Controller",
+      category: "Hardware",
+      image: "/images/robotic_arm.jpg",
+      date: "2024-03-20", // Example date
+      shortDescription: "A robotic arm controlled using firmware.",
+      fullDescription: "Detailed overview of Robotics Arm Controller...",
+      links: {
+        code: "https://github.com/yourusername/robotics-arm",
+        demo: "https://example.com/robotics-arm-demo",
+      },
+      customContent: (
+        <div>
+          <h3>Robotics Arm Controller</h3>
+          <p>Designed a robotic arm capable of precise movements using custom firmware:</p>
+          <ul>
+            <li>STM32-based microcontroller</li>
+            <li>PID control for accuracy</li>
+            <li>Integration with ROS for path planning</li>
+          </ul>
+        </div>
+      ),
+    },
+    {
+      id: 3,
+      title: "Mars Rover Simulation",
+      category: "Space",
+      image: "/images/mars_rover.jpg",
+      date: "2024-05-15", // Example date (latest)
+      shortDescription: "A simulation of a Mars rover using Gazebo and ROS.",
+      fullDescription: "Detailed overview of Mars Rover Simulation...",
+      links: {
+        code: "https://github.com/yourusername/mars-rover-sim",
+        demo: "https://example.com/mars-rover-demo",
+      },
+      customContent: (
+        <div>
+          <h3>Mars Rover Simulation</h3>
+          <p>Developed a Mars rover simulation in Gazebo with ROS2 for:</p>
+          <ul>
+            <li>Realistic Martian terrain navigation</li>
+            <li>Obstacle avoidance algorithms</li>
+            <li>Autonomous pathfinding</li>
+          </ul>
+        </div>
+      ),
+    },
+    // Add remaining projects here with `date` and `links` fields...
+  ];
+  
+  
+  const sortedProjects = projects.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   const handleNavClick = (section) => {
     setActiveSection(section); // Update the active section based on the clicked button
@@ -499,9 +581,60 @@ const TechPage = () => {
                       )}
                       {activeSection === "projects" && (
                         <div className="portfolio-projects">
-                          <h2 className="portfolio-contact-header">Projects</h2>
-                          <div className="about-interest-text">Here are some of the projects I’ve worked on...</div>
+                        <h2 className="portfolio-contact-header">Projects</h2>
+
+                        {/* Category Filter Buttons */}
+                        <div className="project-categories">
+                          {["All", "Software", "AI/ML", "Space", "Hardware"].map((category) => (
+                            <button
+                              key={category}
+                              className={`project-category-button ${activeCategory === category ? "active" : ""}`}
+                              onClick={() => setActiveCategory(category)}
+                            >
+                              {category}
+                            </button>
+                          ))}
                         </div>
+
+                        <div className="projects-grid">
+                          {sortedProjects
+                            .filter((project) => activeCategory === "All" || project.category === activeCategory)
+                            .map((project) => (
+                              <div
+                                key={project.id}
+                                className="project-card"
+                                onClick={() => setExpandedProject(project)}
+                              >
+                                <img className="project-image" src={project.image} alt={project.title} />
+                                <div className="project-info">
+                                  <h3 className="project-title">{project.title}</h3>
+                                  <p className="project-description">{project.shortDescription}</p>
+                                </div>
+                                <div className="project-date">
+                                  {/* Format the date to only show the month and year */}
+                                  {new Date(project.date).toLocaleDateString("en-US", {
+                                    year: "numeric",
+                                    month: "long",
+                                  })}
+                                </div>
+                              </div>
+                            ))}
+                        </div>
+
+                        {/* Expanded Project Panel */}
+                        {expandedProject && (
+                          <div className="expanded-project-panel">
+                            <button className="close-panel-button" onClick={() => setExpandedProject(null)}>
+                              Close
+                            </button>
+                            <h2>{expandedProject.title}</h2>
+                            <img className="expanded-project-image" src={expandedProject.image} alt={expandedProject.title} />
+                            <p>{expandedProject.fullDescription}</p>
+                            {/* Removed the links */}
+                          </div>
+                        )}
+                      </div>
+
                       )}
                       {activeSection === "experiences" && (
                         <div className="portfolio-experiences">
