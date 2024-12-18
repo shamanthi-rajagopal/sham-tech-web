@@ -924,11 +924,17 @@ border:0px;
 /* =========================================    expanded project content    ================================================*/
 /* Container for the entire expanded project content */
 .project-expand-container {
-border: 2px solid; 
-width: 1350px;
-height:650px;
-margin-top: -75px;
-margin-left: -310px;
+  border: 2px solid;
+  width: 1300px;
+  height: 600px;
+  margin-top: -75px;
+  margin-left: -300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+  background-color: #000000f1;
 }
 
 /* Title styling */
@@ -950,7 +956,7 @@ margin-left: -310px;
   margin: 0 auto 20px auto; /* Center the image with margin below */
 }
 
-/* Content container for overview and timeline */
+/* Content container for overview, timeline, and tools */
 .project-expand-content {
   display: flex;
   justify-content: space-between;
@@ -960,7 +966,9 @@ margin-left: -310px;
 
 /* Text (overview) section */
 .project-expand-text {
-  width: 50%;
+  width: 48%; /* Make sure it takes up space alongside the timeline and tools */
+  padding: 10px;
+  border: 2px solid #000;
 }
 
 .project-expand-text h3 {
@@ -977,7 +985,9 @@ margin-left: -310px;
 
 /* Timeline section */
 .project-expand-timeline {
-  width: 45%;
+  width: 48%; /* Fit next to the overview */
+  padding: 10px;
+  border: 2px solid #000;
 }
 
 .project-expand-timeline h3 {
@@ -992,6 +1002,30 @@ margin-left: -310px;
 }
 
 .project-expand-timeline li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Tools section */
+.project-expand-tools {
+  width: 48%; /* Align with timeline */
+  padding: 10px;
+  border: 2px solid #000;
+}
+
+.project-expand-tools h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.project-expand-tools ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.project-expand-tools li {
   font-size: 14px;
   line-height: 1.6;
   color: #555;
@@ -1033,6 +1067,7 @@ margin-left: -310px;
 .project-expand-code:active {
   transform: scale(0.98);
 }
+
 
 
 .close-panel-button {
