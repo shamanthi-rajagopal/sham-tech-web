@@ -92,19 +92,36 @@ const TechPage = () => {
       date: "2024-09-17", 
       shortDescription: "A full-stack app designed for Alzheimer's care, featuring computer vision technology for fall detection and an AI-powered personal chatbot to ensure patient safety and streamline communication in critical situations.",
       customContent: (
-        <div>
-          <h3>IoT Smart Home System</h3>
-          <p>
-            A comprehensive home automation project using sensors and microcontrollers. Key features include:
-          </p>
-          <ul>
-            <li>ESP32 and Raspberry Pi integration</li>
-            <li>Remote control via a mobile app</li>
-            <li>Energy-efficient IoT design</li>
-          </ul>
+        <div className="project-expand-container">
+          <h1 className="project-expand-title">NeuroGuard</h1>
+    
+          <img className="project-expand-image" src={neuro} alt="NeuroGuard" />
+    
+          <div className="project-expand-content">
+            <div className="project-expand-text">
+              <h3>Overview</h3>
+              <p>
+                A full-stack app designed for Alzheimer's care, featuring computer vision technology for fall detection and an AI-powered personal chatbot to ensure patient safety and streamline communication in critical situations.
+              </p>
+            </div>
+            <div className="project-expand-timeline">
+              <h3>Timeline</h3>
+              <ul>
+                <li>2024-09-01: Initial design and planning</li>
+                <li>2024-10-01: Development phase</li>
+                <li>2024-12-01: Testing and refinement</li>
+              </ul>
+            </div>
+          </div>
+    
+          <div className="project-expand-buttons">
+            <button className="project-expand-demo">Demo</button>
+            <button className="project-expand-code">Code</button>
+          </div>
         </div>
       ),
     },
+    
     {
       id: 2,
       title: "Robotics Arm Controller",
