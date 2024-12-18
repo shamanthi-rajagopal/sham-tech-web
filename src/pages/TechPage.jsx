@@ -56,6 +56,7 @@ import ball2 from "../assets/photos/ball2.jpg";
 import ball3 from "../assets/photos/ball3.jpg";
 import ball4 from "../assets/photos/ball4.jpg";
 import ball5 from "../assets/photos/ball5.jpg";
+import neuro from "../assets/project/neuroguard.png";
 
 
 const TechPage = () => {
@@ -85,16 +86,11 @@ const TechPage = () => {
   const projects = [
     {
       id: 1,
-      title: "IoT Smart Home System",
-      category: "Hardware",
-      image: "/images/smart_home.jpg",
-      date: "2024-04-10", // Example date
-      shortDescription: "A smart home automation project.",
-      fullDescription: "Detailed overview of IoT Smart Home System...",
-      links: {
-        code: "https://github.com/yourusername/iot-smart-home",
-        demo: "https://example.com/smart-home-demo",
-      },
+      title: "NeuroGuard",
+      category: "AI/ML",
+      image: neuro,
+      date: "2024-09-17", 
+      shortDescription: "A full-stack app designed for Alzheimer's care, featuring computer vision technology for fall detection and an AI-powered personal chatbot to ensure patient safety and streamline communication in critical situations.",
       customContent: (
         <div>
           <h3>IoT Smart Home System</h3>
@@ -157,7 +153,8 @@ const TechPage = () => {
         </div>
       ),
     },
-    // Add remaining projects here with `date` and `links` fields...
+
+
   ];
   
   
@@ -597,42 +594,60 @@ const TechPage = () => {
                         </div>
 
                         <div className="projects-grid">
-                          {sortedProjects
-                            .filter((project) => activeCategory === "All" || project.category === activeCategory)
-                            .map((project) => (
-                              <div
-                                key={project.id}
-                                className="project-card"
-                                onClick={() => setExpandedProject(project)}
-                              >
-                                <img className="project-image" src={project.image} alt={project.title} />
-                                <div className="project-info">
-                                  <h3 className="project-title">{project.title}</h3>
-                                  <p className="project-description">{project.shortDescription}</p>
-                                </div>
+                        {sortedProjects
+                          .filter(
+                            (project) =>
+                              activeCategory === "All" || project.category === activeCategory
+                          )
+                          .map((project) => (
+                            <div
+                              key={project.id}
+                              className="project-card"
+                              onClick={() => setExpandedProject(project)}
+                            >
+                              <img
+                                className="project-image"
+                                src={project.image}
+                                alt={project.title}
+                              />
+                              <div className="project-info">
+                                <h3 className="project-title">{project.title}</h3>
+                                <p className="project-description">{project.shortDescription}</p>
                                 <div className="project-date">
-                                  {/* Format the date to only show the month and year */}
                                   {new Date(project.date).toLocaleDateString("en-US", {
                                     year: "numeric",
                                     month: "long",
                                   })}
                                 </div>
                               </div>
-                            ))}
-                        </div>
+                            </div>
+                          ))}
+                      </div>
 
-                        {/* Expanded Project Panel */}
-                        {expandedProject && (
-                          <div className="expanded-project-panel">
-                            <button className="close-panel-button" onClick={() => setExpandedProject(null)}>
-                              Close
-                            </button>
-                            <h2>{expandedProject.title}</h2>
-                            <img className="expanded-project-image" src={expandedProject.image} alt={expandedProject.title} />
-                            <p>{expandedProject.fullDescription}</p>
-                            {/* Removed the links */}
+
+                       {/* Expanded Project Panel */}
+                      {expandedProject && (
+                        <div className="expanded-project-panel">
+                          <button className="close-panel-button" onClick={() => setExpandedProject(null)}>
+                            Close
+                          </button>
+                          <div className="expanded-project-content">
+                            {expandedProject.customContent ? (
+                              expandedProject.customContent
+                            ) : (
+                              <>
+                                <h2>{expandedProject.title}</h2>
+                                <img
+                                  className="expanded-project-image"
+                                  src={expandedProject.image}
+                                  alt={expandedProject.title}
+                                />
+                                <p>{expandedProject.fullDescription}</p>
+                              </>
+                            )}
                           </div>
-                        )}
+                        </div>
+                      )}
                       </div>
 
                       )}

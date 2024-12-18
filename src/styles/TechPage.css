@@ -806,28 +806,17 @@ border:0px;
 
 }
 
-.project-date {
-  text-align: center;
-  width: 70px;
-  margin-left: 10px;
-  background-color: #3a3a3a13;
-  padding: 5px 10px;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: bold;
-  color: #242424;
-}
-
 .projects-grid {
   display: flex;
-  flex-direction: column; /* Changed from grid to flex for rows */
-  gap: 20px;
+  flex-direction: column; /* Stack project cards vertically */
+  gap: 15px; /* Add consistent spacing between project cards */
+  margin: 20px 0; /* Add margin to the top and bottom of the grid */
 }
 
 .project-card {
   background-color: #3333330e;
-  display: flex;
-  align-items: center;
+  display: flex; /* Side-by-side layout for image and text */
+  align-items: center; /* Vertically align items */
   border-top: 2px solid #ffffff;
   border-left: 2px solid #ffffff;
   border-right: 2px solid #000000;
@@ -836,6 +825,7 @@ border:0px;
     4px 4px 8px rgba(0, 0, 0, 0.008), /* Outer shadow for depth */
     inset 0 0 0 1px #5f5f5f;
   padding: 10px;
+  gap: 20px; /* Space between image and text container */
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -846,22 +836,68 @@ border:0px;
 }
 
 .project-image {
-  width: 80px;
-  height: 80px;
-  margin-right: 10px;
+  width: 350px; /* Adjust image size */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure proper cropping */
+  border-top: 1px solid #000000;
+  border-left: 1px solid #000000;
+  border-right: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  box-shadow: 
+    4px 4px 8px rgba(0, 0, 0, 0.008), /* Outer shadow for depth */
+    inset 0 0 0 1px #3f3f3f;
 }
 
 .project-info {
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column; /* Stack title, description, and date vertically */
+  justify-content: center; /* Center align content vertically */
+  gap: 10px; /* Space between title, description, and date */
+  flex-grow: 1; /* Expand to fill available space */
 }
 
 .project-title {
-  font-size: 18px;
-  font-weight: bold;
+  font-family: 'Windows95Font', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: #0a0a0aea;
+  margin-top: 0px;
 }
 
 .project-description {
+  margin-top: -15px;
   font-size: 14px;
+  text-align: center;
+}
+
+.project-date {
+  text-align: center; /* Center-align text within the date box */
+  font-family: 'Windows95Font', sans-serif;
+  font-style: italic;
+  font-weight: 100;
+  width: fit-content;
+  background-color: #00000027;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #000000c4;
+  align-self: center; /* Center the date horizontally in the column */
+  margin-top: -15px;
+}
+
+
+.expanded-project-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
 }
 
 .expanded-project-panel {
@@ -870,28 +906,61 @@ border:0px;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgb(213, 213, 213);
+  background-color:   #cac6cb;
   z-index: 1000;
-  padding: 20px;
   overflow-y: auto;
-  animation: fadeIn 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.expanded-project-content {
+  max-width: 800px;
+  text-align: center; /* Centers the content */
 }
 
 .close-panel-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: transparent;
-  border: 1px solid #000;
+  position: fixed; /* Fixed to the viewport */
+  top: 20px; /* Distance from the top of the viewport */
+  right: 20px; /* Distance from the right of the viewport */
+  background-color: #cac6cb; /* Windows 95 button color */
+  color: #000; /* Black text color */
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  box-shadow: 
+    4px 4px 8px rgba(0, 0, 0, 0.008), /* Outer shadow for depth */
+    inset 0 0 0 1px #7a7a7a;
+
   padding: 5px 10px;
+  font-family: "Arial", sans-serif; /* Windows 95 font */
+  font-size: 14px;
   cursor: pointer;
+  z-index: 1000; /* Ensure it appears above other content */
+}
+
+.close-panel-button:hover {
+  background-color:  #dbd8dc; /* Darker color on hover */
+  color: #000000;
 }
 
 .expanded-project-image {
   max-width: 100%;
   height: auto;
   margin: 20px 0;
+  display: block; /* Ensures proper alignment */
 }
+
+h2 {
+  margin: 10px 0;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
 
 
 
