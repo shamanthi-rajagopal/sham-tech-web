@@ -109,15 +109,17 @@ const TechPage = () => {
             <div className="project-expand-text">
               <h3>Overview</h3>
               <p>
-                A full-stack app designed for Alzheimer's care, featuring computer vision technology for fall detection and an AI-powered personal chatbot to ensure patient safety and streamline communication in critical situations.
-              </p>
+              NeuroGuard is a full-stack application inspired by my grandmother, who is at risk of falling due to mild dementia and dizziness.
+               The project uses AI/ML technologies to support Alzheimer's patients and caregivers, featuring fall detection, an AI chatbot for caregiver assistance, and an emergency alert system.
+                The backend leverages OpenCV and MediaPipe for real-time motion analysis, while the chatbot integrates GPT-4 and Voiceflow for personalized support. The front-end, built with React.js and Flask, ensures a seamless user experience. 
+                This project helped me gain valuable experience in full-stack development, machine learning, and real-time data processing, with plans to expand its impact by providing behavioral insights to healthcare professionals.</p>
             </div>
             <div className="project-expand-features">
               <h3>Features</h3>
               <ul>
-                <li>Fall detection with computer vision</li>
-                <li>AI chatbot for caregiver communication</li>
-                <li>Real-time alerts and updates</li>
+                <li>- Real-time fall detection with computer vision</li>
+                <li>- AI chatbot for personalized caregiver support</li>
+                <li>- Emergency alerts to caregivers and healthcare providers</li>
               </ul>
             </div>
         
@@ -125,7 +127,7 @@ const TechPage = () => {
             <div className="project-expand-timeline">
               <h3>Timeline</h3>
               <ul>
-                <li>September 2024 (Hack The North)</li>
+                <li>36 hours (Hack The North 2024)</li>
               </ul>
             </div>
             <div className="project-expand-tools">
@@ -140,8 +142,20 @@ const TechPage = () => {
           </div>
         
           <div className="project-expand-buttons">
-            <button className="project-expand-demo">Demo</button>
-            <button className="project-expand-code">Code</button>
+          <div className="project-expand-buttons">
+        <button
+          className="project-expand-demo"
+          onClick={() => window.open("https://devpost.com/software/neuroguard-1cbg2d", "_blank")}
+        >
+          Demo
+        </button>
+        <button
+          className="project-expand-code"
+          onClick={() => window.open("https://github.com/shamanthi-rajagopal/NeuroGuard", "_blank")}
+        >
+          Github
+        </button>
+           </div>
           </div>
         </div>
         
