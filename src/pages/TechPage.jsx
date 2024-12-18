@@ -57,6 +57,7 @@ import ball3 from "../assets/photos/ball3.jpg";
 import ball4 from "../assets/photos/ball4.jpg";
 import ball5 from "../assets/photos/ball5.jpg";
 import neuro from "../assets/project/neuroguard.png";
+import neurovid from "../assets/project/neurovid.mp4";
 
 
 const TechPage = () => {
@@ -96,7 +97,7 @@ const TechPage = () => {
           <h1 className="project-expand-title">NeuroGuard</h1>
         
           <div className="project-expand-image-container">
-          <img className="project-expand-image" src={neuro} alt="NeuroGuard" />
+          <video className="project-expand-vid" src={neurovid} alt="NeuroGuard" loop autoPlay muted />
           <div className="project-expand-image-side">
             <img className="project-expand-image-1" src={neuro} alt="NeuroGuard" />
             <img className="project-expand-image-2" src={neuro} alt="NeuroGuard" />
