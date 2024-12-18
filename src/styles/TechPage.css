@@ -942,92 +942,147 @@ border:0px;
   font-size: 32px;
   font-weight: bold;
   text-align: center;
-  color: #000;
+  color: #ffffff;
   margin-bottom: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Retro Windows vibe */
 }
 
 /* Image styling */
-.project-expand-image {
-  width: 70%;
-  max-width: 600px; /* Control max size of the image */
-  height: auto;
-  display: block;
-  margin: 0 auto 20px auto; /* Center the image with margin below */
+/* Main image and side images container */
+.project-expand-image-container {
+  display: flex;
+  gap: 10px; /* Space between main image and the side images */
+  margin-bottom: 20px; /* Space between the image container and the next section */
 }
 
-/* Content container for overview, timeline, and tools */
-.project-expand-content {
+/* Main image */
+.project-expand-image {
+  margin-left: 50px;
+  width: 60%; /* Take full width of its container */
+  height: auto; /* Maintain aspect ratio */
+  border-top: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
+  border-right: 3px solid #000000;
+  border-bottom: 3px solid #000000;
+}
+
+/* Side images container */
+.project-expand-image-side {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  flex-direction: column; /* Stack images vertically */
+  gap: 10px; /* Space between the two images */
+}
+
+/* Side images */
+.project-expand-image-1,
+.project-expand-image-2 {
+  width: 100%; /* Take full width of the container */
+  max-width: 390px; /* Reduce to about half of the main image width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image fits within the container */
+  border-top: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
+  border-right: 3px solid #000000;
+  border-bottom: 3px solid #000000;
+}
+
+
+/* Content container for the four boxes */
+.project-expand-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal-width columns */
+  grid-template-rows: auto auto; /* Two rows */
+  gap: 20px; /* Space between the boxes */
   margin-bottom: 20px;
 }
 
-/* Text (overview) section */
+
+/* Box placement using grid-area */
 .project-expand-text {
-  width: 48%; /* Make sure it takes up space alongside the timeline and tools */
+  grid-column: 1; /* Top left */
+  grid-row: 1;
+  text-align: center;
   padding: 10px;
-  border: 2px solid #000;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background-color: transparent;
+  text-align: left;
+  width: 100%;
+  margin-left: 150px;
 }
 
-.project-expand-text h3 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
+.project-expand-features {
+  grid-column: 1; /* Bottom left */
+  grid-row: 2;
+  text-align: center;
+  padding: 10px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background-color: transparent;
+  text-align: left;
+  width: 100%;
+  margin-left: 150px;
 }
 
-.project-expand-text p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #333;
-}
-
-/* Timeline section */
 .project-expand-timeline {
-  width: 48%; /* Fit next to the overview */
-  padding: 10px;
-  border: 2px solid #000;
+  grid-column: 2; /* Top right */
+  grid-row: 1;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background-color: transparent;
+  text-align: left;
+  width: 50%;
+  margin-left: 170px;
+  margin-top: -20px;
 }
 
-.project-expand-timeline h3 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.project-expand-timeline ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.project-expand-timeline li {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #555;
-}
-
-/* Tools section */
 .project-expand-tools {
-  width: 48%; /* Align with timeline */
-  padding: 10px;
-  border: 2px solid #000;
+  grid-column: 2; /* Bottom right */
+  grid-row: 2;
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  background-color: transparent;
+  text-align: left;
+  width: 50%;
+  margin-left: 170px;  
+  margin-top: -20px;
 }
 
+/* Specific box styling */
+.project-expand-text h3,
+.project-expand-timeline h3,
+.project-expand-features h3,
 .project-expand-tools h3 {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
+  
 }
 
+.project-expand-text p,
+.project-expand-timeline ul,
+.project-expand-features ul,
 .project-expand-tools ul {
-  list-style-type: none;
+  margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 
+.project-expand-text p,
+.project-expand-timeline li,
+.project-expand-features li,
 .project-expand-tools li {
   font-size: 14px;
   line-height: 1.6;
+}
+
+/* Timeline and Tools text color */
+.project-expand-timeline li,
+.project-expand-tools li {
   color: #555;
 }
 
@@ -1043,9 +1098,9 @@ border:0px;
 /* Styling for the Demo and Code buttons */
 .project-expand-demo,
 .project-expand-code {
-  background-color: #c0c0c0; /* Windows 95 button color */
-  color: #000;
-  border: 2px solid #000;
+  background-color: #c0c0c000; /* Windows 95 button color */
+  color: #ffffff;
+  border: 2px solid #ffffff;
   padding: 10px 20px;
   font-size: 14px;
   cursor: pointer;
@@ -1058,8 +1113,7 @@ border:0px;
 /* Hover effect for the buttons */
 .project-expand-demo:hover,
 .project-expand-code:hover {
-  background-color: #a0a0a0;
-  transform: scale(1.05);
+  color:#0c6fb0;
 }
 
 /* Active button effect */
@@ -1067,6 +1121,7 @@ border:0px;
 .project-expand-code:active {
   transform: scale(0.98);
 }
+
 
 
 
