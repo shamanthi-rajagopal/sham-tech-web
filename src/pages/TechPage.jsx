@@ -134,10 +134,14 @@ const TechPage = () => {
             <div className="project-expand-tools">
               <h3>Tools</h3>
               <ul>
-                <li>React</li>
-                <li>Node.js</li>
-                <li>Python</li>
+                <li>OpenCV</li>
                 <li>TensorFlow</li>
+                <li>MediaPipe</li>
+                <li>Python</li>
+                <li>Flask</li>
+                <li>React</li>
+                <li>JavaScript</li>
+                <li>Axios</li>
               </ul>
             </div>
           </div>
