@@ -836,8 +836,8 @@ border:0px;
 }
 
 .project-image {
-  width: 350px; /* Adjust image size */
-  height: auto; /* Maintain aspect ratio */
+  width: 300px; /* Adjust image size */
+  height: 225px; /* Maintain aspect ratio */
   object-fit: cover; /* Ensure proper cropping */
   border-top: 1px solid #000000;
   border-left: 1px solid #000000;
@@ -959,12 +959,15 @@ border:0px;
 
 /* Title styling */
 .project-expand-title {
-  font-size: 32px;
+  font-size: 35px;
   font-weight: bold;
   text-align: center;
   color: #ffffff;
   margin-bottom: 20px;
   margin-left: 50px;
+  font-family: "Changa One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* Image styling */

@@ -57,7 +57,9 @@ import ball3 from "../assets/photos/ball3.jpg";
 import ball4 from "../assets/photos/ball4.jpg";
 import ball5 from "../assets/photos/ball5.jpg";
 import neuro from "../assets/project/neuroguard.png";
+import neuro1 from "../assets/project/neuro1.png";
 import neurovid from "../assets/project/neurovid.mp4";
+import fashion from "../assets/project/FashioNova.png";
 
 
 const TechPage = () => {
@@ -100,7 +102,7 @@ const TechPage = () => {
           <video className="project-expand-vid" src={neurovid} alt="NeuroGuard" loop autoPlay muted />
           <div className="project-expand-image-side">
             <img className="project-expand-image-1" src={neuro} alt="NeuroGuard" />
-            <img className="project-expand-image-2" src={neuro} alt="NeuroGuard" />
+            <img className="project-expand-image-2" src={neuro1} alt="NeuroGuard" />
           </div>
         </div>
 
@@ -170,25 +172,81 @@ const TechPage = () => {
     
     {
       id: 2,
-      title: "Robotics Arm Controller",
-      category: "Hardware",
-      image: "/images/robotic_arm.jpg",
-      date: "2024-03-20", // Example date
-      shortDescription: "A robotic arm controlled using firmware.",
-      fullDescription: "Detailed overview of Robotics Arm Controller...",
-      links: {
-        code: "https://github.com/yourusername/robotics-arm",
-        demo: "https://example.com/robotics-arm-demo",
-      },
+      title: "FashioNova",
+      category: "AI/ML",
+      image: fashion,
+      date: "2024-10-06", 
+      shortDescription: "A full-stack app designed for Alzheimer's care, featuring computer vision technology for fall detection and an AI-powered personal chatbot to ensure patient safety and streamline communication in critical situations.",
       customContent: (
-        <div>
-          <h3>Robotics Arm Controller</h3>
-          <p>Designed a robotic arm capable of precise movements using custom firmware:</p>
-          <ul>
-            <li>STM32-based microcontroller</li>
-            <li>PID control for accuracy</li>
-            <li>Integration with ROS for path planning</li>
-          </ul>
+          <div className="project-expand-container">
+          <h1 className="project-expand-title">FashioNova</h1>
+        
+          <div className="project-expand-image-container">
+          <video className="project-expand-vid" src={neurovid} alt="NeuroGuard" loop autoPlay muted />
+          <div className="project-expand-image-side">
+            <img className="project-expand-image-1" src={fashion} alt="NeuroGuard" />
+            <img className="project-expand-image-2" src={neuro1} alt="NeuroGuard" />
+          </div>
+        </div>
+
+
+          <div className="project-expand-content">
+            {/* First row: Overview and Features */}
+            <div className="project-expand-text">
+              <h3>Overview</h3>
+              <p>
+              NeuroGuard is a full-stack application inspired by my grandmother, who is at risk of falling due to mild dementia and dizziness.
+               The project uses AI/ML technologies to support Alzheimer's patients and caregivers, featuring fall detection, an AI chatbot for caregiver assistance, and an emergency alert system.
+                The backend leverages OpenCV and MediaPipe for real-time motion analysis, while the chatbot integrates GPT-4 and Voiceflow for personalized support. The front-end, built with React.js and Flask, ensures a seamless user experience. 
+                This project helped me gain valuable experience in full-stack development, machine learning, and real-time data processing, with plans to expand its impact by providing behavioral insights to healthcare professionals.</p>
+            </div>
+            <div className="project-expand-features">
+              <h3>Features</h3>
+              <ul>
+                <li>- Real-time fall detection with computer vision</li>
+                <li>- AI chatbot for personalized caregiver support</li>
+                <li>- Emergency alerts to caregivers and healthcare providers</li>
+              </ul>
+            </div>
+        
+            {/* Second row: Timeline and Tools */}
+            <div className="project-expand-timeline">
+              <h3>Timeline</h3>
+              <ul>
+                <li>36 hours (Hack The North 2024)</li>
+              </ul>
+            </div>
+            <div className="project-expand-tools">
+              <h3>Tools</h3>
+              <ul>
+                <li>OpenCV</li>
+                <li>TensorFlow</li>
+                <li>MediaPipe</li>
+                <li>Python</li>
+                <li>Flask</li>
+                <li>React</li>
+                <li>JavaScript</li>
+                <li>Axios</li>
+              </ul>
+            </div>
+          </div>
+        
+          <div className="project-expand-buttons">
+          <div className="project-expand-buttons">
+        <button
+          className="project-expand-demo"
+          onClick={() => window.open("https://devpost.com/software/fashionova", "_blank")}
+        >
+          Demo
+        </button>
+        <button
+          className="project-expand-code"
+          onClick={() => window.open("https://github.com/shamanthi-rajagopal/FashioNova", "_blank")}
+        >
+          Github
+        </button>
+           </div>
+          </div>
         </div>
       ),
     },
