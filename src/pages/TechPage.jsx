@@ -57,14 +57,6 @@ import ball2 from "../assets/photos/ball2.jpg";
 import ball3 from "../assets/photos/ball3.jpg";
 import ball4 from "../assets/photos/ball4.jpg";
 import ball5 from "../assets/photos/ball5.jpg";
-import neuro from "../assets/project/neuroguard.png";
-import neuro1 from "../assets/project/neuro1.png";
-import neurovid from "../assets/project/neurovid.mp4";
-import fashion from "../assets/project/FashioNova.png";
-import fashion1 from "../assets/project/FashioNova2.png";
-import fashionvid from "../assets/project/fashionova.mp4"
-import tucantravel from "../assets/project/tucantravel.png";
-import colourai from "../assets/project/colourai.png";
 
 
 const TechPage = () => {
@@ -517,7 +509,7 @@ const TechPage = () => {
 
                         {/* Category Filter Buttons */}
                         <div className="project-categories">
-                          {["All", "Software", "AI/ML", "Space", "Hardware"].map((category) => (
+                          {["All", "Software", "AI/ML", "Hardware", "Space"].map((category) => (
                             <button
                               key={category}
                               className={`project-category-button ${activeCategory === category ? "active" : ""}`}

@@ -836,8 +836,8 @@ border:0px;
 }
 
 .project-image {
-  width: 270px; /* Adjust image size */
-  height: 225px; /* Maintain aspect ratio */
+  width: 250px; /* Adjust image size */
+  height: 180px; /* Maintain aspect ratio */
   object-fit: cover; /* Ensure proper cropping */
   border-top: 1px solid #000000;
   border-left: 1px solid #000000;
@@ -1166,6 +1166,17 @@ border:0px;
   width: 100%; /* Take full width of the container */
   max-width: 400px; /* Reduce to about half of the main image width */
   height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image fits within the container */
+  border-top: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
+  border-right: 3px solid #000000;
+  border-bottom: 3px solid #000000;
+}
+
+.project-expand-image-1-skate,
+.project-expand-image-2-skate {
+  width: 80%; /* Take full width of the container */
+  height: 220px; /* Maintain aspect ratio */
   object-fit: cover; /* Ensure the image fits within the container */
   border-top: 3px solid #ffffff;
   border-left: 3px solid #ffffff;

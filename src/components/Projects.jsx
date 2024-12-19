@@ -10,6 +10,12 @@ import colourai from "../assets/project/colourai.png";
 import myfocuslibrary from "../assets/project/myfocuslibrary.png";
 import geesespotter from "../assets/project/geesespotter.jpg";
 import humorhaven from "../assets/project/humorhaven.png";
+import seniorminder from "../assets/project/seniorminder.jpg";
+import seniorminder1 from "../assets/project/seniorminder1.png";
+import seniorminder2 from "../assets/project/seniorminder2.png";
+import skateboard from "../assets/project/skateboardbattery1.png";
+import skateboard1 from "../assets/project/skateboardbattery2.png";
+import skateboard2 from "../assets/project/skateboardbattery.png";
 
 /* This page is to organize and add all the project content here, styling however is still in Tech Page CSS */
 
@@ -175,7 +181,7 @@ const Projects = [
           <h1 className="project-expand-title">TuCanTravel</h1>
         
           <div className="project-expand-image-tucantravel-container">
-          <img className="project-expand-image-tucantravel" src={tucantravel} alt="NeuroGuard" />
+          <img className="project-expand-image-tucantravel" src={tucantravel} />
           </div>
 
 
@@ -505,6 +511,137 @@ const Projects = [
           Github
         </button>
            </div>
+          </div>
+        </div>
+      ),
+    },
+
+    {
+      id: 8,
+      title: "SeniorMinder",
+      category: "Hardware",
+      image: seniorminder,
+      date: "2023-12-10", 
+      shortDescription: "A microcontroller-powered alarm clock designed to assist the elderly, especially those with Alzheimer's or dementia, in managing their medication schedule with enhanced accessibility features.",
+      customContent: (
+          <div className="project-expand-container">
+          <h1 className="project-expand-title">SeniorMinder</h1>
+        
+          <div className="project-expand-image-container">
+          <img className="project-expand-vid" src={seniorminder} />
+          <div className="project-expand-image-side">
+            <img className="project-expand-image-1" src={seniorminder1}/>
+            <img className="project-expand-image-2" src={seniorminder2}></img>
+          </div>
+        </div>
+
+
+          <div className="project-expand-content">
+            {/* First row: Overview and Features */}
+            <div className="project-expand-text">
+              <h3>Overview</h3>
+              <p>
+              SeniorMinder is an innovative hardware solution developed to support elderly individuals, particularly those with memory health issues like Alzheimer's and dementia. 
+              This medicine alarm clock ensures that seniors take their medications on time, with added features designed to assist visually impaired and hard-of-hearing users. 
+              The device is powered by an STM32 microcontroller and programmed using C & C++ (for testing) with Arduino, incorporating various electrical components and schematics to ensure reliability and ease of use. 
+              The project was built with careful consideration of the user experience and technological design processes, ensuring that it effectively meets the needs of its target audience. 
+              The result is a user-friendly, life-improving product that not only helps seniors with medication management but also provides them with an intuitive way to stay on track with their daily health regimen.
+              </p></div>
+            <div className="project-expand-features">
+              <h3>Features</h3>
+              <ul>
+                <li>- STM32 Microcontroller: Provides reliable, efficient control for the device's functions.</li>
+                <li>- Accessibility Features: Visual & audio cues to assist visually impaired and hard-of-hearing users.</li>
+                <li>- Medicine Reminder (easy-to-use alarm system).</li>
+              </ul>
+            </div>
+        
+            {/* Second row: Timeline and Tools */}
+            <div className="project-expand-timeline">
+              <h3>Timeline</h3>
+              <ul>
+                <li>4 months (September 2023 - December 2023)</li>
+              </ul>
+            </div>
+            <div className="project-expand-tools">
+              <h3>Skills & Tools</h3>
+              <ul>
+                <li>STM32 Microcontroller</li><li>C & C++</li><li>Arduino</li><li>Electrical components & circuits</li><li>Schematics Design</li>
+              </ul>
+            </div>
+          </div>
+        
+          <div className="project-expand-buttons">
+          <div className="project-expand-buttons">
+        <button
+          className="project-expand-demo"
+          onClick={() => window.open("https://drive.google.com/file/d/1Pf9fEsvhXH0x4DrDYoLy8TE1J7STuqTo/view", "_blank")}
+        >
+          Demo
+        </button>
+        <button
+          className="project-expand-code"
+          onClick={() => window.open("https://github.com/shamanthi-rajagopal/ECE_198_Microcontroller-Project", "_blank")}
+        >
+          Github
+        </button>
+           </div>
+          </div>
+        </div>
+      ),
+    },
+
+    {
+      id: 9,
+      title: "E-Skateboard Battery Box",
+      category: "Hardware",
+      image: skateboard,
+      date: "2024-06-10", 
+      shortDescription: "Engineered a waterproof battery box for an electric skateboard, enhancing durability and optimizing balance for improved performance.",
+      customContent: (
+          <div className="project-expand-container">
+          <h1 className="project-expand-title">E-Skateboard Battery Box</h1>
+        
+          <div className="project-expand-image-container">
+          <img className="project-expand-vid" src={skateboard} />
+          <div className="project-expand-image-side">
+            <img className="project-expand-image-1-skate" src={skateboard1}/>
+            <img className="project-expand-image-2-skate" src={skateboard2}></img>
+          </div>
+        </div>
+
+
+          <div className="project-expand-content">
+            {/* First row: Overview and Features */}
+            <div className="project-expand-text">
+              <h3>Overview</h3>
+              <p>
+              I helped design and engineer a waterproof battery box for an electric skateboard, enhancing durability and optimizing balance. 
+              Using SolidWorks for precise CAD modeling, I incorporated material selection, waterproofing techniques, and manufacturing processes to protect the battery in harsh conditions. 
+              I also focused on optimizing the center of gravity for improved stability and performance. This project involved a blend of mechanical and electrical engineering skills, including CAD design, material analysis, balance optimization, and hardware integration. (For Electrium Design Team @ UWaterloo).
+             </p></div>
+            <div className="project-expand-features">
+              <h3>Features</h3>
+              <ul>
+                <li>- SolidWorks Modeling (Precise 3D model).</li>
+                <li>- Waterproof Design.</li>
+                <li>- Optimized Balance.</li>
+              </ul>
+            </div>
+        
+            {/* Second row: Timeline and Tools */}
+            <div className="project-expand-timeline">
+              <h3>Timeline</h3>
+              <ul>
+                <li>2 months (May 2024 - June 2024)</li>
+              </ul>
+            </div>
+            <div className="project-expand-tools">
+              <h3>Skills & Tools</h3>
+              <ul>
+                <li>CAD Desigin</li><li>SolidWorks</li><li>Material Selection</li><li>Manufacturing Techniques (prototyping, assembly)</li><li>3D Printing</li>
+              </ul>
+            </div>
           </div>
         </div>
       ),
