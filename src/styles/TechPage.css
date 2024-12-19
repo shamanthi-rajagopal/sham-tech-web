@@ -836,7 +836,7 @@ border:0px;
 }
 
 .project-image {
-  width: 300px; /* Adjust image size */
+  width: 270px; /* Adjust image size */
   height: 225px; /* Maintain aspect ratio */
   object-fit: cover; /* Ensure proper cropping */
   border-top: 1px solid #000000;
@@ -1002,7 +1002,7 @@ border:0px;
 .project-expand-image-1,
 .project-expand-image-2 {
   width: 100%; /* Take full width of the container */
-  max-width: 390px; /* Reduce to about half of the main image width */
+  max-width: 370px; /* Reduce to about half of the main image width */
   height: auto; /* Maintain aspect ratio */
   object-fit: cover; /* Ensure the image fits within the container */
   border-top: 3px solid #ffffff;
@@ -1158,8 +1158,42 @@ border:0px;
 }
 
 
+/* ===================== Customizations for each project if needed!!!!!  ======================*/
+
+/* Side images */
+.project-expand-image-1-neuro,
+.project-expand-image-2-neuro {
+  width: 100%; /* Take full width of the container */
+  max-width: 400px; /* Reduce to about half of the main image width */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure the image fits within the container */
+  border-top: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
+  border-right: 3px solid #000000;
+  border-bottom: 3px solid #000000;
+}
+
+.project-expand-image-tucantravel-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100%; /* Set the height of the container */
+}
+
+.project-expand-image-tucantravel {
+  display: block;
+  margin: 0 auto; /* Centers the image horizontally */
+  width: 60%;
+  height: 455px;
+  border-top: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
+  border-right: 3px solid #000000;
+  border-bottom: 3px solid #000000;
+}
 
 
+
+/* ===================== END OF Customizations for each project if needed!!!!!  ======================*/
 
 .close-panel-button {
   position: fixed; /* Fixed to the viewport */
