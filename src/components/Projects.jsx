@@ -16,6 +16,8 @@ import seniorminder2 from "../assets/project/seniorminder2.png";
 import skateboard from "../assets/project/skateboardbattery1.png";
 import skateboard1 from "../assets/project/skateboardbattery2.png";
 import skateboard2 from "../assets/project/skateboardbattery.png";
+import websitevid from "../assets/project/website.mp4";
+import website from "../assets/project/website1.png";
 
 /* This page is to organize and add all the project content here, styling however is still in Tech Page CSS */
 
@@ -644,6 +646,79 @@ const Projects = [
             </div>
           </div>
         </div>
+      ),
+    },
+
+    {
+      id: 10,
+      title: "Portfolio Website",
+      category:"Software",
+      image: website,
+      date: "2024-12-10", 
+      shortDescription: "Created a fully functional, retro-style Windows 95 / Windows CE portfolio website from scratch!",
+      customContent: (
+          <div className="project-expand-container">
+          <h1 className="project-expand-title">Portfolio Website</h1>
+        
+          <div className="project-expand-image-container">
+          <video className="project-expand-vid-web" src={websitevid} loop autoPlay muted />
+        </div>
+
+
+          <div className="project-expand-content">
+            {/* First row: Overview and Features */}
+            <div className="project-expand-text">
+              <h3>Overview</h3>
+              <p>
+              This project is a fun and creative take on my portfolio, designed to bring the nostalgia of Windows 95/CE to life. 
+              I wanted to build something cool that not only showcased my versatility but also captured the essence of retro computing in a modern, interactive way. 
+              Using React, I recreated the classic Windows 95 interface, complete with clickable windows, dynamic content loading, and a playful UI that transports users back to the '90s. 
+              The goal was to combine nostalgia with innovation, making something engaging that would stand out and reflect my unique style, while also being fully functional. (My favourite project so far!!!)
+             </p></div>
+            <div className="project-expand-features">
+              <h3>Features</h3>
+              <ul>
+                <li>- Dynamic Content Loading</li>
+                <li>- Windows 95/CE UI</li>
+                <li>- Hidden suprise features ☺️ !!!</li>
+                <li>(Created with lots of 🩵) </li>
+              </ul>
+            </div>
+        
+            {/* Second row: Timeline and Tools */}
+            <div className="project-expand-timeline">
+              <h3>Timeline</h3>
+              <ul>
+                <li> 1 Month (December 2024)</li>
+              </ul>
+            </div>
+            <div className="project-expand-tools">
+              <h3>Skills & Tools</h3>
+              <ul>
+                <li>React & Vite</li><li>JavaScript</li><li>HTML/CSS</li><li>State Management</li>
+              </ul>
+            </div>
+          </div>
+        
+          <div className="project-expand-buttons">
+          <div className="project-expand-buttons">
+        <button
+          className="project-expand-demo"
+          onClick={() => window.open("https://shamanthi-rajagopal.com/", "_blank")}
+        >
+          Demo
+        </button>
+        <button
+          className="project-expand-code"
+          onClick={() => window.open("https://github.com/shamanthi-rajagopal/website-portfolio-uw/tree/main", "_blank")}
+        >
+          Github
+        </button>
+           </div>
+          </div>
+        </div>
+        
+
       ),
     },
 
