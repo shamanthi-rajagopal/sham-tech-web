@@ -8,6 +8,7 @@ import fashionvid from "../assets/project/fashionova.mp4"
 import tucantravel from "../assets/project/tucantravel.png";
 import colourai from "../assets/project/colourai.png";
 import myfocuslibrary from "../assets/project/myfocuslibrary.png";
+import geesespotter from "../assets/project/geesespotter.jpg";
 
 /* This page is to organize and add all the project content here, styling however is still in Tech Page CSS */
 
@@ -59,7 +60,7 @@ const Projects = [
               </ul>
             </div>
             <div className="project-expand-tools">
-              <h3>Tools</h3>
+              <h3>Skills & Tools</h3>
               <ul>
                 <li>OpenCV</li><li>TensorFlow</li><li>MediaPipe</li><li>Python</li><li>Flask</li><li>React</li><li>JavaScript</li><li>Axios</li>
               </ul>
@@ -135,7 +136,7 @@ const Projects = [
               </ul>
             </div>
             <div className="project-expand-tools">
-              <h3>Tools</h3>
+              <h3>Skills & Tools</h3>
               <ul>
                 <li>OpenCV</li><li>TensorFlow</li><li>MediaPipe</li><li>VR/AR</li><li>ML model</li><li>WebRTC</li><li>Socket.IO</li><li>Python</li><li>Flask</li><li>React & JSX</li>
               </ul>
@@ -369,6 +370,75 @@ const Projects = [
       ),
     },
 
+    {
+      id: 6,
+      title: "GeeseSpotter",
+      category: "Software",
+      image: geesespotter,
+      date: "2023-11-10", 
+      shortDescription: " A C++ console game that challenges players to uncover hidden geese using clues from neighboring fields, combining strategy with fun!",
+      customContent: (
+          <div className="project-expand-container">
+          <h1 className="project-expand-title">GeeseSpotter</h1>
+        
+          <div className="project-expand-image-tucantravel-container">
+          <img className="project-expand-image-tucantravel" src={geesespotter} />
+          </div>
+
+
+          <div className="project-expand-content">
+            {/* First row: Overview and Features */}
+            <div className="project-expand-text">
+              <h3>Overview</h3>
+              <p>
+              GeeseSpotter is a text-based, single-player game developed in C++ that replicates a unique version of Minesweeper with a creative Waterloo twist. 
+              The goal is to identify which fields contain geese by interpreting clues from neighboring fields that indicate the presence of geese through droppings. 
+              This project allowed me to apply core programming concepts such as functions, bitwise operations, arrays, and dynamic memory allocation to build an engaging, interactive game. 
+              Through this experience, I strengthened my skills in C++ and learned how to implement game logic, manage memory dynamically, and develop a console-based application with an emphasis on efficiency and user experience. 
+              (Project's main purpose was to learn and develop skills mentioned =>)</p></div>
+            <div className="project-expand-features">
+              <h3>Features</h3>
+              <ul>
+                <li>- Console-Based Interface (Text-driven UI & engaging gaming experience).</li>
+                <li>- 2D Board Layout (Interactive game environment).</li>
+              </ul>
+            </div>
+        
+            {/* Second row: Timeline and Tools */}
+            <div className="project-expand-timeline">
+              <h3>Timeline</h3>
+              <ul>
+                <li>1 Month (November 2023)</li>
+              </ul>
+            </div>
+            <div className="project-expand-tools">
+              <h3>Skills & Tools</h3>
+              <ul>
+                <li>C++</li><li>Game Development</li><li>Functions | Arrays | Bitwise Operations</li>
+              </ul>
+            </div>
+          </div>
+        
+          <div className="project-expand-buttons">
+          <div className="project-expand-buttons">
+        <button
+          className="project-expand-demo"
+          onClick={() => window.open("https://drive.google.com/file/d/1ZNa1lu5cox61KNyAdE8FkkI9JPc11UOn/view", "_blank")}
+        >
+          Demo
+        </button>
+        <button
+          className="project-expand-code"
+          onClick={() => window.open("https://github.com/shamanthi-rajagopal/Geesespotter--C-plusplus-Game", "_blank")}
+        >
+          Github
+        </button>
+           </div>
+          </div>
+        </div>
+      ),
+    },
+    
 
   ];
   
