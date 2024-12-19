@@ -9,6 +9,7 @@ import tucantravel from "../assets/project/tucantravel.png";
 import colourai from "../assets/project/colourai.png";
 import myfocuslibrary from "../assets/project/myfocuslibrary.png";
 import geesespotter from "../assets/project/geesespotter.jpg";
+import humorhaven from "../assets/project/humorhaven.png";
 
 /* This page is to organize and add all the project content here, styling however is still in Tech Page CSS */
 
@@ -439,6 +440,75 @@ const Projects = [
       ),
     },
     
+    {
+      id: 7,
+      title: "HumorHaven",
+      category: "Software",
+      image: humorhaven,
+      date: "2024-01-10", 
+      shortDescription: "A dynamic PHP-based website that connects users to a joke database, allowing them to search, add, and enjoy jokes, all with secure encryption.",
+      customContent: (
+          <div className="project-expand-container">
+          <h1 className="project-expand-title">HumorHaven</h1>
+        
+          <div className="project-expand-image-tucantravel-container">
+          <img className="project-expand-image-tucantravel" src={humorhaven} />
+          </div>
+
+
+          <div className="project-expand-content">
+            {/* First row: Overview and Features */}
+            <div className="project-expand-text">
+              <h3>Overview</h3>
+              <p>
+              Humor Haven is an interactive website built using PHP and MySQL, hosted on an Apache web server. 
+              The website serves as a fun, user-friendly platform for accessing a wide variety of jokes and puns, aimed at boosting personality and charm. 
+              Users can browse jokes based on specific keywords or contribute their own to the site. 
+              This project gave me hands-on experience with web development technologies such as PHP, HTML, and MySQL, and helped me sharpen my skills in server-side programming and database management. 
+              Additionally, the website is encrypted to ensure security, demonstrating my ability to implement web security practices alongside dynamic web development. (Project was created to help practice new skills for internship - SWD intern @ PinkByte)</p></div>
+            <div className="project-expand-features">
+              <h3>Features</h3>
+              <ul>
+                <li>- Database-Driven: Usage of a robust MySQL database.</li>
+                <li>- User-Generated Content: Feature to add and share jokes with the community.</li>
+                <li>- Encryption: The site is encrypted to ensure secure user interactions and data handling.</li>
+              </ul>
+            </div>
+        
+            {/* Second row: Timeline and Tools */}
+            <div className="project-expand-timeline">
+              <h3>Timeline</h3>
+              <ul>
+                <li>6 hours (January 2024)</li>
+              </ul>
+            </div>
+            <div className="project-expand-tools">
+              <h3>Skills & Tools</h3>
+              <ul>
+                <li>MySQL</li><li>PHP</li><li>Apache Web Server</li><li>Database Mangement</li><li>Web Hosting</li><li>Encryption</li><li>HTML/CSS</li>
+              </ul>
+            </div>
+          </div>
+        
+          <div className="project-expand-buttons">
+          <div className="project-expand-buttons">
+        <button
+          className="project-expand-demo"
+          onClick={() => window.open("https://www.youtube.com/watch?v=bEdtgVBG8zU", "_blank")}
+        >
+          Demo
+        </button>
+        <button
+          className="project-expand-code"
+          onClick={() => window.open("https://github.com/shamanthi-rajagopal/HumorHaven", "_blank")}
+        >
+          Github
+        </button>
+           </div>
+          </div>
+        </div>
+      ),
+    },
 
   ];
   
